@@ -58,7 +58,7 @@ export default function Navbar() {
                 alt="GMG Labs"
                 width={160}
                 height={45}
-                style={{ height: 'auto', width: 'auto' }}
+                style={{ height: '32px', width: 'auto' }}
                 priority
               />
             </Link>
