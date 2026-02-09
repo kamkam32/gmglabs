@@ -11,10 +11,10 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
-import NextImage from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { colors } from '@/lib/colors'
+import GradientText from '../shared/GradientText'
 import MobileMenu from './MobileMenu'
 
 const navLinks = [
@@ -53,14 +53,9 @@ export default function Navbar() {
         <Container maxW="1400px" py={4}>
           <Flex as="nav" justify="space-between" align="center" aria-label="Navigation principale">
             <Link href="/" aria-label="GMG Labs - Accueil">
-              <NextImage
-                src="/logo-gmg.png"
-                alt="GMG Labs"
-                width={160}
-                height={45}
-                style={{ height: '32px', width: 'auto' }}
-                priority
-              />
+              <GradientText fontSize="xl" fontWeight="800">
+                GMG Labs
+              </GradientText>
             </Link>
 
             <HStack spacing={8} display={{ base: 'none', lg: 'flex' }}>
