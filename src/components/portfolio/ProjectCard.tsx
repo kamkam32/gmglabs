@@ -43,7 +43,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         {/* Image */}
         <Box
           h="200px"
-          bg={colors.bg.elevated}
+          bg={project.images[0]?.endsWith('.jpg') ? 'white' : colors.bg.elevated}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -54,9 +54,9 @@ export default function ProjectCard({ project }: { project: Project }) {
             <Image
               src={project.images[0]}
               alt={project.title}
-              width={200}
-              height={150}
-              style={{ objectFit: 'contain', maxHeight: '100%' }}
+              width={300}
+              height={180}
+              style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }}
             />
           ) : (
             <Text fontSize="4xl" fontWeight="800" color={`${accent}30`}>

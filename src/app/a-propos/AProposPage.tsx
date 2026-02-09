@@ -30,10 +30,9 @@ const values = [
 ]
 
 const timeline = [
-  { year: '2022', title: 'Creation de GMG Labs', description: 'Fondation de l\'agence a Casablanca avec une vision claire : creer des produits digitaux de classe mondiale.' },
-  { year: '2023', title: 'Premiers projets majeurs', description: 'Livraison de plusieurs projets web et mobile pour des clients au Maroc et en Europe.' },
-  { year: '2024', title: 'Lancement d\'Ello', description: 'Developpement et lancement de notre produit phare : Ello, la plateforme de reservation beaute #1 au Maroc.' },
-  { year: '2025', title: 'Expansion IA', description: 'Ouverture du pole Intelligence Artificielle. Chatbots, RAG et solutions d\'automatisation pour les entreprises.' },
+  { year: '2025', title: 'Creation de GMG Labs', description: 'Fondation de l\'agence a Casablanca avec une vision claire : creer des produits digitaux de classe mondiale.' },
+  { year: '2025', title: 'Lancement d\'Ello', description: 'Developpement et lancement de notre produit phare : Ello, la plateforme de reservation beaute #1 au Maroc.' },
+  { year: '2025', title: 'Messidor Patrimoine', description: 'Conception du dashboard financier pour Messidor Patrimoine : suivi OPCVM, OPCI et simulateur d\'investissement.' },
 ]
 
 export default function AProposPage() {
