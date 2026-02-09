@@ -47,7 +47,7 @@ function MouseGlow() {
         bg="radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, rgba(123, 97, 255, 0.08) 40%, transparent 70%)"
         filter="blur(60px)"
         transform="translate(-50%, -50%)"
-        transition="left 0.3s ease-out, top 0.3s ease-out"
+        transition="left 0.1s ease-out, top 0.1s ease-out"
         pointerEvents="none"
         style={{
           left: `${pos.x}%`,
