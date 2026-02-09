@@ -28,8 +28,8 @@ export default function FeaturedProject() {
       <Container maxW="1200px">
         <SectionHeading
           label="Projet vedette"
-          title="Ello, notre fierte"
-          gradientWord="fierte"
+          title="Ello, notre fierté"
+          gradientWord="fierté"
           subtitle="La plateforme de reservation beaute #1 au Maroc, concue et developpee par GMG Labs."
         />
 
