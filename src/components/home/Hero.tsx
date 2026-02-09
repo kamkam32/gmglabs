@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { Box, Container, Heading, Text, HStack, Button, VStack } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { FiArrowRight } from 'react-icons/fi'
 import { colors } from '@/lib/colors'
@@ -119,8 +119,18 @@ function MagneticButton({ children }: { children: React.ReactNode }) {
 }
 
 export default function Hero() {
+  const heroRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  })
+  const gridY = useTransform(scrollYProgress, [0, 1], [0, 150])
+  const gradientY = useTransform(scrollYProgress, [0, 1], [0, 80])
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 60])
+
   return (
     <Box
+      ref={heroRef}
       as="section"
       position="relative"
       minH="100vh"
@@ -132,17 +142,44 @@ export default function Hero() {
       {/* Mouse-following glow */}
       <MouseGlow />
 
+      {/* Animated gradient background */}
+      <MotionBox
+        position="absolute"
+        inset={0}
+        pointerEvents="none"
+        zIndex={0}
+        style={{ y: gradientY }}
+        sx={{
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '-50%',
+            left: '-50%',
+            width: '200%',
+            height: '200%',
+            background: 'conic-gradient(from 0deg at 50% 50%, rgba(0, 212, 255, 0.06) 0deg, transparent 60deg, rgba(123, 97, 255, 0.05) 120deg, transparent 180deg, rgba(0, 212, 255, 0.04) 240deg, transparent 300deg)',
+            animation: 'rotateGradient 20s linear infinite',
+          },
+          '@keyframes rotateGradient': {
+            '0%': { transform: 'rotate(0deg)' },
+            '100%': { transform: 'rotate(360deg)' },
+          },
+        }}
+      />
+
       {/* Grid pattern overlay */}
-      <Box
+      <MotionBox
         position="absolute"
         inset={0}
         opacity={0.03}
         bgImage="linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)"
         bgSize="60px 60px"
         pointerEvents="none"
+        style={{ y: gridY }}
       />
 
       <Container maxW="1200px" position="relative" zIndex={1}>
+        <MotionBox style={{ y: contentY }}>
         <VStack spacing={8} textAlign="center" maxW="900px" mx="auto">
           <MotionBox
             initial={{ opacity: 0, y: 20 }}
@@ -249,6 +286,7 @@ export default function Hero() {
             </HStack>
           </MotionBox>
         </VStack>
+        </MotionBox>
       </Container>
     </Box>
   )

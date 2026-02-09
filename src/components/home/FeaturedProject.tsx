@@ -1,7 +1,8 @@
 'use client'
 
+import { useRef } from 'react'
 import { Box, Container, Flex, Heading, Text, VStack, HStack, Button, SimpleGrid, Badge } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { FiExternalLink, FiArrowRight } from 'react-icons/fi'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -23,9 +24,15 @@ const metrics = [
 
 export default function FeaturedProject() {
   const { ref, isInView } = useScrollAnimation()
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+  const imageY = useTransform(scrollYProgress, [0, 1], [40, -40])
 
   return (
-    <Box as="section" py={24} bg={colors.bg.body}>
+    <Box as="section" py={24} bg={colors.bg.body} ref={sectionRef}>
       <Container maxW="1200px">
         <SectionHeading
           label="Projet vedette"
@@ -46,6 +53,7 @@ export default function FeaturedProject() {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             variants={slideInLeft}
+            style={{ y: imageY }}
           >
             <Box
               bg={colors.bg.card}
