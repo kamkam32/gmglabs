@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useCallback, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import { Box, Container, Heading, Text, HStack, Button, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -14,22 +14,42 @@ const MotionText = motion(Text)
 
 function MouseGlow() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [pos, setPos] = useState({ x: 50, y: 30 })
-
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (!containerRef.current) return
-    const rect = containerRef.current.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width) * 100
-    const y = ((e.clientY - rect.top) / rect.height) * 100
-    setPos({ x, y })
-  }, [])
+  const glowRef = useRef<HTMLDivElement>(null)
+  const mouse = useRef({ x: 0, y: 0 })
+  const current = useRef({ x: 0, y: 0 })
+  const raf = useRef<number>(0)
 
   useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
-    el.addEventListener('mousemove', handleMouseMove)
-    return () => el.removeEventListener('mousemove', handleMouseMove)
-  }, [handleMouseMove])
+    const container = containerRef.current
+    const glow = glowRef.current
+    if (!container || !glow) return
+
+    const rect = container.getBoundingClientRect()
+    current.current = { x: rect.width / 2, y: rect.height * 0.3 }
+    mouse.current = { ...current.current }
+
+    const onMouseMove = (e: MouseEvent) => {
+      const r = container.getBoundingClientRect()
+      mouse.current = { x: e.clientX - r.left, y: e.clientY - r.top }
+    }
+
+    const animate = () => {
+      current.current.x += (mouse.current.x - current.current.x) * 0.08
+      current.current.y += (mouse.current.y - current.current.y) * 0.08
+      if (glow) {
+        glow.style.transform = `translate(${current.current.x - 300}px, ${current.current.y - 300}px)`
+      }
+      raf.current = requestAnimationFrame(animate)
+    }
+
+    container.addEventListener('mousemove', onMouseMove)
+    raf.current = requestAnimationFrame(animate)
+
+    return () => {
+      container.removeEventListener('mousemove', onMouseMove)
+      cancelAnimationFrame(raf.current)
+    }
+  }, [])
 
   return (
     <Box
@@ -40,19 +60,17 @@ function MouseGlow() {
       zIndex={0}
     >
       <Box
+        ref={glowRef}
         position="absolute"
+        top={0}
+        left={0}
         w="600px"
         h="600px"
         borderRadius="full"
         bg="radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, rgba(123, 97, 255, 0.08) 40%, transparent 70%)"
         filter="blur(60px)"
-        transform="translate(-50%, -50%)"
-        transition="left 0.1s ease-out, top 0.1s ease-out"
         pointerEvents="none"
-        style={{
-          left: `${pos.x}%`,
-          top: `${pos.y}%`,
-        }}
+        willChange="transform"
       />
     </Box>
   )
