@@ -70,20 +70,37 @@ export default function AProposPage() {
                 GMG Labs est une agence tech premium basee a Casablanca. Nous construisons des produits
                 digitaux qui font la difference pour les entreprises marocaines et au-dela.
               </Text>
-              <Button
-                as="a"
-                href="https://www.ello.ma"
-                target="_blank"
-                variant="outline"
-                borderColor={colors.accent.cyan}
-                color={colors.accent.cyan}
-                borderRadius="full"
-                px={6}
-                _hover={{ bg: `rgba(0, 212, 255, 0.1)` }}
-                rightIcon={<FiExternalLink />}
-              >
-                Decouvrir Ello
-              </Button>
+              <HStack spacing={4} flexWrap="wrap" justify="center">
+                <Button
+                  as="a"
+                  href="https://gmg-labs.com/"
+                  target="_blank"
+                  bgGradient={colors.accent.gradient}
+                  color="white"
+                  borderRadius="full"
+                  px={6}
+                  fontWeight="600"
+                  _hover={{ opacity: 0.9, transform: 'translateY(-2px)' }}
+                  transition="all 0.3s"
+                  rightIcon={<FiExternalLink />}
+                >
+                  GMG Labs
+                </Button>
+                <Button
+                  as="a"
+                  href="https://www.ello.ma"
+                  target="_blank"
+                  variant="outline"
+                  borderColor={colors.accent.cyan}
+                  color={colors.accent.cyan}
+                  borderRadius="full"
+                  px={6}
+                  _hover={{ bg: `rgba(0, 212, 255, 0.1)` }}
+                  rightIcon={<FiExternalLink />}
+                >
+                  Decouvrir Ello
+                </Button>
+              </HStack>
             </VStack>
           </Container>
         </Box>
@@ -108,6 +125,10 @@ export default function AProposPage() {
               <Text color={colors.text.secondary} lineHeight="1.8">
                 Aujourd&apos;hui, nous accompagnons startups et grandes entreprises dans leur transformation
                 digitale avec trois poles d&apos;expertise : Web, Mobile et Intelligence Artificielle.
+                Retrouvez-nous sur{' '}
+                <Text as="a" href="https://gmg-labs.com/" target="_blank" color={colors.accent.cyan} fontWeight="600" _hover={{ textDecoration: 'underline' }}>
+                  gmg-labs.com
+                </Text>.
               </Text>
             </VStack>
           </Container>

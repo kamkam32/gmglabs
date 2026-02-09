@@ -52,6 +52,10 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <Box
+              as="a"
+              href="https://gmg-labs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               px={4}
               py={1.5}
               borderRadius="full"
@@ -59,6 +63,8 @@ export default function Hero() {
               borderColor="rgba(0, 212, 255, 0.3)"
               bg="rgba(0, 212, 255, 0.05)"
               display="inline-flex"
+              _hover={{ bg: 'rgba(0, 212, 255, 0.1)', borderColor: 'rgba(0, 212, 255, 0.5)' }}
+              transition="all 0.2s"
             >
               <Text fontSize="sm" fontWeight="600" color={colors.accent.cyan}>
                 Agence Tech Premium — Casablanca

@@ -21,6 +21,7 @@ export function generateOrganizationJsonLd() {
       availableLanguage: ['French', 'Arabic', 'English'],
     },
     sameAs: [
+      'https://gmg-labs.com/',
       'https://www.linkedin.com/company/gmglabs',
       'https://www.instagram.com/gmglabs',
     ],

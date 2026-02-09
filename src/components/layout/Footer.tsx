@@ -11,9 +11,9 @@ import {
 } from '@chakra-ui/react'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 import { FaWhatsapp, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import NextImage from 'next/image'
 import Link from 'next/link'
 import { colors } from '@/lib/colors'
-import GradientText from '../shared/GradientText'
 
 const footerLinks = {
   services: [
@@ -27,6 +27,7 @@ const footerLinks = {
     { href: '/realisations', label: 'Realisations' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
+    { href: 'https://gmg-labs.com/', label: 'GMG Labs', external: true },
   ],
   legal: [
     { href: '/mentions-legales', label: 'Mentions legales' },
@@ -40,9 +41,15 @@ export default function Footer() {
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={12}>
           {/* Brand */}
           <VStack align="flex-start" spacing={4}>
-            <GradientText fontSize="xl" fontWeight="800">
-              GMG Labs
-            </GradientText>
+            <Box as="a" href="https://gmg-labs.com/" target="_blank" rel="noopener noreferrer" _hover={{ opacity: 0.8 }} transition="opacity 0.2s">
+              <NextImage
+                src="/logo-gmg.png"
+                alt="GMG Labs"
+                width={120}
+                height={40}
+                style={{ height: 'auto', width: 'auto', maxHeight: '36px' }}
+              />
+            </Box>
             <Text fontSize="sm" color={colors.text.tertiary} lineHeight="1.8">
               Agence tech premium basee a Casablanca. Nous construisons des produits digitaux qui font la difference.
             </Text>
@@ -105,13 +112,21 @@ export default function Footer() {
             <Text fontWeight="600" color="white" fontSize="sm" textTransform="uppercase" letterSpacing="1px">
               Entreprise
             </Text>
-            {footerLinks.entreprise.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <Text fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }} transition="color 0.2s">
-                  {link.label}
-                </Text>
-              </Link>
-            ))}
+            {footerLinks.entreprise.map((link) =>
+              'external' in link ? (
+                <Box key={link.href} as="a" href={link.href} target="_blank" rel="noopener noreferrer">
+                  <Text fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }} transition="color 0.2s">
+                    {link.label}
+                  </Text>
+                </Box>
+              ) : (
+                <Link key={link.href} href={link.href}>
+                  <Text fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }} transition="color 0.2s">
+                    {link.label}
+                  </Text>
+                </Link>
+              )
+            )}
           </VStack>
 
           {/* Contact */}

@@ -11,6 +11,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
+import NextImage from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { colors } from '@/lib/colors'
@@ -52,17 +53,14 @@ export default function Navbar() {
         <Container maxW="1400px" py={4}>
           <Flex as="nav" justify="space-between" align="center" aria-label="Navigation principale">
             <Link href="/" aria-label="GMG Labs - Accueil">
-              <HStack spacing={2}>
-                <Box
-                  bgGradient={colors.accent.gradient}
-                  bgClip="text"
-                  fontSize="xl"
-                  fontWeight="800"
-                  letterSpacing="-0.5px"
-                >
-                  GMG Labs
-                </Box>
-              </HStack>
+              <NextImage
+                src="/logo-gmg.png"
+                alt="GMG Labs"
+                width={180}
+                height={50}
+                style={{ height: 'auto', width: 'auto', maxHeight: '50px' }}
+                priority
+              />
             </Link>
 
             <HStack spacing={8} display={{ base: 'none', lg: 'flex' }}>
