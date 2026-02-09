@@ -8,6 +8,7 @@ import ServicesPreview from '@/components/home/ServicesPreview'
 import FeaturedProject from '@/components/home/FeaturedProject'
 import Stats from '@/components/home/Stats'
 import TechStack from '@/components/home/TechStack'
+import TechMarquee from '@/components/home/TechMarquee'
 import Testimonials from '@/components/home/Testimonials'
 import CTASection from '@/components/home/CTASection'
 
@@ -20,6 +21,7 @@ export default function HomePage() {
         <ServicesPreview />
         <FeaturedProject />
         <Stats />
+        <TechMarquee />
         <TechStack />
         <Testimonials />
         <CTASection />

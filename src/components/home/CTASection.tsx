@@ -8,8 +8,18 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { colors } from '@/lib/colors'
 import GradientText from '../shared/GradientText'
 import { useScrollAnimation, fadeInUp } from '@/hooks/useScrollAnimation'
+import { useMagnetic } from '@/hooks/useMagnetic'
 
 const MotionVStack = motion(VStack)
+
+function MagneticButton({ children }: { children: React.ReactNode }) {
+  const magneticRef = useMagnetic<HTMLDivElement>(0.3)
+  return (
+    <Box ref={magneticRef} display="inline-block">
+      {children}
+    </Box>
+  )
+}
 
 export default function CTASection() {
   const { ref, isInView } = useScrollAnimation()
@@ -52,44 +62,46 @@ export default function CTASection() {
           </Text>
 
           <HStack spacing={4} flexWrap="wrap" justify="center" pt={4}>
-            <Button
-              as={Link}
-              href="/contact"
-              size="lg"
-              bgGradient={colors.accent.gradient}
-              color="white"
-              borderRadius="full"
-              px={8}
-              fontWeight="600"
-              _hover={{
-                opacity: 0.9,
-                transform: 'translateY(-2px)',
-                boxShadow: '0 10px 40px rgba(0, 212, 255, 0.3)',
-              }}
-              transition="all 0.3s"
-              rightIcon={<FiArrowRight />}
-            >
-              Planifier un appel
-            </Button>
-            <Button
-              as="a"
-              href="https://wa.me/33619061215?text=Bonjour%2C%20je%20souhaite%20discuter%20d%27un%20projet"
-              target="_blank"
-              size="lg"
-              bg="#25D366"
-              color="white"
-              borderRadius="full"
-              px={8}
-              fontWeight="600"
-              _hover={{
-                bg: '#20BD5A',
-                transform: 'translateY(-2px)',
-              }}
-              transition="all 0.3s"
-              leftIcon={<FaWhatsapp />}
-            >
-              WhatsApp
-            </Button>
+            <MagneticButton>
+              <Button
+                as={Link}
+                href="/contact"
+                size="lg"
+                bgGradient={colors.accent.gradient}
+                color="white"
+                borderRadius="full"
+                px={8}
+                fontWeight="600"
+                _hover={{
+                  opacity: 0.9,
+                  boxShadow: '0 10px 40px rgba(0, 212, 255, 0.3)',
+                }}
+                transition="all 0.3s"
+                rightIcon={<FiArrowRight />}
+              >
+                Planifier un appel
+              </Button>
+            </MagneticButton>
+            <MagneticButton>
+              <Button
+                as="a"
+                href="https://wa.me/33619061215?text=Bonjour%2C%20je%20souhaite%20discuter%20d%27un%20projet"
+                target="_blank"
+                size="lg"
+                bg="#25D366"
+                color="white"
+                borderRadius="full"
+                px={8}
+                fontWeight="600"
+                _hover={{
+                  bg: '#20BD5A',
+                }}
+                transition="all 0.3s"
+                leftIcon={<FaWhatsapp />}
+              >
+                WhatsApp
+              </Button>
+            </MagneticButton>
           </HStack>
         </MotionVStack>
       </Container>

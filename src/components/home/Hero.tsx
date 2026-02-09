@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { FiArrowRight } from 'react-icons/fi'
 import { colors } from '@/lib/colors'
 import GradientText from '../shared/GradientText'
+import { useMagnetic } from '@/hooks/useMagnetic'
 
 const MotionBox = motion(Box)
 const MotionHeading = motion(Heading)
@@ -108,6 +109,15 @@ function MouseGlow() {
   )
 }
 
+function MagneticButton({ children }: { children: React.ReactNode }) {
+  const magneticRef = useMagnetic<HTMLDivElement>(0.3)
+  return (
+    <Box ref={magneticRef} display="inline-block">
+      {children}
+    </Box>
+  )
+}
+
 export default function Hero() {
   return (
     <Box
@@ -196,43 +206,46 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <HStack spacing={4} flexWrap="wrap" justify="center">
-              <Button
-                as={Link}
-                href="/contact"
-                size="lg"
-                bgGradient={colors.accent.gradient}
-                color="white"
-                borderRadius="full"
-                px={8}
-                fontWeight="600"
-                _hover={{
-                  opacity: 0.9,
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 10px 40px rgba(0, 212, 255, 0.3)',
-                }}
-                transition="all 0.3s"
-                rightIcon={<FiArrowRight />}
-              >
-                Demarrer un projet
-              </Button>
-              <Button
-                as={Link}
-                href="/realisations"
-                size="lg"
-                variant="outline"
-                borderColor={colors.border.hover}
-                color="white"
-                borderRadius="full"
-                px={8}
-                fontWeight="600"
-                _hover={{
-                  bg: 'rgba(255,255,255,0.06)',
-                  borderColor: colors.accent.cyan,
-                }}
-                transition="all 0.3s"
-              >
-                Voir nos projets
-              </Button>
+              <MagneticButton>
+                <Button
+                  as={Link}
+                  href="/contact"
+                  size="lg"
+                  bgGradient={colors.accent.gradient}
+                  color="white"
+                  borderRadius="full"
+                  px={8}
+                  fontWeight="600"
+                  _hover={{
+                    opacity: 0.9,
+                    boxShadow: '0 10px 40px rgba(0, 212, 255, 0.3)',
+                  }}
+                  transition="all 0.3s"
+                  rightIcon={<FiArrowRight />}
+                >
+                  Demarrer un projet
+                </Button>
+              </MagneticButton>
+              <MagneticButton>
+                <Button
+                  as={Link}
+                  href="/realisations"
+                  size="lg"
+                  variant="outline"
+                  borderColor={colors.border.hover}
+                  color="white"
+                  borderRadius="full"
+                  px={8}
+                  fontWeight="600"
+                  _hover={{
+                    bg: 'rgba(255,255,255,0.06)',
+                    borderColor: colors.accent.cyan,
+                  }}
+                  transition="all 0.3s"
+                >
+                  Voir nos projets
+                </Button>
+              </MagneticButton>
             </HStack>
           </MotionBox>
         </VStack>

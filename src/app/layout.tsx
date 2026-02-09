@@ -34,6 +34,10 @@ export const metadata: Metadata = {
       alt: 'GMG Labs - Agence Tech Premium au Maroc',
     }],
   },
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'GMG Labs - Agence Tech Premium au Maroc',
@@ -50,7 +54,8 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0A0A0F" />
       </head>
