@@ -3,7 +3,10 @@ import { Providers } from './providers'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.gmglabs.ma'),
+  metadataBase: new URL('https://gmg-labs.com'),
+  verification: {
+    google: 'cVf0dr_gMpE72S4V-XCz4s71_S4ZzA0Nnq2zl3GsewE',
+  },
   title: {
     default: 'GMG Labs - Agence de developpement Web, Mobile & IA au Maroc',
     template: '%s | GMG Labs',
@@ -15,12 +18,12 @@ export const metadata: Metadata = {
   publisher: 'GMG Labs',
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://www.gmglabs.ma',
+    canonical: 'https://gmg-labs.com',
   },
   openGraph: {
     title: 'GMG Labs - Agence de developpement Web, Mobile & IA au Maroc',
     description: 'Agence tech premium basee a Casablanca. Developpement web, applications mobiles et solutions IA sur mesure.',
-    url: 'https://www.gmglabs.ma',
+    url: 'https://gmg-labs.com',
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',

@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: post.title,
     description: post.excerpt,
     keywords: post.keywords.join(', '),
-    alternates: { canonical: `https://www.gmglabs.ma/blog/${post.slug}` },
+    alternates: { canonical: `https://www.gmg-labs.com/blog/${post.slug}` },
     openGraph: {
       title: `${post.title} - GMG Labs Blog`,
       description: post.excerpt,
-      url: `https://www.gmglabs.ma/blog/${post.slug}`,
+      url: `https://www.gmg-labs.com/blog/${post.slug}`,
       siteName: 'GMG Labs',
       locale: 'fr_MA',
       type: 'article',
@@ -44,7 +44,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     ...generateArticleJsonLd({
       title: post.title,
       description: post.excerpt,
-      url: `https://www.gmglabs.ma/blog/${post.slug}`,
+      url: `https://www.gmg-labs.com/blog/${post.slug}`,
       date: post.date,
       author: post.author,
       image: post.image || undefined,

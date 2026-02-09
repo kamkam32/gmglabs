@@ -1,12 +1,12 @@
 export function generateOrganizationJsonLd() {
   return {
     '@type': 'Organization',
-    '@id': 'https://www.gmglabs.ma/#organization',
+    '@id': 'https://gmg-labs.com/#organization',
     name: 'GMG Labs',
-    url: 'https://www.gmglabs.ma',
+    url: 'https://gmg-labs.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.gmglabs.ma/logo.png',
+      url: 'https://gmg-labs.com/logo.png',
     },
     description: 'Agence de developpement Web, Mobile et IA basee a Casablanca, Maroc.',
     address: {
@@ -31,10 +31,10 @@ export function generateOrganizationJsonLd() {
 export function generateWebSiteJsonLd() {
   return {
     '@type': 'WebSite',
-    '@id': 'https://www.gmglabs.ma/#website',
-    url: 'https://www.gmglabs.ma',
+    '@id': 'https://gmg-labs.com/#website',
+    url: 'https://gmg-labs.com',
     name: 'GMG Labs',
-    publisher: { '@id': 'https://www.gmglabs.ma/#organization' },
+    publisher: { '@id': 'https://gmg-labs.com/#organization' },
     inLanguage: 'fr-MA',
   }
 }
@@ -49,7 +49,7 @@ export function generateServiceJsonLd(service: {
     name: service.name,
     description: service.description,
     url: service.url,
-    provider: { '@id': 'https://www.gmglabs.ma/#organization' },
+    provider: { '@id': 'https://gmg-labs.com/#organization' },
     areaServed: {
       '@type': 'Country',
       name: 'Morocco',
@@ -75,7 +75,7 @@ export function generateArticleJsonLd(article: {
       '@type': 'Person',
       name: article.author,
     },
-    publisher: { '@id': 'https://www.gmglabs.ma/#organization' },
+    publisher: { '@id': 'https://gmg-labs.com/#organization' },
     ...(article.image && {
       image: {
         '@type': 'ImageObject',
@@ -96,7 +96,7 @@ export function generateCreativeWorkJsonLd(project: {
     name: project.name,
     description: project.description,
     url: project.url,
-    creator: { '@id': 'https://www.gmglabs.ma/#organization' },
+    creator: { '@id': 'https://gmg-labs.com/#organization' },
     keywords: project.technologies.join(', '),
   }
 }

@@ -22,7 +22,7 @@ export default function MentionsLegalesPage() {
                   Editeur du site
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  Le site gmglabs.ma est edite par GMG Labs, societe basee a Casablanca, Maroc.
+                  Le site gmg-labs.com est edite par GMG Labs, societe basee a Casablanca, Maroc.
                 </Text>
                 <Text color={colors.text.secondary} lineHeight="1.8">
                   Email : contact@ello.ma<br />

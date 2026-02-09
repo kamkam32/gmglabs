@@ -3,7 +3,7 @@ import { getPostSlugs } from '@/lib/blog'
 import { getProjectSlugs } from '@/lib/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.gmglabs.ma'
+  const baseUrl = 'https://www.gmg-labs.com'
 
   const staticPages = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 1 },

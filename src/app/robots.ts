@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/api/',
       },
     ],
-    sitemap: 'https://www.gmglabs.ma/sitemap.xml',
+    sitemap: 'https://www.gmg-labs.com/sitemap.xml',
   }
 }

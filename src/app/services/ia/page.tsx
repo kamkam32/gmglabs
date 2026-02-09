@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: 'Intelligence Artificielle - Chatbots, Automatisation & IA sur mesure',
   description: 'Solutions d\'intelligence artificielle sur mesure : chatbots WhatsApp, RAG, automatisation de processus, computer vision et analyse de donnees au Maroc.',
   keywords: 'intelligence artificielle maroc, chatbot whatsapp, rag llm, automatisation ia, openai, langchain, machine learning casablanca',
-  alternates: { canonical: 'https://www.gmglabs.ma/services/ia' },
+  alternates: { canonical: 'https://www.gmg-labs.com/services/ia' },
   openGraph: {
     title: 'Intelligence Artificielle - GMG Labs',
     description: 'Solutions IA sur mesure au Maroc : chatbots, automatisation et plus.',
-    url: 'https://www.gmglabs.ma/services/ia',
+    url: 'https://www.gmg-labs.com/services/ia',
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',
@@ -22,7 +22,7 @@ const jsonLd = {
   ...generateServiceJsonLd({
     name: 'Intelligence Artificielle',
     description: 'Solutions IA, chatbots et automatisation sur mesure.',
-    url: 'https://www.gmglabs.ma/services/ia',
+    url: 'https://www.gmg-labs.com/services/ia',
   }),
 }
 

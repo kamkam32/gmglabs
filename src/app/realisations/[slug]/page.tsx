@@ -16,11 +16,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `${project.title} - Etude de cas`,
     description: project.shortDescription,
     keywords: project.technologies.join(', '),
-    alternates: { canonical: `https://www.gmglabs.ma/realisations/${project.slug}` },
+    alternates: { canonical: `https://www.gmg-labs.com/realisations/${project.slug}` },
     openGraph: {
       title: `${project.title} - GMG Labs`,
       description: project.shortDescription,
-      url: `https://www.gmglabs.ma/realisations/${project.slug}`,
+      url: `https://www.gmg-labs.com/realisations/${project.slug}`,
       siteName: 'GMG Labs',
       locale: 'fr_MA',
       type: 'article',
@@ -37,7 +37,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     ...generateCreativeWorkJsonLd({
       name: project.title,
       description: project.description,
-      url: `https://www.gmglabs.ma/realisations/${project.slug}`,
+      url: `https://www.gmg-labs.com/realisations/${project.slug}`,
       technologies: project.technologies,
     }),
   }
