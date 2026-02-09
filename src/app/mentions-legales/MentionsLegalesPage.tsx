@@ -25,7 +25,7 @@ export default function MentionsLegalesPage() {
                   Le site gmglabs.ma est edite par GMG Labs, societe basee a Casablanca, Maroc.
                 </Text>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  Email : kamil@ello.ma<br />
+                  Email : contact@ello.ma<br />
                   Telephone : +33 6 19 06 12 15<br />
                   Adresse : Casablanca, Maroc
                 </Text>

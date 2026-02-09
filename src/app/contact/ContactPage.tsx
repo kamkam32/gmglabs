@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: FiMail,
     label: 'Email',
-    value: 'kamil@ello.ma',
-    href: 'mailto:kamil@ello.ma',
+    value: 'contact@ello.ma',
+    href: 'mailto:contact@ello.ma',
   },
   {
     icon: FiPhone,

@@ -121,8 +121,8 @@ export default function Footer() {
             </Text>
             <HStack spacing={3}>
               <FiMail size={16} color={colors.accent.cyan} />
-              <Text as="a" href="mailto:kamil@ello.ma" fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }}>
-                kamil@ello.ma
+              <Text as="a" href="mailto:contact@ello.ma" fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }}>
+                contact@ello.ma
               </Text>
             </HStack>
             <HStack spacing={3}>
