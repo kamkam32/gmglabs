@@ -37,7 +37,7 @@ export default function BlogListPage({ posts }: { posts: BlogPost[] }) {
                 Le <GradientText>blog</GradientText> GMG Labs
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Articles, guides et retours d&apos;experience sur le developpement web, mobile et l&apos;intelligence artificielle.
+                Articles, guides et retours d&apos;experience sur le developpement web, mobile et l&apos;intelligence artificielle !
               </Text>
             </VStack>
           </Container>
