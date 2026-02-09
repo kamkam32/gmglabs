@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | GMG Labs',
   },
   description: 'GMG Labs est une agence tech premium basee a Casablanca. Developpement web, applications mobiles et solutions IA sur mesure. Createurs d\'Ello.',
-  keywords: 'agence developpement web maroc, developpement mobile casablanca, intelligence artificielle maroc, gmg labs, application web, next.js, react native',
+  keywords: 'agence web maroc, creation site web sur mesure, developpement web casablanca, agence developpement web maroc, developpement mobile casablanca, application mobile maroc, intelligence artificielle maroc, gmg labs, site web professionnel, agence digitale casablanca, next.js, react native, supabase',
   authors: [{ name: 'GMG Labs' }],
   creator: 'GMG Labs',
   publisher: 'GMG Labs',
