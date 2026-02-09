@@ -8,7 +8,8 @@
       "Bash(gh repo create:*)",
       "Bash(git remote set-url:*)",
       "Bash(git push:*)",
-      "Bash(npx next build:*)"
+      "Bash(npx next build:*)",
+      "WebFetch(domain:gmglabs-mqeknvnwh-ellos-projects-5e8d4ee2.vercel.app)"
     ]
   }
 }
