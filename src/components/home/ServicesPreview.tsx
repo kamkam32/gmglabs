@@ -60,7 +60,7 @@ export default function ServicesPreview() {
           {services.map((service) => (
             <MotionBox key={service.title} variants={fadeInUp}>
               <Link href={service.href}>
-                <GlowCard glowColor={service.color} h="full" cursor="pointer">
+                <GlowCard glowColor={service.color} h="full" cursor="pointer" enableTilt>
                   <VStack align="flex-start" spacing={5}>
                     <Box
                       p={3}

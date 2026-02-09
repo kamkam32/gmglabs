@@ -3,22 +3,32 @@
 import { Box, BoxProps } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { colors } from '@/lib/colors'
+import { useTiltEffect } from '@/hooks/useTiltEffect'
 
 const MotionBox = motion(Box)
 
 interface GlowCardProps extends BoxProps {
   glowColor?: string
   hoverScale?: number
+  /** Enable 3D tilt effect on hover (default: false) */
+  enableTilt?: boolean
 }
 
 export default function GlowCard({
   glowColor = colors.accent.cyan,
   hoverScale = 1.02,
+  enableTilt = false,
   children,
   ...props
 }: GlowCardProps) {
+  const tiltRef = useTiltEffect<HTMLDivElement>({
+    maxTilt: 8,
+    glowColor: `${glowColor}25`,
+  })
+
   return (
     <MotionBox
+      ref={enableTilt ? tiltRef : undefined}
       bg={colors.bg.card}
       border="1px solid"
       borderColor={colors.border.subtle}
@@ -26,11 +36,17 @@ export default function GlowCard({
       p={8}
       position="relative"
       overflow="hidden"
-      whileHover={{
-        scale: hoverScale,
-        borderColor: 'rgba(255,255,255,0.16)',
-        boxShadow: `0 0 30px ${glowColor}33`,
-      }}
+      whileHover={
+        enableTilt
+          ? {
+              borderColor: 'rgba(255,255,255,0.16)',
+            }
+          : {
+              scale: hoverScale,
+              borderColor: 'rgba(255,255,255,0.16)',
+              boxShadow: `0 0 30px ${glowColor}33`,
+            }
+      }
       transition={{ duration: 0.3 }}
       _before={{
         content: '""',

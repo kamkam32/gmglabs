@@ -4,6 +4,7 @@ import { Box, Heading, Text, VStack, HStack, Badge } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { colors } from '@/lib/colors'
+import { useTiltEffect } from '@/hooks/useTiltEffect'
 import type { Project } from '@/lib/projects'
 
 const categoryColors: Record<string, string> = {
@@ -22,10 +23,15 @@ const categoryLabels: Record<string, string> = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const accent = categoryColors[project.category] || colors.accent.cyan
+  const tiltRef = useTiltEffect<HTMLDivElement>({
+    maxTilt: 8,
+    glowColor: `${accent}25`,
+  })
 
   return (
     <Link href={`/realisations/${project.slug}`}>
       <Box
+        ref={tiltRef}
         bg={colors.bg.card}
         border="1px solid"
         borderColor={colors.border.subtle}
@@ -34,10 +40,8 @@ export default function ProjectCard({ project }: { project: Project }) {
         cursor="pointer"
         _hover={{
           borderColor: `${accent}50`,
-          boxShadow: `0 0 30px ${accent}15`,
-          transform: 'translateY(-4px)',
         }}
-        transition="all 0.3s"
+        transition="border-color 0.3s"
         h="full"
       >
         {/* Image */}

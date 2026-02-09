@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { colors } from '@/lib/colors'
 import SectionHeading from '../shared/SectionHeading'
+import AnimatedCounter, { parseMetricValue } from '../shared/AnimatedCounter'
 import { useScrollAnimation, fadeInUp, slideInLeft, slideInRight } from '@/hooks/useScrollAnimation'
 
 const MotionBox = motion(Box)
@@ -104,23 +105,31 @@ export default function FeaturedProject() {
               </Text>
 
               <SimpleGrid columns={2} spacing={4} w="full">
-                {metrics.map((m) => (
-                  <Box
-                    key={m.label}
-                    p={4}
-                    bg={colors.bg.section}
-                    borderRadius="xl"
-                    border="1px solid"
-                    borderColor={colors.border.subtle}
-                  >
-                    <Text fontSize="2xl" fontWeight="800" color="white">
-                      {m.value}
-                    </Text>
-                    <Text fontSize="xs" color={colors.text.tertiary}>
-                      {m.label}
-                    </Text>
-                  </Box>
-                ))}
+                {metrics.map((m) => {
+                  const parsed = parseMetricValue(m.value)
+                  return (
+                    <Box
+                      key={m.label}
+                      p={4}
+                      bg={colors.bg.section}
+                      borderRadius="xl"
+                      border="1px solid"
+                      borderColor={colors.border.subtle}
+                    >
+                      <AnimatedCounter
+                        target={parsed.numeric}
+                        suffix={parsed.suffix}
+                        decimals={parsed.decimals}
+                        fontSize="2xl"
+                        fontWeight="800"
+                        color="white"
+                      />
+                      <Text fontSize="xs" color={colors.text.tertiary}>
+                        {m.label}
+                      </Text>
+                    </Box>
+                  )
+                })}
               </SimpleGrid>
 
               <HStack spacing={4} pt={2}>
