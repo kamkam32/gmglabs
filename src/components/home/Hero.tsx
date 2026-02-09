@@ -142,30 +142,79 @@ export default function Hero() {
       {/* Mouse-following glow */}
       <MouseGlow />
 
-      {/* Animated gradient background */}
+      {/* Animated aurora blobs */}
       <MotionBox
         position="absolute"
         inset={0}
         pointerEvents="none"
         zIndex={0}
         style={{ y: gradientY }}
-        sx={{
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: '-50%',
-            left: '-50%',
-            width: '200%',
-            height: '200%',
-            background: 'conic-gradient(from 0deg at 50% 50%, rgba(0, 212, 255, 0.06) 0deg, transparent 60deg, rgba(123, 97, 255, 0.05) 120deg, transparent 180deg, rgba(0, 212, 255, 0.04) 240deg, transparent 300deg)',
-            animation: 'rotateGradient 20s linear infinite',
-          },
-          '@keyframes rotateGradient': {
-            '0%': { transform: 'rotate(0deg)' },
-            '100%': { transform: 'rotate(360deg)' },
-          },
-        }}
-      />
+        overflow="hidden"
+      >
+        {/* Blob 1 - cyan, top-left drift */}
+        <Box
+          position="absolute"
+          top="-20%"
+          left="-10%"
+          w="70vw"
+          h="70vw"
+          maxW="800px"
+          maxH="800px"
+          borderRadius="full"
+          bg="radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.02) 40%, transparent 70%)"
+          filter="blur(80px)"
+          sx={{
+            animation: 'blob1 18s ease-in-out infinite',
+            '@keyframes blob1': {
+              '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+              '33%': { transform: 'translate(12vw, 8vh) scale(1.15)' },
+              '66%': { transform: 'translate(-5vw, 15vh) scale(0.9)' },
+            },
+          }}
+        />
+        {/* Blob 2 - purple, center-right drift */}
+        <Box
+          position="absolute"
+          top="10%"
+          right="-15%"
+          w="60vw"
+          h="60vw"
+          maxW="700px"
+          maxH="700px"
+          borderRadius="full"
+          bg="radial-gradient(circle, rgba(123, 97, 255, 0.07) 0%, rgba(123, 97, 255, 0.02) 40%, transparent 70%)"
+          filter="blur(80px)"
+          sx={{
+            animation: 'blob2 22s ease-in-out infinite',
+            '@keyframes blob2': {
+              '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+              '33%': { transform: 'translate(-15vw, 5vh) scale(1.1)' },
+              '66%': { transform: 'translate(-8vw, -10vh) scale(0.95)' },
+            },
+          }}
+        />
+        {/* Blob 3 - mixed, bottom-center drift */}
+        <Box
+          position="absolute"
+          bottom="-15%"
+          left="20%"
+          w="55vw"
+          h="55vw"
+          maxW="650px"
+          maxH="650px"
+          borderRadius="full"
+          bg="radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, rgba(123, 97, 255, 0.04) 30%, transparent 65%)"
+          filter="blur(90px)"
+          sx={{
+            animation: 'blob3 25s ease-in-out infinite',
+            '@keyframes blob3': {
+              '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+              '33%': { transform: 'translate(10vw, -12vh) scale(1.08)' },
+              '66%': { transform: 'translate(-8vw, -5vh) scale(1.12)' },
+            },
+          }}
+        />
+      </MotionBox>
 
       {/* Grid pattern overlay */}
       <MotionBox
