@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Box, Container, Heading, Text, HStack, Button, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -11,6 +11,38 @@ import GradientText from '../shared/GradientText'
 const MotionBox = motion(Box)
 const MotionHeading = motion(Heading)
 const MotionText = motion(Text)
+
+const TYPEWRITER_TEXT = "De l'idee au produit. Nous concevons des applications web, mobiles et IA qui propulsent les entreprises marocaines vers le succes."
+
+function Typewriter({ text, delay = 0.8 }: { text: string; delay?: number }) {
+  const [displayed, setDisplayed] = useState('')
+  const [started, setStarted] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setStarted(true), delay * 1000)
+    return () => clearTimeout(timeout)
+  }, [delay])
+
+  useEffect(() => {
+    if (!started) return
+    if (displayed.length >= text.length) return
+    const timeout = setTimeout(() => {
+      setDisplayed(text.slice(0, displayed.length + 1))
+    }, 25)
+    return () => clearTimeout(timeout)
+  }, [started, displayed, text])
+
+  return (
+    <>
+      {displayed}
+      {displayed.length < text.length && (
+        <Box as="span" display="inline-block" w="2px" h="1em" bg={colors.accent.cyan} ml="2px" verticalAlign="text-bottom"
+          sx={{ animation: 'blink 1s step-end infinite', '@keyframes blink': { '0%, 100%': { opacity: 1 }, '50%': { opacity: 0 } } }}
+        />
+      )}
+    </>
+  )
+}
 
 function MouseGlow() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -142,18 +174,21 @@ export default function Hero() {
             <GradientText>futur digital</GradientText>
           </MotionHeading>
 
-          <MotionText
-            fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
-            color={colors.text.secondary}
-            maxW="650px"
-            lineHeight="1.8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <MotionBox
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
-            De l&apos;idee au produit. Nous concevons des applications web, mobiles et IA
-            qui propulsent les entreprises marocaines vers le succes.
-          </MotionText>
+            <Text
+              fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+              color={colors.text.secondary}
+              maxW="650px"
+              lineHeight="1.8"
+              minH={{ base: '80px', md: '60px' }}
+            >
+              <Typewriter text={TYPEWRITER_TEXT} delay={0.8} />
+            </Text>
+          </MotionBox>
 
           <MotionBox
             initial={{ opacity: 0, y: 30 }}

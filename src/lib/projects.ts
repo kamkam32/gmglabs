@@ -42,7 +42,7 @@ export const projects: Project[] = [
       { label: 'Score SEO', value: '98' },
       { label: 'Uptime', value: '99.9%' },
     ],
-    images: ['/images/4 - Peach vide + texte clair (transparent).png'],
+    images: ['/images/6 - Peach plein + texte dark (transparent)(2).png'],
     featured: true,
     url: 'https://www.ello.ma',
   },

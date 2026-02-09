@@ -65,7 +65,7 @@ export default function FeaturedProject() {
                 p={10}
               >
                 <Image
-                  src="/images/4 - Peach vide + texte clair (transparent).png"
+                  src="/images/6 - Peach plein + texte dark (transparent)(2).png"
                   alt="Ello - Plateforme Beaute"
                   width={400}
                   height={300}
