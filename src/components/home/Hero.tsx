@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef, useCallback, useEffect, useState } from 'react'
 import { Box, Container, Heading, Text, HStack, Button, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -10,6 +11,52 @@ import GradientText from '../shared/GradientText'
 const MotionBox = motion(Box)
 const MotionHeading = motion(Heading)
 const MotionText = motion(Text)
+
+function MouseGlow() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [pos, setPos] = useState({ x: 50, y: 30 })
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    if (!containerRef.current) return
+    const rect = containerRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    setPos({ x, y })
+  }, [])
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    el.addEventListener('mousemove', handleMouseMove)
+    return () => el.removeEventListener('mousemove', handleMouseMove)
+  }, [handleMouseMove])
+
+  return (
+    <Box
+      ref={containerRef}
+      position="absolute"
+      inset={0}
+      pointerEvents="auto"
+      zIndex={0}
+    >
+      <Box
+        position="absolute"
+        w="600px"
+        h="600px"
+        borderRadius="full"
+        bg="radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, rgba(123, 97, 255, 0.08) 40%, transparent 70%)"
+        filter="blur(60px)"
+        transform="translate(-50%, -50%)"
+        transition="left 0.3s ease-out, top 0.3s ease-out"
+        pointerEvents="none"
+        style={{
+          left: `${pos.x}%`,
+          top: `${pos.y}%`,
+        }}
+      />
+    </Box>
+  )
+}
 
 export default function Hero() {
   return (
@@ -22,17 +69,8 @@ export default function Hero() {
       overflow="hidden"
       bg={colors.bg.body}
     >
-      {/* Radial gradient background */}
-      <Box
-        position="absolute"
-        top="-20%"
-        left="50%"
-        transform="translateX(-50%)"
-        w="120%"
-        h="120%"
-        bgGradient="radial-gradient(ellipse at 50% 30%, rgba(0, 212, 255, 0.12) 0%, rgba(123, 97, 255, 0.06) 30%, transparent 60%)"
-        pointerEvents="none"
-      />
+      {/* Mouse-following glow */}
+      <MouseGlow />
 
       {/* Grid pattern overlay */}
       <Box
