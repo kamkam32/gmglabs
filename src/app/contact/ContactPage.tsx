@@ -87,7 +87,7 @@ export default function ContactPage() {
                 </Heading>
                 <Text color={colors.text.secondary} fontSize="sm" lineHeight="1.7">
                   N&apos;hesitez pas a nous appeler, nous envoyer un email
-                  ou nous ecrire sur WhatsApp. Nous repondons sous 24h maximum.
+                  ou nous ecrire sur WhatsApp. Nous repondons sous 24h.
                 </Text>
               </Box>
 
