@@ -56,9 +56,9 @@ export default function Navbar() {
               <NextImage
                 src="/logo-gmg.png"
                 alt="GMG Labs"
-                width={180}
-                height={50}
-                style={{ height: 'auto', width: 'auto', maxHeight: '50px' }}
+                width={240}
+                height={60}
+                style={{ height: 'auto', width: 'auto', maxHeight: '45px' }}
                 priority
               />
             </Link>
