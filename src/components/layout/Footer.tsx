@@ -45,8 +45,8 @@ export default function Footer() {
               <NextImage
                 src="/logo-gmg.png"
                 alt="GMG Labs"
-                width={250}
-                height={60}
+                width={160}
+                height={45}
                 style={{ height: 'auto', width: 'auto' }}
               />
             </Box>
