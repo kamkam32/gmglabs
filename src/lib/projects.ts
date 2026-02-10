@@ -1,7 +1,7 @@
 export interface Project {
   slug: string
   title: string
-  category: 'web' | 'mobile' | 'ia' | 'web+mobile'
+  category: 'web' | 'mobile' | 'ia' | 'web+mobile' | 'web+ia'
   description: string
   shortDescription: string
   client: string
@@ -72,6 +72,36 @@ export const projects: Project[] = [
     images: ['/images/logomessidor.jpg'],
     featured: false,
     url: 'https://www.messidor-patrimoine.com',
+  },
+  {
+    slug: 'ello-pro',
+    title: 'Ello Pro - Dashboard de Gestion pour Salons',
+    category: 'web+ia',
+    description: 'Dashboard SaaS complet pour les professionnels de la beaute et du bien-etre. Ello Pro offre un planning interactif en drag-and-drop, un chatbot IA pour la prise de rendez-vous, des notifications en temps reel, un studio de creation de contenu avec editeur video, un portail de recrutement de talents et des analytics avances.',
+    shortDescription: 'Dashboard SaaS de gestion pour salons de beaute et bien-etre',
+    client: 'Ello (produit interne)',
+    year: '2024',
+    duration: '10 mois',
+    technologies: ['Next.js 14', 'TypeScript', 'Chakra UI', 'Supabase', 'OpenAI', 'SWR', 'Zustand', 'FFmpeg.wasm', 'Fabric.js', 'Recharts', 'Framer Motion', 'React Big Calendar'],
+    challenge: 'Les gerants de salons au Maroc utilisent des outils fragmentes (cahiers, WhatsApp, Excel) pour gerer leurs rendez-vous, clients et equipes. Aucune solution locale ne combine planning, analytics, contenu et IA en un seul outil.',
+    solution: 'Nous avons developpe un dashboard tout-en-un avec planning drag-and-drop, gestion multi-services en parallele, chatbot IA capable de prendre des RDV en langage naturel, notifications temps reel avec alertes sonores, et un content studio integre pour creer des reels video directement dans le navigateur.',
+    results: [
+      'Planning interactif avec gestion de bundles multi-services et phases paralleles',
+      'Chatbot IA avec OpenAI pour prise de RDV, gestion clients et insights business',
+      'Notifications en temps reel via Supabase Realtime avec alertes sonores',
+      'Content Studio avec editeur video FFmpeg et generateur de reels automatique',
+      'Portail de recrutement de talents (coiffeurs, estheticiennes) avec gestion de profils',
+      'Module analytics avec KPIs, graphiques et suivi de performance',
+    ],
+    metrics: [
+      { label: 'Salons actifs', value: '100+' },
+      { label: 'RDV geres/mois', value: '5K+' },
+      { label: 'Fichiers source', value: '150+' },
+      { label: 'Uptime', value: '99.9%' },
+    ],
+    images: ['/images/6 - Peach plein + texte dark (transparent)(2).png'],
+    featured: false,
+    url: 'https://www.ello.ma/pro',
   },
 ]
 

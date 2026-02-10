@@ -12,6 +12,7 @@ const categoryColors: Record<string, string> = {
   mobile: colors.services.mobile,
   ia: colors.services.ia,
   'web+mobile': colors.services.web,
+  'web+ia': colors.services.ia,
 }
 
 const categoryLabels: Record<string, string> = {
@@ -19,6 +20,7 @@ const categoryLabels: Record<string, string> = {
   mobile: 'Mobile',
   ia: 'IA',
   'web+mobile': 'Web + Mobile',
+  'web+ia': 'Web + IA',
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
