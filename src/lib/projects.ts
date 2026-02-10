@@ -99,7 +99,7 @@ export const projects: Project[] = [
       { label: 'Fichiers source', value: '150+' },
       { label: 'Uptime', value: '99.9%' },
     ],
-    images: ['/images/6 - Peach plein + texte dark (transparent)(2).png'],
+    images: ['/images/planningello.webp'],
     featured: false,
     url: 'https://www.ello.ma/pro',
   },
