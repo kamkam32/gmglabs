@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import RealisationsPage from './RealisationsPage'
 
 export const metadata: Metadata = {
-  title: 'Realisations - Portfolio de nos projets',
-  description: 'Decouvrez nos realisations : applications web, mobiles et IA. Etudes de cas detaillees avec metriques et technologies utilisees.',
-  keywords: 'portfolio developpement web maroc, projets application mobile, etude de cas ia, gmg labs realisations',
+  title: 'Réalisations - Portfolio de nos projets',
+  description: 'Découvrez nos réalisations : applications web, mobiles et IA. Études de cas détaillées avec métriques et technologies utilisées.',
+  keywords: 'portfolio développement web maroc, projets application mobile, étude de cas ia, gmg labs réalisations',
   alternates: { canonical: 'https://www.gmg-labs.com/realisations' },
   openGraph: {
-    title: 'Nos Realisations - GMG Labs',
+    title: 'Nos Réalisations - GMG Labs',
     description: 'Portfolio complet de nos projets web, mobile et IA.',
     url: 'https://www.gmg-labs.com/realisations',
     siteName: 'GMG Labs',

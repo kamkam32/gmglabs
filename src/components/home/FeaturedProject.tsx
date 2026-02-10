@@ -16,7 +16,7 @@ const MotionFlex = motion(Flex)
 
 const metrics = [
   { label: 'Utilisateurs', value: '10K+' },
-  { label: 'Reservations/mois', value: '5K+' },
+  { label: 'Réservations/mois', value: '5K+' },
   { label: 'Score SEO', value: '98' },
   { label: 'Uptime', value: '99.9%' },
 ]
@@ -38,7 +38,7 @@ export default function FeaturedProject() {
           label="Projet vedette"
           title="Ello, notre fierté"
           gradientWord="fierté"
-          subtitle="La plateforme de reservation beaute #1 au Maroc, concue et developpee par GMG Labs."
+          subtitle="La plateforme de réservation beauté #1 au Maroc, conçue et développée par GMG Labs."
         />
 
         <Flex
@@ -74,7 +74,7 @@ export default function FeaturedProject() {
               >
                 <Image
                   src="/images/6 - Peach plein + texte dark (transparent)(2).png"
-                  alt="Ello - Plateforme Beaute"
+                  alt="Ello - Plateforme Beauté"
                   width={400}
                   height={300}
                   style={{ objectFit: 'contain', maxHeight: '100%' }}
@@ -104,12 +104,12 @@ export default function FeaturedProject() {
               </Badge>
 
               <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} color="white" fontWeight="700">
-                Ello — Plateforme Beaute & Bien-etre
+                Ello — Plateforme Beauté & Bien-être
               </Heading>
 
               <Text color={colors.text.secondary} lineHeight="1.8" fontSize="sm">
-                Plateforme complete de reservation et gestion pour les professionnels de la beaute au Maroc.
-                Reservation en temps reel, rappels WhatsApp automatiques, dashboard pro et app mobile.
+                Plateforme complète de réservation et gestion pour les professionnels de la beauté au Maroc.
+                Réservation en temps réel, rappels WhatsApp automatiques, dashboard pro et app mobile.
               </Text>
 
               <SimpleGrid columns={2} spacing={4} w="full">
@@ -153,7 +153,7 @@ export default function FeaturedProject() {
                   _hover={{ opacity: 0.9 }}
                   rightIcon={<FiArrowRight />}
                 >
-                  Etude de cas
+                  Étude de cas
                 </Button>
                 <Button
                   as="a"

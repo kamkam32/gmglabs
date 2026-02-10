@@ -22,30 +22,30 @@ export default function MobileServicePage() {
             {
               icon: FiSmartphone,
               title: 'Cross-platform avec React Native',
-              description: 'Une seule codebase pour iOS et Android. Reduction de 40% du temps de developpement tout en conservant une experience native sur chaque plateforme.',
+              description: 'Une seule codebase pour iOS et Android. Réduction de 40% du temps de développement tout en conservant une expérience native sur chaque plateforme.',
             },
             {
               icon: FiDownloadCloud,
-              title: 'Deploiement App Store & Play Store',
-              description: 'Nous gerons tout le processus de publication : builds, certificats, screenshots, fiches store et optimisation ASO.',
+              title: 'Déploiement App Store & Play Store',
+              description: 'Nous gérons tout le processus de publication : builds, certificats, screenshots, fiches store et optimisation ASO.',
             },
             {
               icon: FiSend,
-              title: 'Offline-first et temps reel',
-              description: 'Synchronisation hors-ligne, push notifications et mises a jour en temps reel pour une experience sans interruption.',
+              title: 'Offline-first et temps réel',
+              description: 'Synchronisation hors-ligne, push notifications et mises à jour en temps réel pour une expérience sans interruption.',
             },
             {
               icon: FiBell,
               title: 'Push notifications intelligentes',
-              description: 'Notifications ciblees et segmentees pour engager vos utilisateurs au bon moment avec le bon message.',
+              description: 'Notifications ciblées et segmentées pour engager vos utilisateurs au bon moment avec le bon message.',
             },
           ]}
           technologies={['React Native', 'Expo', 'TypeScript', 'Firebase', 'Supabase', 'Redux', 'React Navigation', 'FastAPI', 'App Store Connect', 'Google Play Console']}
           processSteps={[
-            { number: '01', title: 'Prototype', description: 'Definition du MVP, wireframes et prototype Figma interactif pour valider l\'UX avant le developpement.' },
-            { number: '02', title: 'Developpement', description: 'Sprints de 2 semaines avec builds de test sur TestFlight et Play Store beta pour des retours continus.' },
-            { number: '03', title: 'Tests', description: 'Tests sur appareils reels, performance profiling, tests d\'accessibilite et correction des bugs.' },
-            { number: '04', title: 'Lancement', description: 'Publication sur les stores, monitoring Crashlytics, analytics et iterations post-lancement.' },
+            { number: '01', title: 'Prototype', description: 'Définition du MVP, wireframes et prototype Figma interactif pour valider l\'UX avant le développement.' },
+            { number: '02', title: 'Développement', description: 'Sprints de 2 semaines avec builds de test sur TestFlight et Play Store beta pour des retours continus.' },
+            { number: '03', title: 'Tests', description: 'Tests sur appareils réels, performance profiling, tests d\'accessibilité et correction des bugs.' },
+            { number: '04', title: 'Lancement', description: 'Publication sur les stores, monitoring Crashlytics, analytics et itérations post-lancement.' },
           ]}
         />
 

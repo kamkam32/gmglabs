@@ -17,35 +17,35 @@ export default function IAServicePage() {
           accentColor={colors.services.ia}
           heroTitle="L'IA au service de votre entreprise"
           heroGradientWord="votre entreprise"
-          heroSubtitle="Des solutions intelligentes qui automatisent, analysent et optimisent vos processus metier. Du chatbot a la computer vision."
+          heroSubtitle="Des solutions intelligentes qui automatisent, analysent et optimisent vos processus métier. Du chatbot à la computer vision."
           features={[
             {
               icon: FiMessageSquare,
               title: 'Chatbots conversationnels',
-              description: 'Chatbots WhatsApp et web alimentes par des LLMs. RAG sur vos documents pour des reponses precises et contextuelles, 24h/24.',
+              description: 'Chatbots WhatsApp et web alimentés par des LLMs. RAG sur vos documents pour des réponses précises et contextuelles, 24h/24.',
             },
             {
               icon: FiDatabase,
               title: 'RAG & Bases documentaires',
-              description: 'Indexation et recherche semantique sur vos documents internes. Vos employes trouvent l\'information en secondes au lieu de minutes.',
+              description: 'Indexation et recherche sémantique sur vos documents internes. Vos employés trouvent l\'information en secondes au lieu de minutes.',
             },
             {
               icon: FiEye,
               title: 'Computer Vision',
-              description: 'Detection d\'objets, OCR intelligent, controle qualite automatise. Transformez vos cameras en capteurs intelligents.',
+              description: 'Détection d\'objets, OCR intelligent, contrôle qualité automatisé. Transformez vos caméras en capteurs intelligents.',
             },
             {
               icon: FiTrendingUp,
-              title: 'Analyse predictive',
-              description: 'Modeles de prediction pour anticiper la demande, detecter les anomalies et optimiser vos operations en temps reel.',
+              title: 'Analyse prédictive',
+              description: 'Modèles de prédiction pour anticiper la demande, détecter les anomalies et optimiser vos opérations en temps réel.',
             },
           ]}
           technologies={['OpenAI GPT', 'Claude', 'LangChain', 'Python', 'FastAPI', 'Pinecone', 'ChromaDB', 'TensorFlow', 'PyTorch', 'WhatsApp API', 'Hugging Face', 'Docker']}
           processSteps={[
-            { number: '01', title: 'Audit IA', description: 'Identification des cas d\'usage a fort impact, evaluation de la faisabilite et estimation du ROI attendu.' },
-            { number: '02', title: 'POC', description: 'Proof of concept en 2-4 semaines pour valider la solution sur un perimetre reduit avec vos donnees reelles.' },
-            { number: '03', title: 'Production', description: 'Industrialisation de la solution, integration aux systemes existants, monitoring et alerting.' },
-            { number: '04', title: 'Optimisation', description: 'Fine-tuning continu, ajout de fonctionnalites et amelioration des performances basee sur les feedbacks.' },
+            { number: '01', title: 'Audit IA', description: 'Identification des cas d\'usage à fort impact, évaluation de la faisabilité et estimation du ROI attendu.' },
+            { number: '02', title: 'POC', description: 'Proof of concept en 2-4 semaines pour valider la solution sur un périmètre réduit avec vos données réelles.' },
+            { number: '03', title: 'Production', description: 'Industrialisation de la solution, intégration aux systèmes existants, monitoring et alerting.' },
+            { number: '04', title: 'Optimisation', description: 'Fine-tuning continu, ajout de fonctionnalités et amélioration des performances basée sur les feedbacks.' },
           ]}
         />
 

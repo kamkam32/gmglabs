@@ -53,12 +53,12 @@ export default function CTASection() {
             color="white"
             lineHeight="1.2"
           >
-            Pret a lancer votre{' '}
+            Prêt à lancer votre{' '}
             <GradientText>projet ?</GradientText>
           </Heading>
 
           <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} maxW="550px" lineHeight="1.8">
-            Discutons de votre vision. Premier appel de decouverte gratuit et sans engagement.
+            Discutons de votre vision. Premier appel de découverte gratuit et sans engagement.
           </Text>
 
           <HStack spacing={4} flexWrap="wrap" justify="center" pt={4}>

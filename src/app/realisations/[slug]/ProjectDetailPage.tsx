@@ -59,7 +59,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
               <Link href="/realisations">
                 <HStack spacing={2} color={colors.accent.cyan} mb={8} _hover={{ opacity: 0.8 }}>
                   <FiArrowLeft />
-                  <Text fontSize="sm" fontWeight="500">Retour aux realisations</Text>
+                  <Text fontSize="sm" fontWeight="500">Retour aux réalisations</Text>
                 </HStack>
               </Link>
 
@@ -126,7 +126,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               <VStack align="flex-start" spacing={4}>
                 <Heading as="h2" fontSize="xl" color="white">
-                  Le defi
+                  Le défi
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
                   {project.challenge}
@@ -148,7 +148,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
         <Box py={16} bg={colors.bg.section}>
           <Container maxW="900px">
             <Heading as="h2" fontSize="xl" color="white" mb={6}>
-              Resultats
+              Résultats
             </Heading>
             <VStack align="flex-start" spacing={3}>
               {project.results.map((r, i) => (
@@ -189,13 +189,13 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
               </Box>
               <Box>
                 <Text fontSize="xs" color={colors.text.tertiary} textTransform="uppercase" letterSpacing="1px" mb={1}>
-                  Duree
+                  Durée
                 </Text>
                 <Text color="white" fontWeight="600">{project.duration}</Text>
               </Box>
               <Box>
                 <Text fontSize="xs" color={colors.text.tertiary} textTransform="uppercase" letterSpacing="1px" mb={1}>
-                  Annee
+                  Année
                 </Text>
                 <Text color="white" fontWeight="600">{project.year}</Text>
               </Box>

@@ -25,37 +25,37 @@ const MotionSimpleGrid = motion(SimpleGrid)
 const cofounders = [
   {
     name: 'Kamil Alami',
-    role: 'Co-fondateur – Product & Tech',
-    description: 'Product Manager avec une double expertise finance & tech. +5 ans d\'experience dans la conception de solutions digitales innovantes. Pilote le cycle de vie produit de bout en bout, de la strategie a la livraison.',
-    expertise: ['Product Management', 'UX/UI', 'IA & RAG', 'Agile/Scrum'],
-    formation: 'ESCP Europe – MS International Wealth Management',
+    role: 'Co-fondateur – Product Builder',
+    description: 'Profil Product Builder : à la fois stratégiste, technologue et exécutant. Conçoit, développe et livre les produits de A à Z – de la vision produit au code, en passant par le design UX, l\'architecture technique et le go-to-market. C\'est le pilier opérationnel sur lequel repose l\'exécution de chaque projet GMG Labs.',
+    expertise: ['Product Strategy', 'UX/UI Design', 'Full-stack Dev', 'IA & RAG'],
+    formation: 'ESCP Europe / NEOMA Business School',
   },
   {
     name: 'Oualid Tebib',
-    role: 'Co-fondateur – Performance IT & Strategie Digitale',
-    description: 'Consultant en strategie digitale et IT avec 8 ans d\'experience dans l\'accompagnement de grands groupes (BNP, ENGIE, Saint-Gobain) dans leurs projets de transformation. Expert en performance applicative et architecture IT.',
+    role: 'Co-fondateur – Performance IT & Stratégie Digitale',
+    description: 'Consultant en stratégie digitale et IT avec 8 ans d\'expérience dans l\'accompagnement de grands groupes (BNP, ENGIE, Saint-Gobain) dans leurs projets de transformation. Expert en performance applicative et architecture IT.',
     expertise: ['Neoload', 'Dynatrace / AppDynamics', 'Tests de charge', 'Architecture IT'],
     formation: 'Paris-Dauphine – Master MIAGE-IF',
   },
   {
     name: 'Mehdi Essakalli',
-    role: 'Co-fondateur – Data & Strategie',
-    description: 'Profil strategie et data avec une experience chez MFG Labs (Big Data) et en tant que bras droit de Gilles Babinet, Digital Champion de la France. Expertise en blockchain, IA et transformation digitale aupres de grands comptes du CAC 40.',
-    expertise: ['Data & Big Data', 'Blockchain', 'Strategie digitale', 'IA & Automatisation'],
-    formation: 'Sciences-Po Paris x LSE – Finance & Strategie',
+    role: 'Co-fondateur – Data & Stratégie',
+    description: 'Profil stratégie et data avec une expérience en R&D Big Data (MFG Labs) et en conseil en transformation digitale auprès de l\'État et de grands comptes du CAC 40. Expertise en blockchain, IA et automatisation.',
+    expertise: ['Data & Big Data', 'Blockchain', 'Stratégie digitale', 'IA & Automatisation'],
+    formation: 'Sciences-Po Paris x LSE – Finance & Stratégie',
   },
 ]
 
 const values = [
-  { icon: FiTarget, title: 'Excellence', description: 'Chaque ligne de code est ecrite avec soin. Nous ne livrons que des produits dont nous sommes fiers.' },
-  { icon: FiHeart, title: 'Passion', description: 'Nous aimons ce que nous faisons. Cette passion se reflete dans la qualite de chaque projet.' },
-  { icon: FiZap, title: 'Innovation', description: 'Nous restons a la pointe de la technologie pour offrir les meilleures solutions a nos clients.' },
-  { icon: FiUsers, title: 'Partenariat', description: 'Nous ne sommes pas un prestataire, mais un partenaire. Votre succes est notre succes.' },
+  { icon: FiTarget, title: 'Excellence', description: 'Chaque ligne de code est écrite avec soin. Nous ne livrons que des produits dont nous sommes fiers.' },
+  { icon: FiHeart, title: 'Passion', description: 'Nous aimons ce que nous faisons. Cette passion se reflète dans la qualité de chaque projet.' },
+  { icon: FiZap, title: 'Innovation', description: 'Nous restons à la pointe de la technologie pour offrir les meilleures solutions à nos clients.' },
+  { icon: FiUsers, title: 'Partenariat', description: 'Nous ne sommes pas un prestataire, mais un partenaire. Votre succès est notre succès.' },
 ]
 
 const timeline = [
-  { year: '2025', title: 'Creation de GMG Labs', description: 'Fondation de l\'agence a Casablanca avec une vision claire : creer des produits digitaux de classe mondiale.' },
-  { year: '2025', title: 'Lancement d\'Ello', description: 'Developpement et lancement de notre produit phare : Ello, la plateforme de reservation beaute #1 au Maroc.' },
+  { year: '2025', title: 'Création de GMG Labs', description: 'Fondation de l\'agence à Casablanca avec une vision claire : créer des produits digitaux de classe mondiale.' },
+  { year: '2025', title: 'Lancement d\'Ello', description: 'Développement et lancement de notre produit phare : Ello, la plateforme de réservation beauté #1 au Maroc.' },
   { year: '2025', title: 'Messidor Patrimoine', description: 'Conception du dashboard financier pour Messidor Patrimoine : suivi OPCVM, OPCI et simulateur d\'investissement.' },
 ]
 
@@ -89,11 +89,11 @@ export default function AProposPage() {
                 color="white"
                 lineHeight="1.2"
               >
-                L&apos;equipe derriere <GradientText>GMG Labs</GradientText>
+                L&apos;équipe derrière <GradientText>GMG Labs</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                GMG Labs est une agence tech premium basee a Casablanca. Nous construisons des produits
-                digitaux qui font la difference pour les entreprises marocaines et au-dela.
+                GMG Labs est une agence tech premium basée à Casablanca. Nous construisons des produits
+                digitaux qui font la différence pour les entreprises marocaines et au-delà.
               </Text>
               <HStack spacing={4} flexWrap="wrap" justify="center">
                 <Button
@@ -123,7 +123,7 @@ export default function AProposPage() {
                   _hover={{ bg: `rgba(0, 212, 255, 0.1)` }}
                   rightIcon={<FiExternalLink />}
                 >
-                  Decouvrir Ello
+                  Découvrir Ello
                 </Button>
               </HStack>
             </VStack>
@@ -138,18 +138,18 @@ export default function AProposPage() {
                 Notre histoire
               </Heading>
               <Text color={colors.text.secondary} lineHeight="1.8">
-                GMG Labs est ne d&apos;un constat simple : le Maroc regorge de talents tech, mais manque
-                d&apos;agences capables de delivrer des produits au niveau des standards internationaux.
-                Nous avons decide de changer cela.
+                GMG Labs est né d&apos;un constat simple : le Maroc regorge de talents tech, mais manque
+                d&apos;agences capables de délivrer des produits au niveau des standards internationaux.
+                Nous avons décidé de changer cela.
               </Text>
               <Text color={colors.text.secondary} lineHeight="1.8">
-                Notre premier grand projet, Ello, est devenu la plateforme de reservation beaute de
-                reference au Maroc. Cette reussite nous a convaincu que nous pouvions reproduire
+                Notre premier grand projet, Ello, est devenu la plateforme de réservation beauté de
+                référence au Maroc. Cette réussite nous a convaincu que nous pouvions reproduire
                 ce niveau d&apos;excellence pour d&apos;autres entreprises.
               </Text>
               <Text color={colors.text.secondary} lineHeight="1.8">
                 Aujourd&apos;hui, nous accompagnons startups et grandes entreprises dans leur transformation
-                digitale avec quatre poles d&apos;expertise : Web, Mobile, Intelligence Artificielle et Performance IT.
+                digitale avec quatre pôles d&apos;expertise : Web, Mobile, Intelligence Artificielle et Performance IT.
                 Retrouvez-nous sur{' '}
                 <Text as="a" href="https://gmg-labs.com/" target="_blank" color={colors.accent.cyan} fontWeight="600" _hover={{ textDecoration: 'underline' }}>
                   gmg-labs.com
@@ -166,7 +166,7 @@ export default function AProposPage() {
               Les cofondateurs
             </Heading>
             <Text fontSize="md" color={colors.text.secondary} textAlign="center" mb={12} maxW="600px" mx="auto">
-              Trois profils complementaires unissant strategie, technologie et performance.
+              Trois profils complémentaires unissant stratégie, technologie et performance.
             </Text>
             <MotionSimpleGrid
               ref={teamRef}

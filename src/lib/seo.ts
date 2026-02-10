@@ -8,7 +8,7 @@ export function generateOrganizationJsonLd() {
       '@type': 'ImageObject',
       url: 'https://gmg-labs.com/logo.png',
     },
-    description: 'Agence de developpement Web, Mobile et IA basee a Casablanca, Maroc.',
+    description: 'Agence de développement Web, Mobile et IA basée à Casablanca, Maroc.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Casablanca',

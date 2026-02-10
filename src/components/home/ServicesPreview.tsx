@@ -15,15 +15,15 @@ const MotionBox = motion(Box)
 const services = [
   {
     icon: FiMonitor,
-    title: 'Developpement Web',
-    description: 'Applications web performantes avec Next.js, React et des architectures modernes. SEO, rapidite et experience utilisateur premium.',
+    title: 'Développement Web',
+    description: 'Applications web performantes avec Next.js, React et des architectures modernes. SEO, rapidité et expérience utilisateur premium.',
     color: colors.services.web,
     href: '/services/web',
   },
   {
     icon: FiSmartphone,
     title: 'Applications Mobiles',
-    description: 'Apps iOS et Android natives et cross-platform avec React Native. Design soigne et performances optimales.',
+    description: 'Apps iOS et Android natives et cross-platform avec React Native. Design soigné et performances optimales.',
     color: colors.services.mobile,
     href: '/services/mobile',
   },
@@ -37,7 +37,7 @@ const services = [
   {
     icon: FiActivity,
     title: 'Performance IT',
-    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilite de vos systemes en production.',
+    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilité de vos systèmes en production.',
     color: colors.services.performance,
     href: '/services/performance',
   },
@@ -51,8 +51,8 @@ export default function ServicesPreview() {
       <Container maxW="1200px">
         <SectionHeading
           label="Nos services"
-          title="Expertise technique, resultats concrets"
-          gradientWord="resultats concrets"
+          title="Expertise technique, résultats concrets"
+          gradientWord="résultats concrets"
           subtitle="Quatre piliers d'excellence pour couvrir tous vos besoins technologiques."
         />
 

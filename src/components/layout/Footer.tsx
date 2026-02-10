@@ -17,20 +17,20 @@ import { colors } from '@/lib/colors'
 
 const footerLinks = {
   services: [
-    { href: '/services/web', label: 'Developpement Web' },
+    { href: '/services/web', label: 'Développement Web' },
     { href: '/services/mobile', label: 'Applications Mobiles' },
     { href: '/services/ia', label: 'Intelligence Artificielle' },
     { href: '/tarifs', label: 'Tarifs' },
   ],
   entreprise: [
-    { href: '/a-propos', label: 'A propos' },
-    { href: '/realisations', label: 'Realisations' },
+    { href: '/a-propos', label: 'À propos' },
+    { href: '/realisations', label: 'Réalisations' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
     { href: 'https://gmg-labs.com/', label: 'GMG Labs', external: true },
   ],
   legal: [
-    { href: '/mentions-legales', label: 'Mentions legales' },
+    { href: '/mentions-legales', label: 'Mentions légales' },
   ],
 }
 
@@ -51,7 +51,7 @@ export default function Footer() {
               />
             </Box>
             <Text fontSize="sm" color={colors.text.tertiary} lineHeight="1.8">
-              Agence tech premium basee a Casablanca. Nous construisons des produits digitaux qui font la difference.
+              Agence tech premium basée à Casablanca. Nous construisons des produits digitaux qui font la différence.
             </Text>
             <HStack spacing={3} pt={2}>
               <Box
@@ -160,7 +160,7 @@ export default function Footer() {
         <Box borderTop="1px solid" borderColor={colors.border.subtle} mt={12} pt={8}>
           <Flex justify="space-between" align="center" flexWrap="wrap" gap={4}>
             <Text fontSize="sm" color={colors.text.tertiary}>
-              &copy; {new Date().getFullYear()} GMG Labs. Tous droits reserves.
+              &copy; {new Date().getFullYear()} GMG Labs. Tous droits réservés.
             </Text>
             <HStack spacing={6}>
               {footerLinks.legal.map((link) => (

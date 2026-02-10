@@ -43,10 +43,10 @@ export default function RealisationsPage() {
                 color="white"
                 lineHeight="1.2"
               >
-                Nos <GradientText>realisations</GradientText>
+                Nos <GradientText>réalisations</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Des projets concrets avec des resultats mesurables. Decouvrez comment nous avons aide nos clients a atteindre leurs objectifs.
+                Des projets concrets avec des résultats mesurables. Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs.
               </Text>
             </VStack>
           </Container>

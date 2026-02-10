@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     google: 'cVf0dr_gMpE72S4V-XCz4s71_S4ZzA0Nnq2zl3GsewE',
   },
   title: {
-    default: 'GMG Labs - Agence de developpement Web, Mobile & IA au Maroc',
+    default: 'GMG Labs - Agence de développement Web, Mobile & IA au Maroc',
     template: '%s | GMG Labs',
   },
-  description: 'GMG Labs est une agence tech premium basee a Casablanca. Developpement web, applications mobiles et solutions IA sur mesure. Createurs d\'Ello.',
-  keywords: 'agence web maroc, creation site web sur mesure, developpement web casablanca, agence developpement web maroc, developpement mobile casablanca, application mobile maroc, intelligence artificielle maroc, gmg labs, site web professionnel, agence digitale casablanca, next.js, react native, supabase',
+  description: 'GMG Labs est une agence tech premium basée à Casablanca. Développement web, applications mobiles et solutions IA sur mesure. Créateurs d\'Ello.',
+  keywords: 'agence web maroc, création site web sur mesure, développement web casablanca, agence développement web maroc, développement mobile casablanca, application mobile maroc, intelligence artificielle maroc, gmg labs, site web professionnel, agence digitale casablanca, next.js, react native, supabase',
   authors: [{ name: 'GMG Labs' }],
   creator: 'GMG Labs',
   publisher: 'GMG Labs',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     canonical: 'https://gmg-labs.com',
   },
   openGraph: {
-    title: 'GMG Labs - Agence de developpement Web, Mobile & IA au Maroc',
-    description: 'Agence tech premium basee a Casablanca. Developpement web, applications mobiles et solutions IA sur mesure.',
+    title: 'GMG Labs - Agence de développement Web, Mobile & IA au Maroc',
+    description: 'Agence tech premium basée à Casablanca. Développement web, applications mobiles et solutions IA sur mesure.',
     url: 'https://gmg-labs.com',
     siteName: 'GMG Labs',
     locale: 'fr_MA',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'GMG Labs - Agence Tech Premium au Maroc',
-    description: 'Developpement web, mobile et IA sur mesure a Casablanca.',
+    description: 'Développement web, mobile et IA sur mesure à Casablanca.',
     images: ['/og-image.png'],
   },
 }

@@ -14,19 +14,19 @@ const testimonials = [
   {
     name: 'Sarah B.',
     role: 'Fondatrice, Beauty Lounge',
-    content: 'GMG Labs a transforme notre salon avec Ello. Nos reservations ont double en 3 mois et on ne gere plus rien manuellement. Un travail exceptionnel !',
+    content: 'GMG Labs a transformé notre salon avec Ello. Nos réservations ont doublé en 3 mois et on ne gère plus rien manuellement. Un travail exceptionnel !',
     rating: 5,
   },
   {
     name: 'Youssef M.',
     role: 'CEO, LogiExpress',
-    content: 'L\'equipe a livre un dashboard logistique impeccable. Le suivi temps reel de nos livraisons a revolutionne notre facon de travailler.',
+    content: 'L\'équipe a livré un dashboard logistique impeccable. Le suivi temps réel de nos livraisons a révolutionné notre façon de travailler.',
     rating: 5,
   },
   {
     name: 'Amina K.',
-    role: 'Directrice, Cooperative Artisanale',
-    content: 'Grace a la marketplace creee par GMG Labs, nos artisans vendent maintenant dans 12 pays. Le chiffre d\'affaires a triple.',
+    role: 'Directrice, Coopérative Artisanale',
+    content: 'Grâce à la marketplace créée par GMG Labs, nos artisans vendent maintenant dans 12 pays. Le chiffre d\'affaires a triplé.',
     rating: 5,
   },
 ]
@@ -38,10 +38,10 @@ export default function Testimonials() {
     <Box as="section" py={24} bg={colors.bg.section}>
       <Container maxW="1200px">
         <SectionHeading
-          label="Temoignages"
+          label="Témoignages"
           title="Ce que nos clients disent"
           gradientWord="clients"
-          subtitle="Des partenariats durables bases sur la confiance et les resultats."
+          subtitle="Des partenariats durables basés sur la confiance et les résultats."
         />
 
         <MotionSimpleGrid

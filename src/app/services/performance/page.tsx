@@ -4,7 +4,7 @@ import { generateServiceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Performance IT - Tests de charge, APM & Monitoring',
-  description: 'Tests de charge Neoload, monitoring Dynatrace/AppDynamics, audit de performance IT et recommandations Go/No Go pour garantir la fiabilite de vos systemes au Maroc.',
+  description: 'Tests de charge Neoload, monitoring Dynatrace/AppDynamics, audit de performance IT et recommandations Go/No Go pour garantir la fiabilité de vos systèmes au Maroc.',
   keywords: 'tests de charge maroc, neoload, dynatrace, appdynamics, apm, monitoring applicatif, audit performance it, stress test, casablanca',
   alternates: { canonical: 'https://www.gmg-labs.com/services/performance' },
   openGraph: {

@@ -47,7 +47,7 @@ export default function NotFound() {
                 Page introuvable
               </Heading>
               <Text color={colors.text.secondary} lineHeight="1.7">
-                La page que vous cherchez n&apos;existe pas ou a ete deplacee.
+                La page que vous cherchez n&apos;existe pas ou a été déplacée.
               </Text>
               <Button
                 as={Link}
@@ -60,7 +60,7 @@ export default function NotFound() {
                 _hover={{ opacity: 0.9 }}
                 leftIcon={<FiArrowLeft />}
               >
-                Retour a l&apos;accueil
+                Retour à l&apos;accueil
               </Button>
             </VStack>
           </Container>

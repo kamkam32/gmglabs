@@ -24,7 +24,7 @@ const contactInfo = [
   },
   {
     icon: FiPhone,
-    label: 'Telephone',
+    label: 'Téléphone',
     value: '+33 6 19 06 12 15',
     href: 'tel:+33619061215',
   },
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 Parlons de votre <GradientText>projet</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Premier appel de decouverte gratuit et sans engagement. Contactez-nous directement.
+                Premier appel de découverte gratuit et sans engagement. Contactez-nous directement.
               </Text>
             </VStack>
           </Container>
@@ -86,8 +86,8 @@ export default function ContactPage() {
                   Contactez-nous directement
                 </Heading>
                 <Text color={colors.text.secondary} fontSize="sm" lineHeight="1.7">
-                  N&apos;hesitez pas a nous appeler, nous envoyer un email
-                  ou nous ecrire sur WhatsApp. Nous repondons sous 24h.
+                  N&apos;hésitez pas à nous appeler, nous envoyer un email
+                  ou nous écrire sur WhatsApp. Nous répondons sous 24h.
                 </Text>
               </Box>
 

@@ -4,7 +4,7 @@ import { generateServiceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Intelligence Artificielle - Chatbots, Automatisation & IA sur mesure',
-  description: 'Solutions d\'intelligence artificielle sur mesure : chatbots WhatsApp, RAG, automatisation de processus, computer vision et analyse de donnees au Maroc.',
+  description: 'Solutions d\'intelligence artificielle sur mesure : chatbots WhatsApp, RAG, automatisation de processus, computer vision et analyse de données au Maroc.',
   keywords: 'intelligence artificielle maroc, chatbot whatsapp, rag llm, automatisation ia, openai, langchain, machine learning casablanca',
   alternates: { canonical: 'https://www.gmg-labs.com/services/ia' },
   openGraph: {

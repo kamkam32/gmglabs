@@ -13,7 +13,7 @@ const MotionBox = motion(Box)
 const MotionHeading = motion(Heading)
 const MotionText = motion(Text)
 
-const TYPEWRITER_TEXT = "De l'idee au produit. Nous concevons des applications web, mobiles et IA qui propulsent les entreprises marocaines vers le succes."
+const TYPEWRITER_TEXT = "De l'idée au produit. Nous concevons des applications web, mobiles et IA qui propulsent les entreprises marocaines vers le succès."
 
 function Typewriter({ text, delay = 0.8 }: { text: string; delay?: number }) {
   const [displayed, setDisplayed] = useState('')
@@ -309,7 +309,7 @@ export default function Hero() {
                   transition="all 0.3s"
                   rightIcon={<FiArrowRight />}
                 >
-                  Demarrer un projet
+                  Démarrer un projet
                 </Button>
               </MagneticButton>
               <MagneticButton>

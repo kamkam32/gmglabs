@@ -17,35 +17,35 @@ export default function WebServicePage() {
           accentColor={colors.services.web}
           heroTitle="Applications web qui performent"
           heroGradientWord="performent"
-          heroSubtitle="De la landing page au SaaS complexe, nous construisons des applications web rapides, securisees et optimisees pour le SEO."
+          heroSubtitle="De la landing page au SaaS complexe, nous construisons des applications web rapides, sécurisées et optimisées pour le SEO."
           features={[
             {
               icon: FiLayout,
               title: 'Interfaces modernes et responsives',
-              description: 'Design pixel-perfect avec Chakra UI et Framer Motion. Chaque interface est pensee pour offrir une experience fluide sur tous les appareils, du mobile au desktop.',
+              description: 'Design pixel-perfect avec Chakra UI et Framer Motion. Chaque interface est pensée pour offrir une expérience fluide sur tous les appareils, du mobile au desktop.',
             },
             {
               icon: FiZap,
-              title: 'Performance et rapidite',
-              description: 'Architecture Next.js avec SSR/SSG, optimisation des images, lazy loading et code splitting. Temps de chargement inferieur a 2 secondes garanti.',
+              title: 'Performance et rapidité',
+              description: 'Architecture Next.js avec SSR/SSG, optimisation des images, lazy loading et code splitting. Temps de chargement inférieur à 2 secondes garanti.',
             },
             {
               icon: FiSearch,
-              title: 'SEO natif et avance',
-              description: 'Metadata dynamique, JSON-LD, sitemap automatique, Open Graph. Votre application est indexee et visible des le premier jour.',
+              title: 'SEO natif et avancé',
+              description: 'Metadata dynamique, JSON-LD, sitemap automatique, Open Graph. Votre application est indexée et visible dès le premier jour.',
             },
             {
               icon: FiShield,
-              title: 'Securite et scalabilite',
+              title: 'Sécurité et scalabilité',
               description: 'Authentification robuste, protection CSRF/XSS, HTTPS. Architecture serverless qui scale automatiquement avec votre croissance.',
             },
           ]}
           technologies={['Next.js 14', 'React', 'TypeScript', 'Chakra UI', 'Supabase', 'PostgreSQL', 'Vercel', 'Stripe', 'Node.js', 'GraphQL', 'Redis', 'Docker']}
           processSteps={[
-            { number: '01', title: 'Decouverte', description: 'Analyse de vos besoins, audit de l\'existant, definition du cahier des charges et des objectifs.' },
+            { number: '01', title: 'Découverte', description: 'Analyse de vos besoins, audit de l\'existant, définition du cahier des charges et des objectifs.' },
             { number: '02', title: 'Design', description: 'Maquettes Figma, prototype interactif, validation du design system et de l\'architecture technique.' },
-            { number: '03', title: 'Developpement', description: 'Sprints agiles de 2 semaines, demos regulieres, integration continue et tests automatises.' },
-            { number: '04', title: 'Deploiement', description: 'Mise en production sur Vercel, monitoring, formation et support technique post-lancement.' },
+            { number: '03', title: 'Développement', description: 'Sprints agiles de 2 semaines, démos régulières, intégration continue et tests automatisés.' },
+            { number: '04', title: 'Déploiement', description: 'Mise en production sur Vercel, monitoring, formation et support technique post-lancement.' },
           ]}
         />
 
@@ -65,7 +65,7 @@ export default function WebServicePage() {
                 _hover={{ opacity: 0.9, transform: 'translateY(-2px)' }}
                 rightIcon={<FiArrowRight />}
               >
-                Demarrer un projet web
+                Démarrer un projet web
               </Button>
             </HStack>
           </Container>

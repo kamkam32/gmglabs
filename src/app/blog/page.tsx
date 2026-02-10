@@ -3,9 +3,9 @@ import BlogListPage from './BlogListPage'
 import { getAllPosts } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: 'Blog - Actualites Tech, Web & IA',
-  description: 'Articles et guides sur le developpement web, les applications mobiles et l\'intelligence artificielle. Conseils, tendances et retours d\'experience.',
-  keywords: 'blog tech maroc, developpement web, intelligence artificielle, react, next.js, mobile, startup',
+  title: 'Blog - Actualités Tech, Web & IA',
+  description: 'Articles et guides sur le développement web, les applications mobiles et l\'intelligence artificielle. Conseils, tendances et retours d\'expérience.',
+  keywords: 'blog tech maroc, développement web, intelligence artificielle, react, next.js, mobile, startup',
   alternates: { canonical: 'https://www.gmg-labs.com/blog' },
   openGraph: {
     title: 'Blog - GMG Labs',

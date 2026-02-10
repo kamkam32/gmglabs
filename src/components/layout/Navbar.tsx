@@ -20,10 +20,10 @@ import MobileMenu from './MobileMenu'
 const navLinks = [
   { href: '/', label: 'Accueil' },
   { href: '/services', label: 'Services' },
-  { href: '/realisations', label: 'Realisations' },
+  { href: '/realisations', label: 'Réalisations' },
   { href: '/blog', label: 'Blog' },
   { href: '/tarifs', label: 'Tarifs' },
-  { href: '/a-propos', label: 'A propos' },
+  { href: '/a-propos', label: 'À propos' },
 ]
 
 export default function Navbar() {

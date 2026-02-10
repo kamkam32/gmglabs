@@ -4,8 +4,8 @@ import { generateServiceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Applications Mobiles - iOS & Android avec React Native',
-  description: 'Developpement d\'applications mobiles iOS et Android avec React Native. Apps cross-platform performantes, design natif et deploiement sur les stores.',
-  keywords: 'application mobile maroc, react native casablanca, developpement ios android, app mobile, cross-platform',
+  description: 'Développement d\'applications mobiles iOS et Android avec React Native. Apps cross-platform performantes, design natif et déploiement sur les stores.',
+  keywords: 'application mobile maroc, react native casablanca, développement ios android, app mobile, cross-platform',
   alternates: { canonical: 'https://www.gmg-labs.com/services/mobile' },
   openGraph: {
     title: 'Applications Mobiles - GMG Labs',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   ...generateServiceJsonLd({
-    name: 'Developpement Mobile',
+    name: 'Développement Mobile',
     description: 'Applications iOS et Android avec React Native.',
     url: 'https://www.gmg-labs.com/services/mobile',
   }),

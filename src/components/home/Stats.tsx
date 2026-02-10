@@ -10,9 +10,9 @@ const MotionSimpleGrid = motion(SimpleGrid)
 const MotionBox = motion(Box)
 
 const stats = [
-  { value: 15, suffix: '+', label: 'Projets livres' },
+  { value: 15, suffix: '+', label: 'Projets livrés' },
   { value: 30, suffix: 'K+', label: 'Utilisateurs actifs' },
-  { value: 3, suffix: '+', label: "Annees d'experience" },
+  { value: 3, suffix: '+', label: "Années d'expérience" },
   { value: 98, suffix: '%', label: 'Clients satisfaits' },
 ]
 

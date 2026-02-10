@@ -18,8 +18,8 @@ const MotionSimpleGrid = motion(SimpleGrid)
 const services = [
   {
     icon: FiMonitor,
-    title: 'Developpement Web',
-    description: 'Applications web performantes avec Next.js, React et des architectures modernes. SEO natif, rapidite et experience utilisateur premium.',
+    title: 'Développement Web',
+    description: 'Applications web performantes avec Next.js, React et des architectures modernes. SEO natif, rapidité et expérience utilisateur premium.',
     features: ['Sites vitrine', 'Applications SaaS', 'E-commerce', 'Dashboards', 'APIs REST/GraphQL'],
     color: colors.services.web,
     href: '/services/web',
@@ -27,23 +27,23 @@ const services = [
   {
     icon: FiSmartphone,
     title: 'Applications Mobiles',
-    description: 'Apps iOS et Android natives et cross-platform avec React Native. Design soigne, performances optimales et deploiement App Store/Play Store.',
-    features: ['Apps cross-platform', 'Apps natives', 'MVP mobile', 'Apps de livraison', 'Apps de reservation'],
+    description: 'Apps iOS et Android natives et cross-platform avec React Native. Design soigné, performances optimales et déploiement App Store/Play Store.',
+    features: ['Apps cross-platform', 'Apps natives', 'MVP mobile', 'Apps de livraison', 'Apps de réservation'],
     color: colors.services.mobile,
     href: '/services/mobile',
   },
   {
     icon: FiCpu,
     title: 'Intelligence Artificielle',
-    description: 'Chatbots, automatisation et solutions IA sur mesure. LLMs, RAG, computer vision et NLP pour transformer vos processus metier.',
-    features: ['Chatbots WhatsApp', 'RAG / Bases documentaires', 'Automatisation', 'Computer Vision', 'Analyse de donnees'],
+    description: 'Chatbots, automatisation et solutions IA sur mesure. LLMs, RAG, computer vision et NLP pour transformer vos processus métier.',
+    features: ['Chatbots WhatsApp', 'RAG / Bases documentaires', 'Automatisation', 'Computer Vision', 'Analyse de données'],
     color: colors.services.ia,
     href: '/services/ia',
   },
   {
     icon: FiActivity,
     title: 'Performance IT',
-    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilite et la rapidite de vos systemes en production.',
+    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilité et la rapidité de vos systèmes en production.',
     features: ['Tests de charge (Neoload)', 'APM Dynatrace / AppDynamics', 'Audit de performance', 'Stress tests', 'Recommandation Go/No Go'],
     color: colors.services.performance,
     href: '/services/performance',
@@ -82,8 +82,8 @@ export default function ServicesPage() {
                 <GradientText>ambition digitale</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Quatre poles d&apos;expertise pour couvrir l&apos;ensemble de vos besoins technologiques,
-                de la conception au deploiement.
+                Quatre pôles d&apos;expertise pour couvrir l&apos;ensemble de vos besoins technologiques,
+                de la conception au déploiement.
               </Text>
             </VStack>
           </Container>
