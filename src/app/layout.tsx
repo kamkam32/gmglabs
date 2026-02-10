@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Providers } from './providers'
 import './globals.css'
 
@@ -60,6 +61,18 @@ export default function RootLayout({
         <meta name="theme-color" content="#0A0A0F" />
       </head>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3PYLNRQZ2G"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3PYLNRQZ2G');
+          `}
+        </Script>
         <Providers>
           {children}
         </Providers>
