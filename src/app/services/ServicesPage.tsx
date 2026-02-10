@@ -2,7 +2,7 @@
 
 import { Box, Container, SimpleGrid, Heading, Text, VStack, Button, HStack, Icon } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FiMonitor, FiSmartphone, FiCpu, FiArrowRight } from 'react-icons/fi'
+import { FiMonitor, FiSmartphone, FiCpu, FiActivity, FiArrowRight } from 'react-icons/fi'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -40,6 +40,14 @@ const services = [
     color: colors.services.ia,
     href: '/services/ia',
   },
+  {
+    icon: FiActivity,
+    title: 'Performance IT',
+    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilite et la rapidite de vos systemes en production.',
+    features: ['Tests de charge (Neoload)', 'APM Dynatrace / AppDynamics', 'Audit de performance', 'Stress tests', 'Recommandation Go/No Go'],
+    color: colors.services.performance,
+    href: '/services/performance',
+  },
 ]
 
 export default function ServicesPage() {
@@ -74,7 +82,7 @@ export default function ServicesPage() {
                 <GradientText>ambition digitale</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Trois poles d&apos;expertise pour couvrir l&apos;ensemble de vos besoins technologiques,
+                Quatre poles d&apos;expertise pour couvrir l&apos;ensemble de vos besoins technologiques,
                 de la conception au deploiement.
               </Text>
             </VStack>
@@ -86,7 +94,7 @@ export default function ServicesPage() {
           <Container maxW="1200px">
             <MotionSimpleGrid
               ref={ref}
-              columns={{ base: 1, lg: 3 }}
+              columns={{ base: 1, md: 2, lg: 4 }}
               spacing={8}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}

@@ -37,6 +37,7 @@ export const colors = {
     web: '#00D4FF',
     mobile: '#7B61FF',
     ia: '#F59E0B',
+    performance: '#10B981',
   },
 
   // Glow effects
@@ -44,6 +45,7 @@ export const colors = {
     cyan: '0 0 20px rgba(0, 212, 255, 0.3)',
     violet: '0 0 20px rgba(123, 97, 255, 0.3)',
     amber: '0 0 20px rgba(245, 158, 11, 0.3)',
+    emerald: '0 0 20px rgba(16, 185, 129, 0.3)',
   },
 
   // Status

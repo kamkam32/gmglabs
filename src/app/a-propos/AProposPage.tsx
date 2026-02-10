@@ -11,7 +11,7 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FiTarget, FiHeart, FiZap, FiUsers, FiExternalLink } from 'react-icons/fi'
+import { FiTarget, FiHeart, FiZap, FiUsers, FiExternalLink, FiLinkedin } from 'react-icons/fi'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import GradientText from '@/components/shared/GradientText'
@@ -21,6 +21,30 @@ import { useScrollAnimation, staggerContainer, fadeInUp } from '@/hooks/useScrol
 
 const MotionBox = motion(Box)
 const MotionSimpleGrid = motion(SimpleGrid)
+
+const cofounders = [
+  {
+    name: 'Kamil Alami',
+    role: 'Co-fondateur – Product & Tech',
+    description: 'Product Manager avec une double expertise finance & tech. +5 ans d\'experience dans la conception de solutions digitales innovantes. Pilote le cycle de vie produit de bout en bout, de la strategie a la livraison.',
+    expertise: ['Product Management', 'UX/UI', 'IA & RAG', 'Agile/Scrum'],
+    formation: 'ESCP Europe – MS International Wealth Management',
+  },
+  {
+    name: 'Oualid Tebib',
+    role: 'Co-fondateur – Performance IT & Strategie Digitale',
+    description: 'Consultant en strategie digitale et IT avec 8 ans d\'experience dans l\'accompagnement de grands groupes (BNP, ENGIE, Saint-Gobain) dans leurs projets de transformation. Expert en performance applicative et architecture IT.',
+    expertise: ['Neoload', 'Dynatrace / AppDynamics', 'Tests de charge', 'Architecture IT'],
+    formation: 'Paris-Dauphine – Master MIAGE-IF',
+  },
+  {
+    name: 'Mehdi Essakalli',
+    role: 'Co-fondateur – Data & Strategie',
+    description: 'Profil strategie et data avec une experience chez MFG Labs (Big Data) et en tant que bras droit de Gilles Babinet, Digital Champion de la France. Expertise en blockchain, IA et transformation digitale aupres de grands comptes du CAC 40.',
+    expertise: ['Data & Big Data', 'Blockchain', 'Strategie digitale', 'IA & Automatisation'],
+    formation: 'Sciences-Po Paris x LSE – Finance & Strategie',
+  },
+]
 
 const values = [
   { icon: FiTarget, title: 'Excellence', description: 'Chaque ligne de code est ecrite avec soin. Nous ne livrons que des produits dont nous sommes fiers.' },
@@ -37,6 +61,7 @@ const timeline = [
 
 export default function AProposPage() {
   const { ref: valRef, isInView: valInView } = useScrollAnimation()
+  const { ref: teamRef, isInView: teamInView } = useScrollAnimation()
   const { ref: timeRef, isInView: timeInView } = useScrollAnimation()
 
   return (
@@ -64,7 +89,7 @@ export default function AProposPage() {
                 color="white"
                 lineHeight="1.2"
               >
-                L&apos;equipe derriere <GradientText>Ello</GradientText>
+                L&apos;equipe derriere <GradientText>GMG Labs</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
                 GMG Labs est une agence tech premium basee a Casablanca. Nous construisons des produits
@@ -124,7 +149,7 @@ export default function AProposPage() {
               </Text>
               <Text color={colors.text.secondary} lineHeight="1.8">
                 Aujourd&apos;hui, nous accompagnons startups et grandes entreprises dans leur transformation
-                digitale avec trois poles d&apos;expertise : Web, Mobile et Intelligence Artificielle.
+                digitale avec quatre poles d&apos;expertise : Web, Mobile, Intelligence Artificielle et Performance IT.
                 Retrouvez-nous sur{' '}
                 <Text as="a" href="https://gmg-labs.com/" target="_blank" color={colors.accent.cyan} fontWeight="600" _hover={{ textDecoration: 'underline' }}>
                   gmg-labs.com
@@ -134,8 +159,79 @@ export default function AProposPage() {
           </Container>
         </Box>
 
-        {/* Values */}
+        {/* Cofounders */}
         <Box py={20} bg={colors.bg.body}>
+          <Container maxW="1100px">
+            <Heading as="h2" fontSize="2xl" color="white" textAlign="center" mb={4}>
+              Les cofondateurs
+            </Heading>
+            <Text fontSize="md" color={colors.text.secondary} textAlign="center" mb={12} maxW="600px" mx="auto">
+              Trois profils complementaires unissant strategie, technologie et performance.
+            </Text>
+            <MotionSimpleGrid
+              ref={teamRef}
+              columns={{ base: 1, lg: 3 }}
+              spacing={8}
+              initial="hidden"
+              animate={teamInView ? 'visible' : 'hidden'}
+              variants={staggerContainer}
+            >
+              {cofounders.map((person) => (
+                <MotionBox key={person.name} variants={fadeInUp}>
+                  <Box
+                    p={8}
+                    bg={colors.bg.card}
+                    borderRadius="2xl"
+                    border="1px solid"
+                    borderColor={colors.border.subtle}
+                    _hover={{ borderColor: colors.border.hover }}
+                    transition="border-color 0.3s"
+                    h="full"
+                    display="flex"
+                    flexDirection="column"
+                  >
+                    <VStack align="flex-start" spacing={4} flex={1}>
+                      <Box>
+                        <Heading as="h3" fontSize="lg" color="white" mb={1}>
+                          {person.name}
+                        </Heading>
+                        <Text fontSize="sm" fontWeight="600" color={colors.accent.cyan}>
+                          {person.role}
+                        </Text>
+                      </Box>
+                      <Text fontSize="sm" color={colors.text.secondary} lineHeight="1.7" flex={1}>
+                        {person.description}
+                      </Text>
+                      <Text fontSize="xs" color={colors.text.tertiary} fontStyle="italic">
+                        {person.formation}
+                      </Text>
+                      <HStack spacing={2} flexWrap="wrap">
+                        {person.expertise.map((skill) => (
+                          <Box
+                            key={skill}
+                            px={3}
+                            py={1}
+                            borderRadius="full"
+                            bg={`${colors.accent.cyan}10`}
+                            border="1px solid"
+                            borderColor={`${colors.accent.cyan}30`}
+                          >
+                            <Text fontSize="xs" color={colors.accent.cyan} fontWeight="500">
+                              {skill}
+                            </Text>
+                          </Box>
+                        ))}
+                      </HStack>
+                    </VStack>
+                  </Box>
+                </MotionBox>
+              ))}
+            </MotionSimpleGrid>
+          </Container>
+        </Box>
+
+        {/* Values */}
+        <Box py={20} bg={colors.bg.section}>
           <Container maxW="1000px">
             <Heading as="h2" fontSize="2xl" color="white" textAlign="center" mb={12}>
               Nos valeurs

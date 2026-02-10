@@ -2,7 +2,7 @@
 
 import { Box, Container, SimpleGrid, Heading, Text, VStack, Icon } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FiMonitor, FiSmartphone, FiCpu } from 'react-icons/fi'
+import { FiMonitor, FiSmartphone, FiCpu, FiActivity } from 'react-icons/fi'
 import Link from 'next/link'
 import { colors } from '@/lib/colors'
 import SectionHeading from '../shared/SectionHeading'
@@ -34,6 +34,13 @@ const services = [
     color: colors.services.ia,
     href: '/services/ia',
   },
+  {
+    icon: FiActivity,
+    title: 'Performance IT',
+    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilite de vos systemes en production.',
+    color: colors.services.performance,
+    href: '/services/performance',
+  },
 ]
 
 export default function ServicesPreview() {
@@ -46,12 +53,12 @@ export default function ServicesPreview() {
           label="Nos services"
           title="Expertise technique, resultats concrets"
           gradientWord="resultats concrets"
-          subtitle="Trois piliers d'excellence pour couvrir tous vos besoins technologiques."
+          subtitle="Quatre piliers d'excellence pour couvrir tous vos besoins technologiques."
         />
 
         <MotionSimpleGrid
           ref={ref}
-          columns={{ base: 1, md: 3 }}
+          columns={{ base: 1, md: 2, lg: 4 }}
           spacing={8}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
