@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Contact' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact - GMG Labs',
+    description: 'Discutons de votre projet. Devis gratuit.',
+    images: ['/og-image.png'],
   },
 }
 

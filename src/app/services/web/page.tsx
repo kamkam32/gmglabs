@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Développement Web' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Développement Web - GMG Labs',
+    description: 'Applications web performantes avec Next.js et React au Maroc.',
+    images: ['/og-image.png'],
   },
 }
 

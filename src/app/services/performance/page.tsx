@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Performance IT' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Performance IT - GMG Labs',
+    description: 'Tests de charge, APM et audit de performance IT au Maroc.',
+    images: ['/og-image.png'],
   },
 }
 

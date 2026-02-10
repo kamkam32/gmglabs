@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Applications Mobiles' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Applications Mobiles - GMG Labs',
+    description: 'Apps iOS et Android avec React Native au Maroc.',
+    images: ['/og-image.png'],
   },
 }
 

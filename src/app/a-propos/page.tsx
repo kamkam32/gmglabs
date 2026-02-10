@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Agence Tech Premium au Maroc' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'À propos - GMG Labs',
+    description: 'Notre histoire, nos valeurs et notre équipe.',
+    images: ['/og-image.png'],
   },
 }
 

@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     siteName: 'GMG Labs',
     locale: 'fr_MA',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Tarifs' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tarifs - GMG Labs',
+    description: 'Formules de développement web, mobile et IA au Maroc.',
+    images: ['/og-image.png'],
   },
 }
 
