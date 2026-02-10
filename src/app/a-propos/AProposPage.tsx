@@ -26,7 +26,7 @@ const cofounders = [
   {
     name: 'Kamil Alami',
     role: 'Co-fondateur – Product Builder',
-    description: 'Profil Product Builder : à la fois stratégiste, technologue et exécutant. Conçoit, développe et livre les produits de A à Z – de la vision produit au code, en passant par le design UX, l\'architecture technique et le go-to-market. C\'est le pilier opérationnel sur lequel repose l\'exécution de chaque projet GMG Labs.',
+    description: 'Profil Product Builder avec +5 ans d\'expérience en conception de produits digitaux. De la stratégie produit au développement, en passant par le design UX et le go-to-market. Expertise en IA générative et méthodologies agiles.',
     expertise: ['Product Strategy', 'UX/UI Design', 'Full-stack Dev', 'IA & RAG'],
     formation: 'ESCP Europe / NEOMA Business School',
   },
@@ -41,7 +41,7 @@ const cofounders = [
     name: 'Mehdi Essakalli',
     role: 'Co-fondateur – Data & Stratégie',
     description: 'Profil stratégie et data avec une expérience en R&D Big Data (MFG Labs) et en conseil en transformation digitale auprès de l\'État et de grands comptes du CAC 40. Expertise en blockchain, IA et automatisation.',
-    expertise: ['Data & Big Data', 'Blockchain', 'Stratégie digitale', 'IA & Automatisation'],
+    expertise: ['Data & Big Data', 'Blockchain', 'UX/UI Design', 'IA & Automatisation'],
     formation: 'Sciences-Po Paris x LSE – Finance & Stratégie',
   },
 ]
