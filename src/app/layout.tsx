@@ -59,6 +59,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0A0A0F" />
+        <meta name="facebook-domain-verification" content="0bmsbc0lthok16g2h2ctrloqow5ohj" />
       </head>
       <body>
         <Script
