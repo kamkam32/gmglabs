@@ -290,6 +290,7 @@
       {
         "name": "Starter",
         "price": "15,000 MAD",
+        "priceEur": "~€1,400",
         "priceNote": "starting from",
         "description": "Ideal for small businesses that need a professional, SEO-optimized business website.",
         "features": [
@@ -305,6 +306,7 @@
       {
         "name": "Business",
         "price": "40,000 MAD",
+        "priceEur": "~€3,700",
         "priceNote": "starting from",
         "description": "For ambitious projects: web applications, e-commerce or SaaS platforms with advanced features.",
         "features": [

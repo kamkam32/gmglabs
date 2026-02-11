@@ -10,6 +10,7 @@ import { localePath } from '@/i18n/config'
 interface PricingCardProps {
   name: string
   price: string
+  priceEur?: string
   priceNote?: string
   description: string
   features: string[]
@@ -21,6 +22,7 @@ interface PricingCardProps {
 export default function PricingCard({
   name,
   price,
+  priceEur,
   priceNote,
   description,
   features,
@@ -92,6 +94,11 @@ export default function PricingCard({
               </Text>
             )}
           </HStack>
+          {priceEur && (
+            <Text fontSize="sm" color={colors.text.tertiary} mt={1}>
+              {priceEur}
+            </Text>
+          )}
         </Box>
 
         <Text fontSize="sm" color={colors.text.secondary} lineHeight="1.6">
