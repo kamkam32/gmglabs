@@ -4,6 +4,8 @@ import { Box, Heading, Text, VStack, HStack, Button, Badge } from '@chakra-ui/re
 import { FiCheck, FiArrowRight } from 'react-icons/fi'
 import Link from 'next/link'
 import { colors } from '@/lib/colors'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 interface PricingCardProps {
   name: string
@@ -23,9 +25,12 @@ export default function PricingCard({
   description,
   features,
   popular = false,
-  ctaText = 'Commencer',
+  ctaText,
   ctaHref = '/contact',
 }: PricingCardProps) {
+  const { locale, dict } = useLocale()
+  const buttonText = ctaText || dict.pricing.startCta
+
   return (
     <Box
       bg={colors.bg.card}
@@ -66,7 +71,7 @@ export default function PricingCard({
             fontSize="xs"
             fontWeight="700"
           >
-            Populaire
+            {dict.pricing.popular}
           </Badge>
         </>
       )}
@@ -110,7 +115,7 @@ export default function PricingCard({
 
         <Button
           as={Link}
-          href={ctaHref}
+          href={localePath(ctaHref, locale)}
           w="full"
           size="lg"
           bgGradient={popular ? colors.accent.gradient : undefined}
@@ -127,7 +132,7 @@ export default function PricingCard({
           }}
           rightIcon={<FiArrowRight />}
         >
-          {ctaText}
+          {buttonText}
         </Button>
       </VStack>
     </Box>

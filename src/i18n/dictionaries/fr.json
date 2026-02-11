@@ -1,0 +1,564 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "realisations": "Réalisations",
+    "blog": "Blog",
+    "pricing": "Tarifs",
+    "about": "À propos",
+    "contact": "Contactez-nous",
+    "homeAriaLabel": "GMG Labs - Accueil",
+    "mainNavAriaLabel": "Navigation principale"
+  },
+  "footer": {
+    "description": "Agence tech premium basée à Casablanca. Nous construisons des produits digitaux qui font la différence.",
+    "servicesTitle": "Services",
+    "webDev": "Développement Web",
+    "mobileApps": "Applications Mobiles",
+    "ai": "Intelligence Artificielle",
+    "pricing": "Tarifs",
+    "companyTitle": "Entreprise",
+    "about": "À propos",
+    "realisations": "Réalisations",
+    "blog": "Blog",
+    "contactLabel": "Contact",
+    "gmgLabs": "GMG Labs",
+    "legalTitle": "Mentions légales",
+    "copyright": "GMG Labs. Tous droits réservés.",
+    "address": "Casablanca, Maroc",
+    "whatsappAriaLabel": "Nous contacter sur WhatsApp"
+  },
+  "hero": {
+    "badge": "Agence Tech Premium — Casablanca",
+    "title": "Nous construisons le ",
+    "titleGradient": "futur digital",
+    "typewriter": "De l'idée au produit. Nous concevons des applications web, mobiles et IA qui propulsent les entreprises marocaines vers le succès.",
+    "ctaPrimary": "Démarrer un projet",
+    "ctaSecondary": "Voir nos projets"
+  },
+  "services": {
+    "label": "Nos services",
+    "title": "Expertise technique, résultats concrets",
+    "gradientWord": "résultats concrets",
+    "subtitle": "Quatre piliers d'excellence pour couvrir tous vos besoins technologiques.",
+    "learnMore": "En savoir plus →",
+    "web": {
+      "title": "Développement Web",
+      "description": "Applications web performantes avec Next.js, React et des architectures modernes. SEO, rapidité et expérience utilisateur premium.",
+      "descriptionLong": "Applications web performantes avec Next.js, React et des architectures modernes. SEO natif, rapidité et expérience utilisateur premium.",
+      "features": ["Sites vitrine", "Applications SaaS", "E-commerce", "Dashboards", "APIs REST/GraphQL"]
+    },
+    "mobile": {
+      "title": "Applications Mobiles",
+      "description": "Apps iOS et Android natives et cross-platform avec React Native. Design soigné et performances optimales.",
+      "descriptionLong": "Apps iOS et Android natives et cross-platform avec React Native. Design soigné, performances optimales et déploiement App Store/Play Store.",
+      "features": ["Apps cross-platform", "Apps natives", "MVP mobile", "Apps de livraison", "Apps de réservation"]
+    },
+    "ia": {
+      "title": "Intelligence Artificielle",
+      "description": "Chatbots, automatisation et solutions IA sur mesure. LLMs, RAG, computer vision et NLP pour transformer vos processus.",
+      "descriptionLong": "Chatbots, automatisation et solutions IA sur mesure. LLMs, RAG, computer vision et NLP pour transformer vos processus métier.",
+      "features": ["Chatbots WhatsApp", "RAG / Bases documentaires", "Automatisation", "Computer Vision", "Analyse de données"]
+    },
+    "performance": {
+      "title": "Performance IT",
+      "description": "Tests de charge, monitoring APM et audit de performance pour garantir la fiabilité de vos systèmes en production.",
+      "descriptionLong": "Tests de charge, monitoring APM et audit de performance pour garantir la fiabilité et la rapidité de vos systèmes en production.",
+      "features": ["Tests de charge (Neoload)", "APM Dynatrace / AppDynamics", "Audit de performance", "Stress tests", "Recommandation Go/No Go"]
+    }
+  },
+  "servicesPage": {
+    "heroTitle": "Des services sur mesure pour votre ",
+    "heroGradientWord": "ambition digitale",
+    "heroSubtitle": "Quatre pôles d'expertise pour couvrir l'ensemble de vos besoins technologiques, de la conception au déploiement."
+  },
+  "servicesDetail": {
+    "technologiesTitle": "Technologies utilisees",
+    "processTitle": "Notre processus",
+    "web": {
+      "heroTitle": "Applications web qui performent",
+      "heroGradientWord": "performent",
+      "heroSubtitle": "De la landing page au SaaS complexe, nous construisons des applications web rapides, sécurisées et optimisées pour le SEO.",
+      "features": [
+        { "title": "Interfaces modernes et responsives", "description": "Design pixel-perfect avec Chakra UI et Framer Motion. Chaque interface est pensée pour offrir une expérience fluide sur tous les appareils, du mobile au desktop." },
+        { "title": "Performance et rapidité", "description": "Architecture Next.js avec SSR/SSG, optimisation des images, lazy loading et code splitting. Temps de chargement inférieur à 2 secondes garanti." },
+        { "title": "SEO natif et avancé", "description": "Metadata dynamique, JSON-LD, sitemap automatique, Open Graph. Votre application est indexée et visible dès le premier jour." },
+        { "title": "Sécurité et scalabilité", "description": "Authentification robuste, protection CSRF/XSS, HTTPS. Architecture serverless qui scale automatiquement avec votre croissance." }
+      ],
+      "processSteps": [
+        { "title": "Découverte", "description": "Analyse de vos besoins, audit de l'existant, définition du cahier des charges et des objectifs." },
+        { "title": "Design", "description": "Maquettes Figma, prototype interactif, validation du design system et de l'architecture technique." },
+        { "title": "Développement", "description": "Sprints agiles de 2 semaines, démos régulières, intégration continue et tests automatisés." },
+        { "title": "Déploiement", "description": "Mise en production sur Vercel, monitoring, formation et support technique post-lancement." }
+      ],
+      "cta": "Démarrer un projet web"
+    },
+    "mobile": {
+      "heroTitle": "Applications mobiles qui marquent",
+      "heroGradientWord": "marquent",
+      "heroSubtitle": "Des apps iOS et Android fluides, performantes et avec un design natif. Une seule codebase, deux plateformes.",
+      "features": [
+        { "title": "Cross-platform avec React Native", "description": "Une seule codebase pour iOS et Android. Réduction de 40% du temps de développement tout en conservant une expérience native sur chaque plateforme." },
+        { "title": "Déploiement App Store & Play Store", "description": "Nous gérons tout le processus de publication : builds, certificats, screenshots, fiches store et optimisation ASO." },
+        { "title": "Offline-first et temps réel", "description": "Synchronisation hors-ligne, push notifications et mises à jour en temps réel pour une expérience sans interruption." },
+        { "title": "Push notifications intelligentes", "description": "Notifications ciblées et segmentées pour engager vos utilisateurs au bon moment avec le bon message." }
+      ],
+      "processSteps": [
+        { "title": "Prototype", "description": "Définition du MVP, wireframes et prototype Figma interactif pour valider l'UX avant le développement." },
+        { "title": "Développement", "description": "Sprints de 2 semaines avec builds de test sur TestFlight et Play Store beta pour des retours continus." },
+        { "title": "Tests", "description": "Tests sur appareils réels, performance profiling, tests d'accessibilité et correction des bugs." },
+        { "title": "Lancement", "description": "Publication sur les stores, monitoring Crashlytics, analytics et itérations post-lancement." }
+      ],
+      "cta": "Lancer une app mobile"
+    },
+    "ia": {
+      "heroTitle": "L'IA au service de votre entreprise",
+      "heroGradientWord": "votre entreprise",
+      "heroSubtitle": "Des solutions intelligentes qui automatisent, analysent et optimisent vos processus métier. Du chatbot à la computer vision.",
+      "features": [
+        { "title": "Chatbots conversationnels", "description": "Chatbots WhatsApp et web alimentés par des LLMs. RAG sur vos documents pour des réponses précises et contextuelles, 24h/24." },
+        { "title": "RAG & Bases documentaires", "description": "Indexation et recherche sémantique sur vos documents internes. Vos employés trouvent l'information en secondes au lieu de minutes." },
+        { "title": "Computer Vision", "description": "Détection d'objets, OCR intelligent, contrôle qualité automatisé. Transformez vos caméras en capteurs intelligents." },
+        { "title": "Analyse prédictive", "description": "Modèles de prédiction pour anticiper la demande, détecter les anomalies et optimiser vos opérations en temps réel." }
+      ],
+      "processSteps": [
+        { "title": "Audit IA", "description": "Identification des cas d'usage à fort impact, évaluation de la faisabilité et estimation du ROI attendu." },
+        { "title": "POC", "description": "Proof of concept en 2-4 semaines pour valider la solution sur un périmètre réduit avec vos données réelles." },
+        { "title": "Production", "description": "Industrialisation de la solution, intégration aux systèmes existants, monitoring et alerting." },
+        { "title": "Optimisation", "description": "Fine-tuning continu, ajout de fonctionnalités et amélioration des performances basée sur les feedbacks." }
+      ],
+      "cta": "Explorer les solutions IA"
+    },
+    "performance": {
+      "heroTitle": "Performance IT au service de votre business",
+      "heroGradientWord": "votre business",
+      "heroSubtitle": "Tests de charge, monitoring applicatif et audit de performance pour garantir la fiabilité et la rapidité de vos systèmes en production.",
+      "features": [
+        { "title": "Tests de charge & stress tests", "description": "Campagnes de tests de performance avec Neoload : simulation de charge utilisateur, identification des goulots d'étranglement et validation de la capacité de vos systèmes avant mise en production." },
+        { "title": "APM & monitoring production", "description": "Mise en place de Dynatrace et AppDynamics pour le suivi en temps réel de la performance applicative. Détection proactive des anomalies et alerting intelligent." },
+        { "title": "Audit de performance IT", "description": "Analyse complète de votre architecture technique, identification des points de faiblesse et recommandations Go/No Go basées sur des données concrètes." },
+        { "title": "Optimisation & gouvernance", "description": "Reporting opérationnel, comitologie performance et plans d'action pour améliorer continuellement la rapidité et la fiabilité de vos applications." }
+      ],
+      "processSteps": [
+        { "title": "Audit", "description": "Analyse de l'architecture technique, définition des scénarios de test et des seuils de performance attendus." },
+        { "title": "Campagne de tests", "description": "Scripting, exécution des tests de charge et stress tests sur vos environnements avec Neoload." },
+        { "title": "Analyse & Go/No Go", "description": "Analyse détaillée des résultats, identification des bottlenecks et recommandation Go/No Go argumentée." },
+        { "title": "Monitoring continu", "description": "Mise en place de l'APM en production, dashboards de suivi et alerting pour une performance garantie dans la durée." }
+      ],
+      "cta": "Auditer ma performance IT"
+    }
+  },
+  "featuredProject": {
+    "label": "Projet vedette",
+    "title": "Ello, notre fierté",
+    "gradientWord": "fierté",
+    "subtitle": "La plateforme de réservation beauté #1 au Maroc, conçue et développée par GMG Labs.",
+    "caseStudy": "Étude de cas",
+    "visitSite": "Visiter ello.ma",
+    "badge": "Web + Mobile",
+    "projectTitle": "Ello — Plateforme Beauté & Bien-être",
+    "projectDescription": "Plateforme complète de réservation et gestion pour les professionnels de la beauté au Maroc. Réservation en temps réel, rappels WhatsApp automatiques, dashboard pro et app mobile.",
+    "metricsLabels": {
+      "users": "Utilisateurs",
+      "bookings": "Réservations/mois",
+      "seoScore": "Score SEO",
+      "uptime": "Uptime"
+    }
+  },
+  "stats": {
+    "projectsDelivered": "Projets livrés",
+    "activeUsers": "Utilisateurs actifs",
+    "yearsExperience": "Années d'expérience",
+    "clientSatisfaction": "Clients satisfaits"
+  },
+  "testimonials": {
+    "label": "Témoignages",
+    "title": "Ce que nos clients disent",
+    "gradientWord": "clients",
+    "subtitle": "Des partenariats durables basés sur la confiance et les résultats.",
+    "quotes": [
+      {
+        "name": "Sarah B.",
+        "role": "Fondatrice, Beauty Lounge",
+        "content": "GMG Labs a transformé notre salon avec Ello. Nos réservations ont doublé en 3 mois et on ne gère plus rien manuellement. Un travail exceptionnel !"
+      },
+      {
+        "name": "Youssef M.",
+        "role": "CEO, LogiExpress",
+        "content": "L'équipe a livré un dashboard logistique impeccable. Le suivi temps réel de nos livraisons a révolutionné notre façon de travailler."
+      },
+      {
+        "name": "Amina K.",
+        "role": "Directrice, Coopérative Artisanale",
+        "content": "Grâce à la marketplace créée par GMG Labs, nos artisans vendent maintenant dans 12 pays. Le chiffre d'affaires a triplé."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à lancer votre ",
+    "titleGradient": "projet ?",
+    "subtitle": "Discutons de votre vision. Premier appel de découverte gratuit et sans engagement.",
+    "ctaPrimary": "Planifier un appel"
+  },
+  "about": {
+    "heroTitle": "L'équipe derrière ",
+    "heroTitleGradient": "GMG Labs",
+    "heroSubtitle": "GMG Labs est une agence tech premium basée à Casablanca. Nous construisons des produits digitaux qui font la différence pour les entreprises marocaines et au-delà.",
+    "ctaGmgLabs": "GMG Labs",
+    "ctaEllo": "Découvrir Ello",
+    "storyLabel": "Notre histoire",
+    "storyTitle": "Comment tout a commencé",
+    "storyGradientWord": "commencé",
+    "storyParagraphs": [
+      "GMG Labs est né d'un constat simple : le Maroc regorge de talents tech, mais manque d'agences capables de délivrer des produits au niveau des standards internationaux. Nous avons décidé de changer cela.",
+      "Notre premier grand projet, Ello, est devenu la plateforme de réservation beauté de référence au Maroc. Cette réussite nous a convaincu que nous pouvions reproduire ce niveau d'excellence pour d'autres entreprises.",
+      "Aujourd'hui, nous accompagnons startups et grandes entreprises dans leur transformation digitale avec quatre pôles d'expertise : Web, Mobile, Intelligence Artificielle et Performance IT."
+    ],
+    "storyLink": "gmg-labs.com",
+    "teamLabel": "L'équipe",
+    "teamTitle": "Les cofondateurs",
+    "teamGradientWord": "cofondateurs",
+    "teamSubtitle": "Trois profils complémentaires unissant stratégie, technologie et performance.",
+    "cofounders": [
+      {
+        "name": "Kamil Alami",
+        "role": "Co-fondateur – Product Builder",
+        "description": "Profil Product Builder avec +5 ans d'expérience en conception de produits digitaux. De la stratégie produit au développement, en passant par le design UX et le go-to-market. Expertise en IA générative et méthodologies agiles.",
+        "formation": "ESCP Europe / NEOMA Business School"
+      },
+      {
+        "name": "Oualid Tebib",
+        "role": "Co-fondateur – Performance IT & Stratégie Digitale",
+        "description": "Consultant en stratégie digitale et IT avec 8 ans d'expérience dans l'accompagnement de grands groupes (BNP, ENGIE, Saint-Gobain) dans leurs projets de transformation. Expert en performance applicative et architecture IT.",
+        "formation": "Paris-Dauphine – Master MIAGE-IF"
+      },
+      {
+        "name": "Mehdi Essakalli",
+        "role": "Co-fondateur – Data & Stratégie",
+        "description": "Profil stratégie et data avec une expérience en R&D Big Data (MFG Labs) et en conseil en transformation digitale auprès de l'État et de grands comptes du CAC 40. Expertise en blockchain, IA et automatisation.",
+        "formation": "Sciences-Po Paris x LSE – Finance & Stratégie"
+      }
+    ],
+    "statsLabel": "En chiffres",
+    "statsTitle": "GMG Labs en quelques chiffres",
+    "statsGradientWord": "chiffres",
+    "statsItems": [
+      { "label": "Ans d'expérience cumulée" },
+      { "label": "Cofondateurs" },
+      { "label": "Projets livrés" },
+      { "label": "Pôles d'expertise" }
+    ],
+    "valuesLabel": "Nos principes",
+    "valuesTitle": "Nos valeurs fondatrices",
+    "valuesGradientWord": "valeurs",
+    "values": [
+      { "title": "Excellence", "description": "Chaque ligne de code est écrite avec soin. Nous ne livrons que des produits dont nous sommes fiers." },
+      { "title": "Passion", "description": "Nous aimons ce que nous faisons. Cette passion se reflète dans la qualité de chaque projet." },
+      { "title": "Innovation", "description": "Nous restons à la pointe de la technologie pour offrir les meilleures solutions à nos clients." },
+      { "title": "Partenariat", "description": "Nous ne sommes pas un prestataire, mais un partenaire. Votre succès est notre succès." }
+    ],
+    "timelineLabel": "Notre parcours",
+    "timelineTitle": "Les étapes clés",
+    "timelineGradientWord": "étapes clés",
+    "timeline": [
+      { "year": "2025", "title": "Création de GMG Labs", "description": "Fondation de l'agence à Casablanca avec une vision claire : créer des produits digitaux de classe mondiale." },
+      { "year": "2025", "title": "Lancement d'Ello", "description": "Développement et lancement de notre produit phare : Ello, la plateforme de réservation beauté #1 au Maroc." },
+      { "year": "2025", "title": "Messidor Patrimoine", "description": "Conception du dashboard financier pour Messidor Patrimoine : suivi OPCVM, OPCI et simulateur d'investissement." }
+    ]
+  },
+  "contact": {
+    "heroTitle": "Parlons de votre ",
+    "heroTitleGradient": "projet",
+    "heroSubtitle": "Premier appel de découverte gratuit et sans engagement. Contactez-nous directement.",
+    "directContact": "Contactez-nous directement",
+    "directContactSubtitle": "N'hésitez pas à nous appeler, nous envoyer un email ou nous écrire sur WhatsApp. Nous répondons sous 24h.",
+    "emailLabel": "Email",
+    "phoneLabel": "Téléphone",
+    "whatsappLabel": "WhatsApp",
+    "addressLabel": "Adresse",
+    "addressValue": "Casablanca, Maroc"
+  },
+  "pricing": {
+    "heroTitle": "Des tarifs ",
+    "heroTitleGradient": "transparents",
+    "heroSubtitle": "Pas de surprise. Trois formules claires pour couvrir tous les types de projets, du site vitrine à la solution enterprise.",
+    "faqTitle": "Questions fréquentes",
+    "popular": "Populaire",
+    "startingFrom": "à partir de",
+    "startCta": "Commencer",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "15 000 MAD",
+        "priceNote": "à partir de",
+        "description": "Idéal pour les petites entreprises qui ont besoin d'un site vitrine professionnel et optimisé SEO.",
+        "features": [
+          "Site vitrine responsive (5-7 pages)",
+          "Design premium sur mesure",
+          "SEO optimisé (meta, sitemap, JSON-LD)",
+          "Formulaire de contact",
+          "Intégration Google Analytics",
+          "Hébergement 1 an inclus",
+          "Support 30 jours post-lancement"
+        ]
+      },
+      {
+        "name": "Business",
+        "price": "40 000 MAD",
+        "priceNote": "à partir de",
+        "description": "Pour les projets ambitieux : applications web, e-commerce ou plateformes SaaS avec fonctionnalités avancées.",
+        "features": [
+          "Application web complète",
+          "Backend et base de données",
+          "Authentification utilisateurs",
+          "Dashboard d'administration",
+          "API REST/GraphQL",
+          "Tests automatisés",
+          "Tests de performance (stress test)",
+          "Monitoring applicatif (setup)",
+          "CI/CD et déploiement",
+          "Support 90 jours post-lancement"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": "Sur devis",
+        "description": "Solutions sur mesure pour les grands projets : applications mobiles, IA, tests de charge, architectures complexes et équipes dédiées.",
+        "features": [
+          "Tout le plan Business",
+          "Application mobile (iOS + Android)",
+          "Solutions IA / Chatbots",
+          "Tests de charge avancés (Neoload)",
+          "APM & monitoring production (Dynatrace)",
+          "Audit de performance IT",
+          "Recommandation Go/No Go performance",
+          "Architecture scalable",
+          "Équipe dédiée",
+          "SLA et garanties de disponibilité",
+          "Formation équipe client",
+          "Support prioritaire illimité"
+        ],
+        "ctaText": "Demander un devis"
+      }
+    ],
+    "faqItems": [
+      {
+        "question": "Combien de temps dure un projet typique ?",
+        "answer": "Un site vitrine prend 2 à 4 semaines. Une application web complète, 2 à 4 mois. Une app mobile, 3 à 6 mois. Chaque projet est différent, nous vous donnerons une estimation précise lors du premier appel."
+      },
+      {
+        "question": "Quelles sont les modalités de paiement ?",
+        "answer": "Nous fonctionnons en 3 versements : 40% à la signature, 30% à mi-parcours et 30% à la livraison. Pour les projets Enterprise, les modalités sont flexibles et négociables."
+      },
+      {
+        "question": "Est-ce que le prix inclut l'hébergement ?",
+        "answer": "Le plan Starter inclut 1 an d'hébergement sur Vercel. Pour les plans Business et Enterprise, nous recommandons et configurons l'hébergement optimal (Vercel, AWS, ou autre) selon vos besoins."
+      },
+      {
+        "question": "Que se passe-t-il après la livraison ?",
+        "answer": "Chaque plan inclut une période de support gratuit (30 à 90 jours). Au-delà, nous proposons des contrats de maintenance mensuels à partir de 2 000 MAD/mois."
+      },
+      {
+        "question": "Pouvez-vous travailler avec notre équipe technique existante ?",
+        "answer": "Absolument. Nous pouvons intervenir en renfort de votre équipe, en mode régie ou en mode projet. Nous nous adaptons à vos outils et processus."
+      },
+      {
+        "question": "Les prix sont-ils négociables ?",
+        "answer": "Les prix affichés sont des tarifs de base. Le prix final dépend de la complexité exacte de votre projet. Nous vous invitons à nous contacter pour un devis personnalisé gratuit."
+      }
+    ]
+  },
+  "portfolio": {
+    "heroTitle": "Nos ",
+    "heroTitleGradient": "réalisations",
+    "heroSubtitle": "Des projets concrets avec des résultats mesurables. Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs.",
+    "filterAll": "Tous",
+    "filterWeb": "Web",
+    "filterMobile": "Mobile",
+    "filterIA": "IA",
+    "featured": "Vedette",
+    "backToPortfolio": "Retour aux réalisations",
+    "challenge": "Le défi",
+    "solution": "Notre solution",
+    "results": "Résultats",
+    "technologies": "Technologies",
+    "visitSite": "Visiter le site",
+    "client": "Client",
+    "duration": "Durée",
+    "year": "Année"
+  },
+  "projects": {
+    "ello": {
+      "title": "Ello - Plateforme Beauté & Bien-être",
+      "shortDescription": "Plateforme de réservation beauté #1 au Maroc",
+      "description": "Plateforme complète de réservation et gestion pour les professionnels de la beauté au Maroc. Ello connecte les clients avec les meilleurs salons, instituts et freelances, avec un système de réservation en temps réel, paiement en ligne et gestion d'agenda intelligent.",
+      "client": "Ello (produit interne)",
+      "duration": "8 mois",
+      "challenge": "Le marché marocain de la beauté manquait d'une solution digitale moderne. Les professionnels gèrent encore leurs rendez-vous par téléphone et WhatsApp, causant des no-shows et une perte de revenus.",
+      "solution": "Nous avons construit une plateforme full-stack avec une app client (web + mobile), un dashboard pro et un système de rappels WhatsApp automatiques. L'architecture serverless avec Supabase permet une scalabilité sans limites.",
+      "results": [
+        "Plus de 100 professionnels inscrits en 6 mois",
+        "Taux de no-show réduit de 40%",
+        "Score Lighthouse 95+ sur toutes les métriques",
+        "Temps de chargement < 2s sur 3G"
+      ],
+      "metrics": [
+        { "label": "Utilisateurs", "value": "10K+" },
+        { "label": "Réservations/mois", "value": "5K+" },
+        { "label": "Score SEO", "value": "98" },
+        { "label": "Uptime", "value": "99.9%" }
+      ]
+    },
+    "messidor-patrimoine": {
+      "title": "Messidor Patrimoine - Dashboard Financier",
+      "shortDescription": "Plateforme de gestion de patrimoine et investissement",
+      "description": "Plateforme de gestion de patrimoine et d'investissement financier au Maroc. Dashboard complet avec suivi OPCVM, OPCI, simulateur d'investissement et suivi boursier en temps réel.",
+      "client": "Messidor Patrimoine",
+      "duration": "4 mois",
+      "challenge": "Les investisseurs marocains manquaient d'un outil centralisé pour suivre leurs placements OPCVM, OPCI et boursiers avec des données fiables et actualisées.",
+      "solution": "Dashboard web sécurisé avec authentification, suivi en temps réel des OPCVM et OPCI, simulateur d'investissement interactif et module de suivi boursier.",
+      "results": [
+        "Centralisation de tous les placements en un seul dashboard",
+        "Simulateur d'investissement utilisé par des centaines de clients",
+        "Données financières actualisées quotidiennement"
+      ],
+      "metrics": [
+        { "label": "OPCVM suivis", "value": "200+" },
+        { "label": "Utilisateurs", "value": "500+" },
+        { "label": "Simulations/mois", "value": "1K+" },
+        { "label": "Uptime", "value": "99.9%" }
+      ]
+    },
+    "ello-pro": {
+      "title": "Ello Pro - Dashboard de Gestion pour Salons",
+      "shortDescription": "Dashboard SaaS de gestion pour salons de beauté et bien-être",
+      "description": "Dashboard SaaS complet pour les professionnels de la beauté et du bien-être. Ello Pro offre un planning interactif en drag-and-drop, un chatbot IA pour la prise de rendez-vous, des notifications en temps réel, un studio de création de contenu avec éditeur vidéo, un portail de recrutement de talents et des analytics avancés.",
+      "client": "Ello (produit interne)",
+      "duration": "10 mois",
+      "challenge": "Les gérants de salons au Maroc utilisent des outils fragmentés (cahiers, WhatsApp, Excel) pour gérer leurs rendez-vous, clients et équipes. Aucune solution locale ne combine planning, analytics, contenu et IA en un seul outil.",
+      "solution": "Nous avons développé un dashboard tout-en-un avec planning drag-and-drop, gestion multi-services en parallèle, chatbot IA capable de prendre des RDV en langage naturel, notifications temps réel avec alertes sonores, et un content studio intégré pour créer des reels vidéo directement dans le navigateur.",
+      "results": [
+        "Planning interactif avec gestion de bundles multi-services et phases parallèles",
+        "Chatbot IA avec OpenAI pour prise de RDV, gestion clients et insights business",
+        "Notifications en temps réel via Supabase Realtime avec alertes sonores",
+        "Content Studio avec éditeur vidéo FFmpeg et générateur de reels automatique",
+        "Portail de recrutement de talents (coiffeurs, esthéticiennes) avec gestion de profils",
+        "Module analytics avec KPIs, graphiques et suivi de performance"
+      ],
+      "metrics": [
+        { "label": "Salons actifs", "value": "100+" },
+        { "label": "RDV gérés/mois", "value": "5K+" },
+        { "label": "Fichiers source", "value": "150+" },
+        { "label": "Uptime", "value": "99.9%" }
+      ]
+    }
+  },
+  "blog": {
+    "heroTitle": "Le ",
+    "heroTitleGradient": "blog",
+    "heroTitleEnd": " GMG Labs",
+    "heroSubtitle": "Articles, guides et retours d'expérience sur le développement web, mobile et l'intelligence artificielle !",
+    "noArticles": "Aucun article pour le moment.",
+    "noArticlesSubtitle": "Revenez bientôt, nous préparons du contenu de qualité !",
+    "backToBlog": "Retour au blog",
+    "readMore": "Lire l'article",
+    "blogCta": {
+      "title": "Un projet en tete ?",
+      "subtitle": "Discutons de votre idee. Premier appel de decouverte gratuit et sans engagement.",
+      "cta": "Contactez-nous"
+    }
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "editor": "Éditeur du site",
+    "editorText": "Le site gmg-labs.com est édité par GMG Labs, société basée à Casablanca, Maroc.",
+    "editorContact": "Email : contact@ello.ma\nTéléphone : +33 6 19 06 12 15\nAdresse : Casablanca, Maroc",
+    "hosting": "Hébergement",
+    "hostingText": "Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.",
+    "ip": "Propriété intellectuelle",
+    "ipText": "L'ensemble du contenu de ce site (textes, images, logos, design) est la propriété exclusive de GMG Labs et est protégé par les lois relatives à la propriété intellectuelle. Toute reproduction, même partielle, est interdite sans autorisation préalable.",
+    "data": "Protection des données personnelles",
+    "dataText": "Les informations collectées via le formulaire de contact sont utilisées uniquement pour répondre à vos demandes. Elles ne sont ni vendues ni transmises à des tiers. Conformément à la loi 09-08 relative à la protection des données à caractère personnel au Maroc, vous disposez d'un droit d'accès, de rectification et de suppression de vos données.",
+    "cookies": "Cookies",
+    "cookiesText": "Ce site utilise des cookies à des fins d'analyse de trafic (Google Analytics). Vous pouvez désactiver les cookies dans les paramètres de votre navigateur."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
+  },
+  "metadata": {
+    "home": {
+      "title": "GMG Labs - Agence de développement Web, Mobile & IA au Maroc",
+      "description": "GMG Labs est une agence tech premium basée à Casablanca. Développement web, applications mobiles et solutions IA sur mesure. Créateurs d'Ello.",
+      "ogTitle": "GMG Labs - Agence Tech Premium au Maroc",
+      "ogDescription": "Développement web, mobile et IA sur mesure à Casablanca. Créateurs d'Ello."
+    },
+    "services": {
+      "title": "Services - Développement Web, Mobile & IA",
+      "description": "Découvrez nos services : développement web avec Next.js, applications mobiles React Native et solutions d'intelligence artificielle sur mesure.",
+      "ogTitle": "Nos Services - GMG Labs",
+      "ogDescription": "Développement web, mobile et IA sur mesure au Maroc."
+    },
+    "servicesWeb": {
+      "title": "Développement Web - Sites & Applications Web Performantes",
+      "description": "Développement web professionnel avec Next.js, React et TypeScript. Sites vitrine, applications SaaS, e-commerce et dashboards sur mesure au Maroc.",
+      "ogTitle": "Développement Web - GMG Labs",
+      "ogDescription": "Applications web performantes avec Next.js et React au Maroc."
+    },
+    "servicesMobile": {
+      "title": "Applications Mobiles - iOS & Android avec React Native",
+      "description": "Développement d'applications mobiles iOS et Android avec React Native. Apps cross-platform performantes, design natif et déploiement sur les stores.",
+      "ogTitle": "Applications Mobiles - GMG Labs",
+      "ogDescription": "Apps iOS et Android avec React Native au Maroc."
+    },
+    "servicesIA": {
+      "title": "Intelligence Artificielle - Chatbots, Automatisation & IA sur mesure",
+      "description": "Solutions d'intelligence artificielle sur mesure : chatbots WhatsApp, RAG, automatisation de processus, computer vision et analyse de données au Maroc.",
+      "ogTitle": "Intelligence Artificielle - GMG Labs",
+      "ogDescription": "Solutions IA sur mesure au Maroc : chatbots, automatisation et plus."
+    },
+    "servicesPerformance": {
+      "title": "Performance IT - Tests de charge, APM & Monitoring",
+      "description": "Tests de charge Neoload, monitoring Dynatrace/AppDynamics, audit de performance IT et recommandations Go/No Go pour garantir la fiabilité de vos systèmes au Maroc.",
+      "ogTitle": "Performance IT - GMG Labs",
+      "ogDescription": "Tests de charge, APM et audit de performance IT au Maroc."
+    },
+    "about": {
+      "title": "À propos - Notre histoire et notre équipe",
+      "description": "GMG Labs est une agence tech premium fondée à Casablanca. Découvrez notre histoire, nos valeurs et l'équipe derrière Ello et nos autres projets.",
+      "ogTitle": "À propos - GMG Labs",
+      "ogDescription": "Notre histoire, nos valeurs et notre équipe."
+    },
+    "contact": {
+      "title": "Contact - Discutons de votre projet",
+      "description": "Contactez GMG Labs pour discuter de votre projet web, mobile ou IA. Devis gratuit et premier appel de découverte sans engagement.",
+      "ogTitle": "Contact - GMG Labs",
+      "ogDescription": "Discutons de votre projet. Devis gratuit."
+    },
+    "pricing": {
+      "title": "Tarifs - Nos formules de développement",
+      "description": "Découvrez nos tarifs transparents pour le développement web, mobile et IA. Trois formules adaptées à tous les budgets et tous les projets.",
+      "ogTitle": "Tarifs - GMG Labs",
+      "ogDescription": "Formules de développement web, mobile et IA au Maroc."
+    },
+    "portfolio": {
+      "title": "Réalisations - Portfolio de nos projets",
+      "description": "Découvrez nos réalisations : applications web, mobiles et IA. Études de cas détaillées avec métriques et technologies utilisées.",
+      "ogTitle": "Nos Réalisations - GMG Labs",
+      "ogDescription": "Portfolio complet de nos projets web, mobile et IA."
+    },
+    "blog": {
+      "title": "Blog - Actualités Tech, Web & IA",
+      "description": "Articles et guides sur le développement web, les applications mobiles et l'intelligence artificielle. Conseils, tendances et retours d'expérience.",
+      "ogTitle": "Blog - GMG Labs",
+      "ogDescription": "Articles et guides sur le dev web, mobile et l'IA."
+    },
+    "legal": {
+      "title": "Mentions legales",
+      "description": "Mentions legales du site GMG Labs. Informations sur l'editeur, l'hebergeur et la propriete intellectuelle.",
+      "ogTitle": "Mentions légales - GMG Labs",
+      "ogDescription": "Mentions légales du site GMG Labs."
+    }
+  }
+}

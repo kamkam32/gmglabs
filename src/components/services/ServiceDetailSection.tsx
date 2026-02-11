@@ -31,6 +31,8 @@ interface ServiceDetailSectionProps {
   features: Feature[]
   technologies: string[]
   processSteps: ProcessStep[]
+  technologiesTitle?: string
+  processTitle?: string
 }
 
 export default function ServiceDetailSection({
@@ -41,6 +43,8 @@ export default function ServiceDetailSection({
   features,
   technologies,
   processSteps,
+  technologiesTitle = 'Technologies utilisees',
+  processTitle = 'Notre processus',
 }: ServiceDetailSectionProps) {
   const { ref: featRef, isInView: featInView } = useScrollAnimation()
   const { ref: techRef, isInView: techInView } = useScrollAnimation()
@@ -174,7 +178,7 @@ export default function ServiceDetailSection({
             variants={fadeInUp}
           >
             <Heading as="h2" fontSize="2xl" color="white" mb={8}>
-              Technologies utilisees
+              {technologiesTitle}
             </Heading>
             <HStack flexWrap="wrap" justify="center" gap={3}>
               {technologies.map((tech) => (
@@ -189,7 +193,7 @@ export default function ServiceDetailSection({
       <Box py={20} bg={colors.bg.section}>
         <Container maxW="1000px">
           <Heading as="h2" fontSize="2xl" color="white" mb={12} textAlign="center">
-            Notre processus
+            {processTitle}
           </Heading>
           <SimpleGrid
             ref={procRef}

@@ -21,6 +21,8 @@ import TechBadge from '@/components/services/TechBadge'
 import CTASection from '@/components/home/CTASection'
 import { colors } from '@/lib/colors'
 import type { Project } from '@/lib/projects'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const MotionBox = motion(Box)
 
@@ -32,7 +34,19 @@ const categoryColors: Record<string, string> = {
 }
 
 export default function ProjectDetailPage({ project }: { project: Project }) {
+  const { locale, dict } = useLocale()
   const accent = categoryColors[project.category] || colors.accent.cyan
+
+  // Get translated project text if available, falling back to project prop
+  const projectDict = (dict.projects as any)?.[project.slug]
+  const title = projectDict?.title ?? project.title
+  const description = projectDict?.description ?? project.description
+  const challenge = projectDict?.challenge ?? project.challenge
+  const solution = projectDict?.solution ?? project.solution
+  const results = projectDict?.results ?? project.results
+  const metrics = projectDict?.metrics ?? project.metrics
+  const client = projectDict?.client ?? project.client
+  const duration = projectDict?.duration ?? project.duration
 
   return (
     <Box>
@@ -56,10 +70,10 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Link href="/realisations">
+              <Link href={localePath('/realisations', locale)}>
                 <HStack spacing={2} color={colors.accent.cyan} mb={8} _hover={{ opacity: 0.8 }}>
                   <FiArrowLeft />
-                  <Text fontSize="sm" fontWeight="500">Retour aux réalisations</Text>
+                  <Text fontSize="sm" fontWeight="500">{dict.portfolio.backToPortfolio}</Text>
                 </HStack>
               </Link>
 
@@ -68,10 +82,10 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
                   {project.category === 'web+mobile' ? 'WEB + MOBILE' : project.category.toUpperCase()} — {project.year}
                 </Badge>
                 <Heading as="h1" fontSize={{ base: '2xl', md: '4xl' }} fontWeight="800" color="white" lineHeight="1.2">
-                  {project.title}
+                  {title}
                 </Heading>
                 <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8">
-                  {project.description}
+                  {description}
                 </Text>
                 {project.url && (
                   <Button
@@ -86,7 +100,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
                     rightIcon={<FiExternalLink />}
                     mt={2}
                   >
-                    Visiter le site
+                    {dict.portfolio.visitSite}
                   </Button>
                 )}
               </VStack>
@@ -98,7 +112,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
         <Box py={16} bg={colors.bg.section}>
           <Container maxW="900px">
             <SimpleGrid columns={{ base: 2, md: 4 }} spacing={6}>
-              {project.metrics.map((m) => (
+              {metrics.map((m: any) => (
                 <Box
                   key={m.label}
                   p={6}
@@ -126,18 +140,18 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               <VStack align="flex-start" spacing={4}>
                 <Heading as="h2" fontSize="xl" color="white">
-                  Le défi
+                  {dict.portfolio.challenge}
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  {project.challenge}
+                  {challenge}
                 </Text>
               </VStack>
               <VStack align="flex-start" spacing={4}>
                 <Heading as="h2" fontSize="xl" color="white">
-                  Notre solution
+                  {dict.portfolio.solution}
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  {project.solution}
+                  {solution}
                 </Text>
               </VStack>
             </SimpleGrid>
@@ -148,10 +162,10 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
         <Box py={16} bg={colors.bg.section}>
           <Container maxW="900px">
             <Heading as="h2" fontSize="xl" color="white" mb={6}>
-              Résultats
+              {dict.portfolio.results}
             </Heading>
             <VStack align="flex-start" spacing={3}>
-              {project.results.map((r, i) => (
+              {results.map((r: string, i: number) => (
                 <HStack key={i} spacing={3} align="flex-start">
                   <Box w="8px" h="8px" borderRadius="full" bg={accent} mt={2} flexShrink={0} />
                   <Text color={colors.text.secondary} lineHeight="1.7">
@@ -167,7 +181,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
         <Box py={16} bg={colors.bg.body}>
           <Container maxW="900px">
             <Heading as="h2" fontSize="xl" color="white" mb={6}>
-              Technologies
+              {dict.portfolio.technologies}
             </Heading>
             <HStack flexWrap="wrap" gap={3}>
               {project.technologies.map((tech) => (
@@ -183,19 +197,19 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
             <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={6}>
               <Box>
                 <Text fontSize="xs" color={colors.text.tertiary} textTransform="uppercase" letterSpacing="1px" mb={1}>
-                  Client
+                  {dict.portfolio.client}
                 </Text>
-                <Text color="white" fontWeight="600">{project.client}</Text>
+                <Text color="white" fontWeight="600">{client}</Text>
               </Box>
               <Box>
                 <Text fontSize="xs" color={colors.text.tertiary} textTransform="uppercase" letterSpacing="1px" mb={1}>
-                  Durée
+                  {dict.portfolio.duration}
                 </Text>
-                <Text color="white" fontWeight="600">{project.duration}</Text>
+                <Text color="white" fontWeight="600">{duration}</Text>
               </Box>
               <Box>
                 <Text fontSize="xs" color={colors.text.tertiary} textTransform="uppercase" letterSpacing="1px" mb={1}>
-                  Année
+                  {dict.portfolio.year}
                 </Text>
                 <Text color="white" fontWeight="600">{project.year}</Text>
               </Box>

@@ -11,47 +11,50 @@ import GlowCard from '@/components/shared/GlowCard'
 import CTASection from '@/components/home/CTASection'
 import { colors } from '@/lib/colors'
 import { useScrollAnimation, staggerContainer, fadeInUp } from '@/hooks/useScrollAnimation'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const MotionBox = motion(Box)
 const MotionSimpleGrid = motion(SimpleGrid)
 
-const services = [
-  {
-    icon: FiMonitor,
-    title: 'Développement Web',
-    description: 'Applications web performantes avec Next.js, React et des architectures modernes. SEO natif, rapidité et expérience utilisateur premium.',
-    features: ['Sites vitrine', 'Applications SaaS', 'E-commerce', 'Dashboards', 'APIs REST/GraphQL'],
-    color: colors.services.web,
-    href: '/services/web',
-  },
-  {
-    icon: FiSmartphone,
-    title: 'Applications Mobiles',
-    description: 'Apps iOS et Android natives et cross-platform avec React Native. Design soigné, performances optimales et déploiement App Store/Play Store.',
-    features: ['Apps cross-platform', 'Apps natives', 'MVP mobile', 'Apps de livraison', 'Apps de réservation'],
-    color: colors.services.mobile,
-    href: '/services/mobile',
-  },
-  {
-    icon: FiCpu,
-    title: 'Intelligence Artificielle',
-    description: 'Chatbots, automatisation et solutions IA sur mesure. LLMs, RAG, computer vision et NLP pour transformer vos processus métier.',
-    features: ['Chatbots WhatsApp', 'RAG / Bases documentaires', 'Automatisation', 'Computer Vision', 'Analyse de données'],
-    color: colors.services.ia,
-    href: '/services/ia',
-  },
-  {
-    icon: FiActivity,
-    title: 'Performance IT',
-    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilité et la rapidité de vos systèmes en production.',
-    features: ['Tests de charge (Neoload)', 'APM Dynatrace / AppDynamics', 'Audit de performance', 'Stress tests', 'Recommandation Go/No Go'],
-    color: colors.services.performance,
-    href: '/services/performance',
-  },
-]
-
 export default function ServicesPage() {
+  const { locale, dict } = useLocale()
   const { ref, isInView } = useScrollAnimation()
+
+  const services = [
+    {
+      icon: FiMonitor,
+      title: dict.services.web.title,
+      description: dict.services.web.descriptionLong,
+      features: dict.services.web.features,
+      color: colors.services.web,
+      href: '/services/web',
+    },
+    {
+      icon: FiSmartphone,
+      title: dict.services.mobile.title,
+      description: dict.services.mobile.descriptionLong,
+      features: dict.services.mobile.features,
+      color: colors.services.mobile,
+      href: '/services/mobile',
+    },
+    {
+      icon: FiCpu,
+      title: dict.services.ia.title,
+      description: dict.services.ia.descriptionLong,
+      features: dict.services.ia.features,
+      color: colors.services.ia,
+      href: '/services/ia',
+    },
+    {
+      icon: FiActivity,
+      title: dict.services.performance.title,
+      description: dict.services.performance.descriptionLong,
+      features: dict.services.performance.features,
+      color: colors.services.performance,
+      href: '/services/performance',
+    },
+  ]
 
   return (
     <Box>
@@ -78,12 +81,11 @@ export default function ServicesPage() {
                 color="white"
                 lineHeight="1.2"
               >
-                Des services sur mesure pour votre{' '}
-                <GradientText>ambition digitale</GradientText>
+                {dict.servicesPage.heroTitle}
+                <GradientText>{dict.servicesPage.heroGradientWord}</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Quatre pôles d&apos;expertise pour couvrir l&apos;ensemble de vos besoins technologiques,
-                de la conception au déploiement.
+                {dict.servicesPage.heroSubtitle}
               </Text>
             </VStack>
           </Container>
@@ -129,7 +131,7 @@ export default function ServicesPage() {
                       </VStack>
                       <Button
                         as={Link}
-                        href={service.href}
+                        href={localePath(service.href, locale)}
                         mt={4}
                         variant="ghost"
                         color={service.color}
@@ -138,7 +140,7 @@ export default function ServicesPage() {
                         rightIcon={<FiArrowRight />}
                         px={0}
                       >
-                        En savoir plus
+                        {dict.services.learnMore}
                       </Button>
                     </VStack>
                   </GlowCard>

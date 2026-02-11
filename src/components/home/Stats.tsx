@@ -5,19 +5,21 @@ import { motion } from 'framer-motion'
 import { colors } from '@/lib/colors'
 import AnimatedCounter from '../shared/AnimatedCounter'
 import { useScrollAnimation, staggerContainer, fadeInUp } from '@/hooks/useScrollAnimation'
+import { useLocale } from '@/i18n/LocaleContext'
 
 const MotionSimpleGrid = motion(SimpleGrid)
 const MotionBox = motion(Box)
 
-const stats = [
-  { value: 15, suffix: '+', label: 'Projets livrés' },
-  { value: 30, suffix: 'K+', label: 'Utilisateurs actifs' },
-  { value: 3, suffix: '+', label: "Années d'expérience" },
-  { value: 98, suffix: '%', label: 'Clients satisfaits' },
-]
-
 export default function Stats() {
   const { ref, isInView } = useScrollAnimation()
+  const { locale, dict } = useLocale()
+
+  const stats = [
+    { value: 15, suffix: '+', label: dict.stats.projectsDelivered },
+    { value: 30, suffix: 'K+', label: dict.stats.activeUsers },
+    { value: 3, suffix: '+', label: dict.stats.yearsExperience },
+    { value: 98, suffix: '%', label: dict.stats.clientSatisfaction },
+  ]
 
   return (
     <Box as="section" py={20} bg={colors.bg.section}>

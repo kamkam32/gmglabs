@@ -1,0 +1,565 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "realisations": "Portfolio",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact us",
+    "homeAriaLabel": "GMG Labs - Home",
+    "mainNavAriaLabel": "Main navigation"
+  },
+  "footer": {
+    "description": "Premium tech agency based in Casablanca. We build digital products that make a difference.",
+    "servicesTitle": "Services",
+    "webDev": "Web Development",
+    "mobileApps": "Mobile Apps",
+    "ai": "Artificial Intelligence",
+    "pricing": "Pricing",
+    "companyTitle": "Company",
+    "about": "About",
+    "realisations": "Portfolio",
+    "blog": "Blog",
+    "contactLabel": "Contact",
+    "gmgLabs": "GMG Labs",
+    "legalTitle": "Legal notice",
+    "copyright": "GMG Labs. All rights reserved.",
+    "address": "Casablanca, Morocco",
+    "whatsappAriaLabel": "Contact us on WhatsApp"
+  },
+  "hero": {
+    "badge": "Premium Tech Agency — Casablanca",
+    "title": "We build the ",
+    "titleGradient": "digital future",
+    "typewriter": "From idea to product. We design web, mobile and AI applications that propel Moroccan businesses to success.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "See our work"
+  },
+  "services": {
+    "label": "Our services",
+    "title": "Technical expertise, concrete results",
+    "gradientWord": "concrete results",
+    "subtitle": "Four pillars of excellence to cover all your technology needs.",
+    "learnMore": "Learn more →",
+    "web": {
+      "title": "Web Development",
+      "description": "High-performance web applications with Next.js, React and modern architectures. SEO, speed and premium user experience.",
+      "descriptionLong": "High-performance web applications with Next.js, React and modern architectures. Native SEO, speed and premium user experience.",
+      "features": ["Business websites", "SaaS applications", "E-commerce", "Dashboards", "REST/GraphQL APIs"]
+    },
+    "mobile": {
+      "title": "Mobile Apps",
+      "description": "Native and cross-platform iOS and Android apps with React Native. Polished design and optimal performance.",
+      "descriptionLong": "Native and cross-platform iOS and Android apps with React Native. Polished design, optimal performance and App Store/Play Store deployment.",
+      "features": ["Cross-platform apps", "Native apps", "Mobile MVP", "Delivery apps", "Booking apps"]
+    },
+    "ia": {
+      "title": "Artificial Intelligence",
+      "description": "Chatbots, automation and custom AI solutions. LLMs, RAG, computer vision and NLP to transform your processes.",
+      "descriptionLong": "Chatbots, automation and custom AI solutions. LLMs, RAG, computer vision and NLP to transform your business processes.",
+      "features": ["WhatsApp chatbots", "RAG / Knowledge bases", "Automation", "Computer Vision", "Data analysis"]
+    },
+    "performance": {
+      "title": "IT Performance",
+      "description": "Load testing, APM monitoring and performance audits to ensure the reliability of your production systems.",
+      "descriptionLong": "Load testing, APM monitoring and performance audits to ensure the reliability and speed of your production systems.",
+      "features": ["Load testing (Neoload)", "APM Dynatrace / AppDynamics", "Performance audit", "Stress tests", "Go/No Go recommendation"]
+    }
+  },
+  "servicesPage": {
+    "heroTitle": "Custom services for your ",
+    "heroGradientWord": "digital ambition",
+    "heroSubtitle": "Four areas of expertise to cover all your technology needs, from design to deployment."
+  },
+  "servicesDetail": {
+    "technologiesTitle": "Technologies used",
+    "processTitle": "Our process",
+    "web": {
+      "heroTitle": "Web applications that perform",
+      "heroGradientWord": "perform",
+      "heroSubtitle": "From landing pages to complex SaaS, we build fast, secure, SEO-optimized web applications.",
+      "features": [
+        { "title": "Modern & responsive interfaces", "description": "Pixel-perfect design with Chakra UI and Framer Motion. Every interface is designed to deliver a smooth experience across all devices, from mobile to desktop." },
+        { "title": "Performance & speed", "description": "Next.js architecture with SSR/SSG, image optimization, lazy loading and code splitting. Loading time under 2 seconds guaranteed." },
+        { "title": "Native & advanced SEO", "description": "Dynamic metadata, JSON-LD, automatic sitemap, Open Graph. Your application is indexed and visible from day one." },
+        { "title": "Security & scalability", "description": "Robust authentication, CSRF/XSS protection, HTTPS. Serverless architecture that scales automatically with your growth." }
+      ],
+      "processSteps": [
+        { "title": "Discovery", "description": "Needs analysis, existing system audit, requirements specification and goals definition." },
+        { "title": "Design", "description": "Figma mockups, interactive prototype, design system validation and technical architecture." },
+        { "title": "Development", "description": "2-week agile sprints, regular demos, continuous integration and automated testing." },
+        { "title": "Deployment", "description": "Production deployment on Vercel, monitoring, training and post-launch technical support." }
+      ],
+      "cta": "Start a web project"
+    },
+    "mobile": {
+      "heroTitle": "Mobile apps that stand out",
+      "heroGradientWord": "stand out",
+      "heroSubtitle": "Smooth, high-performance iOS and Android apps with native design. One codebase, two platforms.",
+      "features": [
+        { "title": "Cross-platform with React Native", "description": "One codebase for iOS and Android. 40% reduction in development time while maintaining a native experience on each platform." },
+        { "title": "App Store & Play Store deployment", "description": "We handle the entire publishing process: builds, certificates, screenshots, store listings and ASO optimization." },
+        { "title": "Offline-first & real-time", "description": "Offline synchronization, push notifications and real-time updates for an uninterrupted experience." },
+        { "title": "Smart push notifications", "description": "Targeted and segmented notifications to engage your users at the right time with the right message." }
+      ],
+      "processSteps": [
+        { "title": "Prototype", "description": "MVP definition, wireframes and interactive Figma prototype to validate UX before development." },
+        { "title": "Development", "description": "2-week sprints with test builds on TestFlight and Play Store beta for continuous feedback." },
+        { "title": "Testing", "description": "Testing on real devices, performance profiling, accessibility testing and bug fixing." },
+        { "title": "Launch", "description": "Store publishing, Crashlytics monitoring, analytics and post-launch iterations." }
+      ],
+      "cta": "Launch a mobile app"
+    },
+    "ia": {
+      "heroTitle": "AI at the service of your business",
+      "heroGradientWord": "your business",
+      "heroSubtitle": "Intelligent solutions that automate, analyze and optimize your business processes. From chatbots to computer vision.",
+      "features": [
+        { "title": "Conversational chatbots", "description": "WhatsApp and web chatbots powered by LLMs. RAG on your documents for precise and contextual answers, 24/7." },
+        { "title": "RAG & Knowledge bases", "description": "Semantic indexing and search on your internal documents. Your employees find information in seconds instead of minutes." },
+        { "title": "Computer Vision", "description": "Object detection, intelligent OCR, automated quality control. Transform your cameras into smart sensors." },
+        { "title": "Predictive analytics", "description": "Prediction models to anticipate demand, detect anomalies and optimize your operations in real time." }
+      ],
+      "processSteps": [
+        { "title": "AI Audit", "description": "Identification of high-impact use cases, feasibility assessment and expected ROI estimation." },
+        { "title": "POC", "description": "Proof of concept in 2-4 weeks to validate the solution on a limited scope with your real data." },
+        { "title": "Production", "description": "Solution industrialization, integration with existing systems, monitoring and alerting." },
+        { "title": "Optimization", "description": "Continuous fine-tuning, feature additions and performance improvements based on feedback." }
+      ],
+      "cta": "Explore AI solutions"
+    },
+    "performance": {
+      "heroTitle": "IT Performance at the service of your business",
+      "heroGradientWord": "your business",
+      "heroSubtitle": "Load testing, application monitoring and performance audits to ensure the reliability and speed of your production systems.",
+      "features": [
+        { "title": "Load & stress testing", "description": "Performance testing campaigns with Neoload: user load simulation, bottleneck identification and system capacity validation before production deployment." },
+        { "title": "APM & production monitoring", "description": "Dynatrace and AppDynamics setup for real-time application performance monitoring. Proactive anomaly detection and intelligent alerting." },
+        { "title": "IT performance audit", "description": "Complete analysis of your technical architecture, weakness identification and Go/No Go recommendations based on concrete data." },
+        { "title": "Optimization & governance", "description": "Operational reporting, performance committee and action plans to continuously improve the speed and reliability of your applications." }
+      ],
+      "processSteps": [
+        { "title": "Audit", "description": "Technical architecture analysis, test scenario definition and expected performance threshold setting." },
+        { "title": "Test campaign", "description": "Scripting, load test and stress test execution on your environments with Neoload." },
+        { "title": "Analysis & Go/No Go", "description": "Detailed results analysis, bottleneck identification and argued Go/No Go recommendation." },
+        { "title": "Continuous monitoring", "description": "Production APM setup, monitoring dashboards and alerting for guaranteed long-term performance." }
+      ],
+      "cta": "Audit my IT performance"
+    }
+  },
+  "featuredProject": {
+    "label": "Featured project",
+    "title": "Ello, our pride",
+    "gradientWord": "pride",
+    "subtitle": "The #1 beauty booking platform in Morocco, designed and developed by GMG Labs.",
+    "caseStudy": "Case study",
+    "visitSite": "Visit ello.ma",
+    "badge": "Web + Mobile",
+    "projectTitle": "Ello — Beauty & Wellness Platform",
+    "projectDescription": "Complete booking and management platform for beauty professionals in Morocco. Real-time booking, automatic WhatsApp reminders, pro dashboard and mobile app.",
+    "metricsLabels": {
+      "users": "Users",
+      "bookings": "Bookings/month",
+      "seoScore": "SEO Score",
+      "uptime": "Uptime"
+    }
+  },
+  "stats": {
+    "projectsDelivered": "Projects delivered",
+    "activeUsers": "Active users",
+    "yearsExperience": "Years of experience",
+    "clientSatisfaction": "Client satisfaction"
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title": "What our clients say",
+    "gradientWord": "clients",
+    "subtitle": "Lasting partnerships built on trust and results.",
+    "quotes": [
+      {
+        "name": "Sarah B.",
+        "role": "Founder, Beauty Lounge",
+        "content": "GMG Labs transformed our salon with Ello. Our bookings doubled in 3 months and we no longer manage anything manually. Exceptional work!"
+      },
+      {
+        "name": "Youssef M.",
+        "role": "CEO, LogiExpress",
+        "content": "The team delivered a flawless logistics dashboard. Real-time delivery tracking has revolutionized the way we work."
+      },
+      {
+        "name": "Amina K.",
+        "role": "Director, Artisan Cooperative",
+        "content": "Thanks to the marketplace created by GMG Labs, our artisans now sell in 12 countries. Revenue has tripled."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to launch your ",
+    "titleGradient": "project?",
+    "subtitle": "Let's discuss your vision. Free discovery call with no commitment.",
+    "ctaPrimary": "Schedule a call"
+  },
+  "about": {
+    "heroTitle": "The team behind ",
+    "heroTitleGradient": "GMG Labs",
+    "heroSubtitle": "GMG Labs is a premium tech agency based in Casablanca. We build digital products that make a difference for Moroccan businesses and beyond.",
+    "ctaGmgLabs": "GMG Labs",
+    "ctaEllo": "Discover Ello",
+    "storyLabel": "Our story",
+    "storyTitle": "How it all started",
+    "storyGradientWord": "started",
+    "storyParagraphs": [
+      "GMG Labs was born from a simple observation: Morocco is full of tech talent, but lacks agencies capable of delivering products at international standards. We decided to change that.",
+      "Our first major project, Ello, became the leading beauty booking platform in Morocco. This success convinced us that we could replicate this level of excellence for other businesses.",
+      "Today, we support startups and large companies in their digital transformation with four areas of expertise: Web, Mobile, Artificial Intelligence and IT Performance."
+    ],
+    "storyLink": "gmg-labs.com",
+    "teamLabel": "The team",
+    "teamTitle": "The co-founders",
+    "teamGradientWord": "co-founders",
+    "teamSubtitle": "Three complementary profiles uniting strategy, technology and performance.",
+    "cofounders": [
+      {
+        "name": "Kamil Alami",
+        "role": "Co-founder – Product Builder",
+        "description": "Product Builder profile with 5+ years of experience in digital product design. From product strategy to development, including UX design and go-to-market. Expertise in generative AI and agile methodologies.",
+        "formation": "ESCP Europe / NEOMA Business School"
+      },
+      {
+        "name": "Oualid Tebib",
+        "role": "Co-founder – IT Performance & Digital Strategy",
+        "description": "Digital strategy and IT consultant with 8 years of experience supporting major groups (BNP, ENGIE, Saint-Gobain) in their transformation projects. Expert in application performance and IT architecture.",
+        "formation": "Paris-Dauphine – Master MIAGE-IF"
+      },
+      {
+        "name": "Mehdi Essakalli",
+        "role": "Co-founder – Data & Strategy",
+        "description": "Strategy and data profile with experience in Big Data R&D (MFG Labs) and digital transformation consulting for the State and major CAC 40 companies. Expertise in blockchain, AI and automation.",
+        "formation": "Sciences-Po Paris x LSE – Finance & Strategy"
+      }
+    ],
+    "statsLabel": "In numbers",
+    "statsTitle": "GMG Labs in numbers",
+    "statsGradientWord": "numbers",
+    "statsItems": [
+      { "label": "Years of combined experience" },
+      { "label": "Co-founders" },
+      { "label": "Projects delivered" },
+      { "label": "Areas of expertise" }
+    ],
+    "valuesLabel": "Our principles",
+    "valuesTitle": "Our founding values",
+    "valuesGradientWord": "values",
+    "values": [
+      { "title": "Excellence", "description": "Every line of code is written with care. We only deliver products we are proud of." },
+      { "title": "Passion", "description": "We love what we do. This passion is reflected in the quality of every project." },
+      { "title": "Innovation", "description": "We stay at the cutting edge of technology to offer the best solutions to our clients." },
+      { "title": "Partnership", "description": "We are not a service provider, but a partner. Your success is our success." }
+    ],
+    "timelineLabel": "Our journey",
+    "timelineTitle": "Key milestones",
+    "timelineGradientWord": "milestones",
+    "timeline": [
+      { "year": "2025", "title": "Creation of GMG Labs", "description": "Founding of the agency in Casablanca with a clear vision: creating world-class digital products." },
+      { "year": "2025", "title": "Launch of Ello", "description": "Development and launch of our flagship product: Ello, the #1 beauty booking platform in Morocco." },
+      { "year": "2025", "title": "Messidor Patrimoine", "description": "Design of the financial dashboard for Messidor Patrimoine: UCITS tracking, OPCI and investment simulator." }
+    ]
+  },
+  "contact": {
+    "heroTitle": "Let's talk about your ",
+    "heroTitleGradient": "project",
+    "heroSubtitle": "Free discovery call with no commitment. Contact us directly.",
+    "directContact": "Contact us directly",
+    "directContactSubtitle": "Feel free to call us, send us an email or write to us on WhatsApp. We respond within 24 hours.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "whatsappLabel": "WhatsApp",
+    "addressLabel": "Address",
+    "addressValue": "Casablanca, Morocco"
+  },
+  "pricing": {
+    "heroTitle": "Transparent ",
+    "heroTitleGradient": "pricing",
+    "heroSubtitle": "No surprises. Three clear plans to cover all types of projects, from business websites to enterprise solutions.",
+    "faqTitle": "Frequently asked questions",
+    "popular": "Popular",
+    "startingFrom": "starting from",
+    "startCta": "Get started",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "15,000 MAD",
+        "priceNote": "starting from",
+        "description": "Ideal for small businesses that need a professional, SEO-optimized business website.",
+        "features": [
+          "Responsive business website (5-7 pages)",
+          "Premium custom design",
+          "SEO optimized (meta, sitemap, JSON-LD)",
+          "Contact form",
+          "Google Analytics integration",
+          "1 year hosting included",
+          "30-day post-launch support"
+        ]
+      },
+      {
+        "name": "Business",
+        "price": "40,000 MAD",
+        "priceNote": "starting from",
+        "description": "For ambitious projects: web applications, e-commerce or SaaS platforms with advanced features.",
+        "features": [
+          "Complete web application",
+          "Backend and database",
+          "User authentication",
+          "Admin dashboard",
+          "REST/GraphQL API",
+          "Automated testing",
+          "Performance testing (stress test)",
+          "Application monitoring (setup)",
+          "CI/CD and deployment",
+          "90-day post-launch support"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom quote",
+        "description": "Custom solutions for large projects: mobile apps, AI, load testing, complex architectures and dedicated teams.",
+        "features": [
+          "Everything in Business plan",
+          "Mobile app (iOS + Android)",
+          "AI solutions / Chatbots",
+          "Advanced load testing (Neoload)",
+          "APM & production monitoring (Dynatrace)",
+          "IT performance audit",
+          "Go/No Go performance recommendation",
+          "Scalable architecture",
+          "Dedicated team",
+          "SLA and availability guarantees",
+          "Client team training",
+          "Unlimited priority support"
+        ],
+        "ctaText": "Request a quote"
+      }
+    ],
+    "faqItems": [
+      {
+        "question": "How long does a typical project take?",
+        "answer": "A business website takes 2 to 4 weeks. A complete web application, 2 to 4 months. A mobile app, 3 to 6 months. Every project is different, we'll give you a precise estimate during the first call."
+      },
+      {
+        "question": "What are the payment terms?",
+        "answer": "We work in 3 installments: 40% at signing, 30% at midpoint and 30% at delivery. For Enterprise projects, terms are flexible and negotiable."
+      },
+      {
+        "question": "Does the price include hosting?",
+        "answer": "The Starter plan includes 1 year of hosting on Vercel. For Business and Enterprise plans, we recommend and configure the optimal hosting (Vercel, AWS, or other) based on your needs."
+      },
+      {
+        "question": "What happens after delivery?",
+        "answer": "Each plan includes a free support period (30 to 90 days). Beyond that, we offer monthly maintenance contracts starting at 2,000 MAD/month."
+      },
+      {
+        "question": "Can you work with our existing technical team?",
+        "answer": "Absolutely. We can work as reinforcement for your team, in managed services or project mode. We adapt to your tools and processes."
+      },
+      {
+        "question": "Are the prices negotiable?",
+        "answer": "The displayed prices are base rates. The final price depends on the exact complexity of your project. We invite you to contact us for a free custom quote."
+      }
+    ]
+  },
+  "portfolio": {
+    "heroTitle": "Our ",
+    "heroTitleGradient": "portfolio",
+    "heroSubtitle": "Concrete projects with measurable results. Discover how we helped our clients achieve their goals.",
+    "filterAll": "All",
+    "filterWeb": "Web",
+    "filterMobile": "Mobile",
+    "filterIA": "AI",
+    "featured": "Featured",
+    "backToPortfolio": "Back to portfolio",
+    "challenge": "The challenge",
+    "solution": "Our solution",
+    "results": "Results",
+    "technologies": "Technologies",
+    "visitSite": "Visit website",
+    "client": "Client",
+    "duration": "Duration",
+    "year": "Year"
+  },
+  "projects": {
+    "ello": {
+      "title": "Ello - Beauty & Wellness Platform",
+      "shortDescription": "#1 beauty booking platform in Morocco",
+      "description": "Complete booking and management platform for beauty professionals in Morocco. Ello connects clients with the best salons, institutes and freelancers, with a real-time booking system, online payment and smart agenda management.",
+      "client": "Ello (internal product)",
+      "duration": "8 months",
+      "challenge": "The Moroccan beauty market lacked a modern digital solution. Professionals still manage their appointments by phone and WhatsApp, causing no-shows and revenue loss.",
+      "solution": "We built a full-stack platform with a client app (web + mobile), a pro dashboard and an automatic WhatsApp reminder system. The serverless architecture with Supabase allows limitless scalability.",
+      "results": [
+        "Over 100 professionals registered in 6 months",
+        "No-show rate reduced by 40%",
+        "Lighthouse score 95+ on all metrics",
+        "Loading time < 2s on 3G"
+      ],
+      "metrics": [
+        { "label": "Users", "value": "10K+" },
+        { "label": "Bookings/month", "value": "5K+" },
+        { "label": "SEO Score", "value": "98" },
+        { "label": "Uptime", "value": "99.9%" }
+      ]
+    },
+    "messidor-patrimoine": {
+      "title": "Messidor Patrimoine - Financial Dashboard",
+      "shortDescription": "Wealth management and investment platform",
+      "description": "Wealth management and financial investment platform in Morocco. Complete dashboard with UCITS tracking, OPCI, investment simulator and real-time stock market monitoring.",
+      "client": "Messidor Patrimoine",
+      "duration": "4 months",
+      "challenge": "Moroccan investors lacked a centralized tool to track their UCITS, OPCI and stock market investments with reliable and up-to-date data.",
+      "solution": "Secure web dashboard with authentication, real-time UCITS and OPCI tracking, interactive investment simulator and stock market monitoring module.",
+      "results": [
+        "Centralization of all investments in a single dashboard",
+        "Investment simulator used by hundreds of clients",
+        "Financial data updated daily"
+      ],
+      "metrics": [
+        { "label": "UCITS tracked", "value": "200+" },
+        { "label": "Users", "value": "500+" },
+        { "label": "Simulations/month", "value": "1K+" },
+        { "label": "Uptime", "value": "99.9%" }
+      ]
+    },
+    "ello-pro": {
+      "title": "Ello Pro - Salon Management Dashboard",
+      "shortDescription": "SaaS management dashboard for beauty and wellness salons",
+      "description": "Complete SaaS dashboard for beauty and wellness professionals. Ello Pro offers an interactive drag-and-drop planning, an AI chatbot for appointment booking, real-time notifications, a content creation studio with video editor, a talent recruitment portal and advanced analytics.",
+      "client": "Ello (internal product)",
+      "duration": "10 months",
+      "challenge": "Salon managers in Morocco use fragmented tools (notebooks, WhatsApp, Excel) to manage their appointments, clients and teams. No local solution combines planning, analytics, content and AI in one tool.",
+      "solution": "We developed an all-in-one dashboard with drag-and-drop planning, multi-service parallel management, AI chatbot capable of booking appointments in natural language, real-time notifications with sound alerts, and an integrated content studio for creating video reels directly in the browser.",
+      "results": [
+        "Interactive planning with multi-service bundle management and parallel phases",
+        "AI chatbot with OpenAI for appointment booking, client management and business insights",
+        "Real-time notifications via Supabase Realtime with sound alerts",
+        "Content Studio with FFmpeg video editor and automatic reels generator",
+        "Talent recruitment portal (hairdressers, beauticians) with profile management",
+        "Analytics module with KPIs, charts and performance tracking"
+      ],
+      "metrics": [
+        { "label": "Active salons", "value": "100+" },
+        { "label": "Appointments/month", "value": "5K+" },
+        { "label": "Source files", "value": "150+" },
+        { "label": "Uptime", "value": "99.9%" }
+      ]
+    }
+  },
+  "blog": {
+    "heroTitle": "The GMG Labs ",
+    "heroTitleGradient": "blog",
+    "heroTitleEnd": "",
+    "heroSubtitle": "Articles, guides and insights on web development, mobile apps and artificial intelligence!",
+    "noArticles": "No articles yet.",
+    "noArticlesSubtitle": "Come back soon, we're preparing quality content!",
+    "backToBlog": "Back to blog",
+    "readMore": "Read article",
+    "frenchOnly": "This article is available in French only.",
+    "blogCta": {
+      "title": "Have a project in mind?",
+      "subtitle": "Let's discuss your idea. Free discovery call with no commitment.",
+      "cta": "Contact us"
+    }
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "editor": "Site publisher",
+    "editorText": "The website gmg-labs.com is published by GMG Labs, a company based in Casablanca, Morocco.",
+    "editorContact": "Email: contact@ello.ma\nPhone: +33 6 19 06 12 15\nAddress: Casablanca, Morocco",
+    "hosting": "Hosting",
+    "hostingText": "This website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.",
+    "ip": "Intellectual property",
+    "ipText": "All content on this website (text, images, logos, design) is the exclusive property of GMG Labs and is protected by intellectual property laws. Any reproduction, even partial, is prohibited without prior authorization.",
+    "data": "Personal data protection",
+    "dataText": "Information collected through the contact form is used solely to respond to your requests. It is neither sold nor shared with third parties. In accordance with Moroccan law 09-08 on the protection of personal data, you have the right to access, rectify and delete your data.",
+    "cookies": "Cookies",
+    "cookiesText": "This website uses cookies for traffic analysis purposes (Google Analytics). You can disable cookies in your browser settings."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "metadata": {
+    "home": {
+      "title": "GMG Labs - Web, Mobile & AI Development Agency in Morocco",
+      "description": "GMG Labs is a premium tech agency based in Casablanca. Web development, mobile applications and custom AI solutions. Creators of Ello.",
+      "ogTitle": "GMG Labs - Premium Tech Agency in Morocco",
+      "ogDescription": "Custom web, mobile and AI development in Casablanca. Creators of Ello."
+    },
+    "services": {
+      "title": "Services - Web, Mobile & AI Development",
+      "description": "Discover our services: web development with Next.js, React Native mobile apps and custom artificial intelligence solutions.",
+      "ogTitle": "Our Services - GMG Labs",
+      "ogDescription": "Custom web, mobile and AI development in Morocco."
+    },
+    "servicesWeb": {
+      "title": "Web Development - High-Performance Websites & Web Apps",
+      "description": "Professional web development with Next.js, React and TypeScript. Business websites, SaaS applications, e-commerce and custom dashboards in Morocco.",
+      "ogTitle": "Web Development - GMG Labs",
+      "ogDescription": "High-performance web applications with Next.js and React in Morocco."
+    },
+    "servicesMobile": {
+      "title": "Mobile Apps - iOS & Android with React Native",
+      "description": "iOS and Android mobile app development with React Native. High-performance cross-platform apps, native design and store deployment.",
+      "ogTitle": "Mobile Apps - GMG Labs",
+      "ogDescription": "iOS and Android apps with React Native in Morocco."
+    },
+    "servicesIA": {
+      "title": "Artificial Intelligence - Chatbots, Automation & Custom AI",
+      "description": "Custom artificial intelligence solutions: WhatsApp chatbots, RAG, process automation, computer vision and data analysis in Morocco.",
+      "ogTitle": "Artificial Intelligence - GMG Labs",
+      "ogDescription": "Custom AI solutions in Morocco: chatbots, automation and more."
+    },
+    "servicesPerformance": {
+      "title": "IT Performance - Load Testing, APM & Monitoring",
+      "description": "Neoload load testing, Dynatrace/AppDynamics monitoring, IT performance audits and Go/No Go recommendations to ensure system reliability in Morocco.",
+      "ogTitle": "IT Performance - GMG Labs",
+      "ogDescription": "Load testing, APM and IT performance audits in Morocco."
+    },
+    "about": {
+      "title": "About - Our Story and Our Team",
+      "description": "GMG Labs is a premium tech agency founded in Casablanca. Discover our story, our values and the team behind Ello and our other projects.",
+      "ogTitle": "About - GMG Labs",
+      "ogDescription": "Our story, our values and our team."
+    },
+    "contact": {
+      "title": "Contact - Let's Discuss Your Project",
+      "description": "Contact GMG Labs to discuss your web, mobile or AI project. Free quote and no-commitment discovery call.",
+      "ogTitle": "Contact - GMG Labs",
+      "ogDescription": "Let's discuss your project. Free quote."
+    },
+    "pricing": {
+      "title": "Pricing - Our Development Plans",
+      "description": "Discover our transparent pricing for web, mobile and AI development. Three plans adapted to all budgets and projects.",
+      "ogTitle": "Pricing - GMG Labs",
+      "ogDescription": "Web, mobile and AI development plans in Morocco."
+    },
+    "portfolio": {
+      "title": "Portfolio - Our Projects",
+      "description": "Discover our work: web, mobile and AI applications. Detailed case studies with metrics and technologies used.",
+      "ogTitle": "Our Portfolio - GMG Labs",
+      "ogDescription": "Complete portfolio of our web, mobile and AI projects."
+    },
+    "blog": {
+      "title": "Blog - Tech, Web & AI News",
+      "description": "Articles and guides on web development, mobile apps and artificial intelligence. Tips, trends and insights.",
+      "ogTitle": "Blog - GMG Labs",
+      "ogDescription": "Articles and guides on web, mobile and AI development."
+    },
+    "legal": {
+      "title": "Legal Notice",
+      "description": "Legal notice for the GMG Labs website. Information about the publisher, hosting and intellectual property.",
+      "ogTitle": "Legal Notice - GMG Labs",
+      "ogDescription": "Legal notice for the GMG Labs website."
+    }
+  }
+}

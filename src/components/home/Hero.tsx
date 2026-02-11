@@ -8,12 +8,12 @@ import { FiArrowRight } from 'react-icons/fi'
 import { colors } from '@/lib/colors'
 import GradientText from '../shared/GradientText'
 import { useMagnetic } from '@/hooks/useMagnetic'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const MotionBox = motion(Box)
 const MotionHeading = motion(Heading)
 const MotionText = motion(Text)
-
-const TYPEWRITER_TEXT = "De l'idée au produit. Nous concevons des applications web, mobiles et IA qui propulsent les entreprises marocaines vers le succès."
 
 function Typewriter({ text, delay = 0.8 }: { text: string; delay?: number }) {
   const [displayed, setDisplayed] = useState('')
@@ -119,6 +119,7 @@ function MagneticButton({ children }: { children: React.ReactNode }) {
 }
 
 export default function Hero() {
+  const { locale, dict } = useLocale()
   const heroRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -139,10 +140,8 @@ export default function Hero() {
       overflow="hidden"
       bg={colors.bg.body}
     >
-      {/* Mouse-following glow */}
       <MouseGlow />
 
-      {/* Animated aurora blobs */}
       <MotionBox
         position="absolute"
         inset={0}
@@ -151,7 +150,6 @@ export default function Hero() {
         style={{ y: gradientY }}
         overflow="hidden"
       >
-        {/* Blob 1 - cyan, top-left drift */}
         <Box
           position="absolute"
           top="-20%"
@@ -172,7 +170,6 @@ export default function Hero() {
             },
           }}
         />
-        {/* Blob 2 - purple, center-right drift */}
         <Box
           position="absolute"
           top="10%"
@@ -193,7 +190,6 @@ export default function Hero() {
             },
           }}
         />
-        {/* Blob 3 - mixed, bottom-center drift */}
         <Box
           position="absolute"
           bottom="-15%"
@@ -216,7 +212,6 @@ export default function Hero() {
         />
       </MotionBox>
 
-      {/* Grid pattern overlay */}
       <MotionBox
         position="absolute"
         inset={0}
@@ -251,7 +246,7 @@ export default function Hero() {
               transition="all 0.2s"
             >
               <Text fontSize="sm" fontWeight="600" color={colors.accent.cyan}>
-                Agence Tech Premium — Casablanca
+                {dict.hero.badge}
               </Text>
             </Box>
           </MotionBox>
@@ -266,8 +261,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Nous construisons le{' '}
-            <GradientText>futur digital</GradientText>
+            {dict.hero.title}
+            <GradientText>{dict.hero.titleGradient}</GradientText>
           </MotionHeading>
 
           <MotionBox
@@ -282,7 +277,7 @@ export default function Hero() {
               lineHeight="1.8"
               minH={{ base: '80px', md: '60px' }}
             >
-              <Typewriter text={TYPEWRITER_TEXT} delay={0.8} />
+              <Typewriter text={dict.hero.typewriter} delay={0.8} />
             </Text>
           </MotionBox>
 
@@ -295,7 +290,7 @@ export default function Hero() {
               <MagneticButton>
                 <Button
                   as={Link}
-                  href="/contact"
+                  href={localePath('/contact', locale)}
                   size="lg"
                   bgGradient={colors.accent.gradient}
                   color="white"
@@ -309,13 +304,13 @@ export default function Hero() {
                   transition="all 0.3s"
                   rightIcon={<FiArrowRight />}
                 >
-                  Démarrer un projet
+                  {dict.hero.ctaPrimary}
                 </Button>
               </MagneticButton>
               <MagneticButton>
                 <Button
                   as={Link}
-                  href="/realisations"
+                  href={localePath('/realisations', locale)}
                   size="lg"
                   variant="outline"
                   borderColor={colors.border.hover}
@@ -329,7 +324,7 @@ export default function Hero() {
                   }}
                   transition="all 0.3s"
                 >
-                  Voir nos projets
+                  {dict.hero.ctaSecondary}
                 </Button>
               </MagneticButton>
             </HStack>

@@ -1,26 +1,36 @@
 import { Metadata } from 'next'
 import RealisationsPage from './RealisationsPage'
+import { getLocaleDictionary } from '@/i18n/getLocaleFromHeaders'
 
-export const metadata: Metadata = {
-  title: 'Réalisations - Portfolio de nos projets',
-  description: 'Découvrez nos réalisations : applications web, mobiles et IA. Études de cas détaillées avec métriques et technologies utilisées.',
-  keywords: 'portfolio développement web maroc, projets application mobile, étude de cas ia, gmg labs réalisations',
-  alternates: { canonical: 'https://www.gmg-labs.com/realisations' },
-  openGraph: {
-    title: 'Nos Réalisations - GMG Labs',
-    description: 'Portfolio complet de nos projets web, mobile et IA.',
-    url: 'https://www.gmg-labs.com/realisations',
-    siteName: 'GMG Labs',
-    locale: 'fr_MA',
-    type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Réalisations' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nos Réalisations - GMG Labs',
-    description: 'Portfolio complet de nos projets web, mobile et IA.',
-    images: ['/og-image.png'],
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const { locale, dict } = await getLocaleDictionary()
+  const m = dict.metadata.portfolio
+  const baseUrl = 'https://www.gmg-labs.com'
+  const path = '/realisations'
+
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: {
+      canonical: locale === 'fr' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
+      languages: { fr: `${baseUrl}${path}`, en: `${baseUrl}/en${path}` },
+    },
+    openGraph: {
+      title: m.ogTitle,
+      description: m.ogDescription,
+      url: locale === 'fr' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
+      siteName: 'GMG Labs',
+      locale: locale === 'fr' ? 'fr_MA' : 'en_US',
+      type: 'website',
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: m.ogTitle,
+      description: m.ogDescription,
+      images: ['/og-image.png'],
+    },
+  }
 }
 
 export default function Page() {

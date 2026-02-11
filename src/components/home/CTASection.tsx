@@ -9,6 +9,8 @@ import { colors } from '@/lib/colors'
 import GradientText from '../shared/GradientText'
 import { useScrollAnimation, fadeInUp } from '@/hooks/useScrollAnimation'
 import { useMagnetic } from '@/hooks/useMagnetic'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const MotionVStack = motion(VStack)
 
@@ -23,6 +25,7 @@ function MagneticButton({ children }: { children: React.ReactNode }) {
 
 export default function CTASection() {
   const { ref, isInView } = useScrollAnimation()
+  const { locale, dict } = useLocale()
 
   return (
     <Box as="section" py={24} bg={colors.bg.body} position="relative" overflow="hidden">
@@ -53,19 +56,19 @@ export default function CTASection() {
             color="white"
             lineHeight="1.2"
           >
-            Prêt à lancer votre{' '}
-            <GradientText>projet ?</GradientText>
+            {dict.cta.title}
+            <GradientText>{dict.cta.titleGradient}</GradientText>
           </Heading>
 
           <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} maxW="550px" lineHeight="1.8">
-            Discutons de votre vision. Premier appel de découverte gratuit et sans engagement.
+            {dict.cta.subtitle}
           </Text>
 
           <HStack spacing={4} flexWrap="wrap" justify="center" pt={4}>
             <MagneticButton>
               <Button
                 as={Link}
-                href="/contact"
+                href={localePath('/contact', locale)}
                 size="lg"
                 bgGradient={colors.accent.gradient}
                 color="white"
@@ -79,7 +82,7 @@ export default function CTASection() {
                 transition="all 0.3s"
                 rightIcon={<FiArrowRight />}
               >
-                Planifier un appel
+                {dict.cta.ctaPrimary}
               </Button>
             </MagneticButton>
             <MagneticButton>

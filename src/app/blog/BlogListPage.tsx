@@ -6,9 +6,12 @@ import Footer from '@/components/layout/Footer'
 import BlogCard from '@/components/blog/BlogCard'
 import GradientText from '@/components/shared/GradientText'
 import { colors } from '@/lib/colors'
+import { useLocale } from '@/i18n/LocaleContext'
 import type { BlogPost } from '@/lib/blog'
 
 export default function BlogListPage({ posts }: { posts: BlogPost[] }) {
+  const { dict } = useLocale()
+
   return (
     <Box>
       <Navbar />
@@ -34,10 +37,10 @@ export default function BlogListPage({ posts }: { posts: BlogPost[] }) {
                 color="white"
                 lineHeight="1.2"
               >
-                Le <GradientText>blog</GradientText> GMG Labs
+                {dict.blog.heroTitle}<GradientText>{dict.blog.heroTitleGradient}</GradientText>{dict.blog.heroTitleEnd}
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Articles, guides et retours d&apos;expérience sur le développement web, mobile et l&apos;intelligence artificielle !
+                {dict.blog.heroSubtitle}
               </Text>
             </VStack>
           </Container>
@@ -49,10 +52,10 @@ export default function BlogListPage({ posts }: { posts: BlogPost[] }) {
             {posts.length === 0 ? (
               <VStack py={20} spacing={4}>
                 <Text fontSize="lg" color={colors.text.secondary}>
-                  Aucun article pour le moment.
+                  {dict.blog.noArticles}
                 </Text>
                 <Text fontSize="sm" color={colors.text.tertiary}>
-                  Revenez bientôt, nous préparons du contenu de qualité !
+                  {dict.blog.noArticlesSubtitle}
                 </Text>
               </VStack>
             ) : (

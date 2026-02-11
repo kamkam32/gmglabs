@@ -6,42 +6,28 @@ import { FiStar } from 'react-icons/fi'
 import { colors } from '@/lib/colors'
 import SectionHeading from '../shared/SectionHeading'
 import { useScrollAnimation, staggerContainer, fadeInUp } from '@/hooks/useScrollAnimation'
+import { useLocale } from '@/i18n/LocaleContext'
 
 const MotionSimpleGrid = motion(SimpleGrid)
 const MotionBox = motion(Box)
 
-const testimonials = [
-  {
-    name: 'Sarah B.',
-    role: 'Fondatrice, Beauty Lounge',
-    content: 'GMG Labs a transformé notre salon avec Ello. Nos réservations ont doublé en 3 mois et on ne gère plus rien manuellement. Un travail exceptionnel !',
-    rating: 5,
-  },
-  {
-    name: 'Youssef M.',
-    role: 'CEO, LogiExpress',
-    content: 'L\'équipe a livré un dashboard logistique impeccable. Le suivi temps réel de nos livraisons a révolutionné notre façon de travailler.',
-    rating: 5,
-  },
-  {
-    name: 'Amina K.',
-    role: 'Directrice, Coopérative Artisanale',
-    content: 'Grâce à la marketplace créée par GMG Labs, nos artisans vendent maintenant dans 12 pays. Le chiffre d\'affaires a triplé.',
-    rating: 5,
-  },
-]
-
 export default function Testimonials() {
   const { ref, isInView } = useScrollAnimation()
+  const { locale, dict } = useLocale()
+
+  const testimonials = dict.testimonials.quotes.map((q) => ({
+    ...q,
+    rating: 5,
+  }))
 
   return (
     <Box as="section" py={24} bg={colors.bg.section}>
       <Container maxW="1200px">
         <SectionHeading
-          label="Témoignages"
-          title="Ce que nos clients disent"
-          gradientWord="clients"
-          subtitle="Des partenariats durables basés sur la confiance et les résultats."
+          label={dict.testimonials.label}
+          title={dict.testimonials.title}
+          gradientWord={dict.testimonials.gradientWord}
+          subtitle={dict.testimonials.subtitle}
         />
 
         <MotionSimpleGrid

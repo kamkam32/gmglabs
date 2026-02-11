@@ -10,20 +10,16 @@ import { colors } from '@/lib/colors'
 import SectionHeading from '../shared/SectionHeading'
 import AnimatedCounter, { parseMetricValue } from '../shared/AnimatedCounter'
 import { useScrollAnimation, fadeInUp, slideInLeft, slideInRight } from '@/hooks/useScrollAnimation'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const MotionBox = motion(Box)
 const MotionFlex = motion(Flex)
 
-const metrics = [
-  { label: 'Utilisateurs', value: '10K+' },
-  { label: 'Réservations/mois', value: '5K+' },
-  { label: 'Score SEO', value: '98' },
-  { label: 'Uptime', value: '99.9%' },
-]
-
 
 export default function FeaturedProject() {
   const { ref, isInView } = useScrollAnimation()
+  const { locale, dict } = useLocale()
   const sectionRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -31,14 +27,21 @@ export default function FeaturedProject() {
   })
   const imageY = useTransform(scrollYProgress, [0, 1], [40, -40])
 
+  const metrics = [
+    { label: dict.featuredProject.metricsLabels.users, value: '10K+' },
+    { label: dict.featuredProject.metricsLabels.bookings, value: '5K+' },
+    { label: dict.featuredProject.metricsLabels.seoScore, value: '98' },
+    { label: dict.featuredProject.metricsLabels.uptime, value: '99.9%' },
+  ]
+
   return (
     <Box as="section" py={24} bg={colors.bg.body} ref={sectionRef}>
       <Container maxW="1200px">
         <SectionHeading
-          label="Projet vedette"
-          title="Ello, notre fierté"
-          gradientWord="fierté"
-          subtitle="La plateforme de réservation beauté #1 au Maroc, conçue et développée par GMG Labs."
+          label={dict.featuredProject.label}
+          title={dict.featuredProject.title}
+          gradientWord={dict.featuredProject.gradientWord}
+          subtitle={dict.featuredProject.subtitle}
         />
 
         <Flex
@@ -100,16 +103,15 @@ export default function FeaturedProject() {
                 fontSize="xs"
                 fontWeight="600"
               >
-                Web + Mobile
+                {dict.featuredProject.badge}
               </Badge>
 
               <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} color="white" fontWeight="700">
-                Ello — Plateforme Beauté & Bien-être
+                {dict.featuredProject.projectTitle}
               </Heading>
 
               <Text color={colors.text.secondary} lineHeight="1.8" fontSize="sm">
-                Plateforme complète de réservation et gestion pour les professionnels de la beauté au Maroc.
-                Réservation en temps réel, rappels WhatsApp automatiques, dashboard pro et app mobile.
+                {dict.featuredProject.projectDescription}
               </Text>
 
               <SimpleGrid columns={2} spacing={4} w="full">
@@ -143,7 +145,7 @@ export default function FeaturedProject() {
               <HStack spacing={4} pt={2}>
                 <Button
                   as={Link}
-                  href="/realisations/ello"
+                  href={localePath('/realisations/ello', locale)}
                   size="md"
                   bgGradient={colors.accent.gradient}
                   color="white"
@@ -153,7 +155,7 @@ export default function FeaturedProject() {
                   _hover={{ opacity: 0.9 }}
                   rightIcon={<FiArrowRight />}
                 >
-                  Étude de cas
+                  {dict.featuredProject.caseStudy}
                 </Button>
                 <Button
                   as="a"
@@ -165,7 +167,7 @@ export default function FeaturedProject() {
                   _hover={{ bg: 'rgba(0, 212, 255, 0.1)' }}
                   rightIcon={<FiExternalLink />}
                 >
-                  Visiter ello.ma
+                  {dict.featuredProject.visitSite}
                 </Button>
               </HStack>
             </VStack>

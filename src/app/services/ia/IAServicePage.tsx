@@ -7,46 +7,37 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ServiceDetailSection from '@/components/services/ServiceDetailSection'
 import { colors } from '@/lib/colors'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
+
+const icons = [FiMessageSquare, FiDatabase, FiEye, FiTrendingUp]
 
 export default function IAServicePage() {
+  const { locale, dict } = useLocale()
+  const d = dict.servicesDetail.ia
+
   return (
     <Box>
       <Navbar />
       <Box as="main" pt="73px">
         <ServiceDetailSection
           accentColor={colors.services.ia}
-          heroTitle="L'IA au service de votre entreprise"
-          heroGradientWord="votre entreprise"
-          heroSubtitle="Des solutions intelligentes qui automatisent, analysent et optimisent vos processus métier. Du chatbot à la computer vision."
-          features={[
-            {
-              icon: FiMessageSquare,
-              title: 'Chatbots conversationnels',
-              description: 'Chatbots WhatsApp et web alimentés par des LLMs. RAG sur vos documents pour des réponses précises et contextuelles, 24h/24.',
-            },
-            {
-              icon: FiDatabase,
-              title: 'RAG & Bases documentaires',
-              description: 'Indexation et recherche sémantique sur vos documents internes. Vos employés trouvent l\'information en secondes au lieu de minutes.',
-            },
-            {
-              icon: FiEye,
-              title: 'Computer Vision',
-              description: 'Détection d\'objets, OCR intelligent, contrôle qualité automatisé. Transformez vos caméras en capteurs intelligents.',
-            },
-            {
-              icon: FiTrendingUp,
-              title: 'Analyse prédictive',
-              description: 'Modèles de prédiction pour anticiper la demande, détecter les anomalies et optimiser vos opérations en temps réel.',
-            },
-          ]}
+          heroTitle={d.heroTitle}
+          heroGradientWord={d.heroGradientWord}
+          heroSubtitle={d.heroSubtitle}
+          features={d.features.map((f: { title: string; description: string }, idx: number) => ({
+            icon: icons[idx],
+            title: f.title,
+            description: f.description,
+          }))}
           technologies={['OpenAI GPT', 'Claude', 'LangChain', 'Python', 'FastAPI', 'Pinecone', 'ChromaDB', 'TensorFlow', 'PyTorch', 'WhatsApp API', 'Hugging Face', 'Docker']}
-          processSteps={[
-            { number: '01', title: 'Audit IA', description: 'Identification des cas d\'usage à fort impact, évaluation de la faisabilité et estimation du ROI attendu.' },
-            { number: '02', title: 'POC', description: 'Proof of concept en 2-4 semaines pour valider la solution sur un périmètre réduit avec vos données réelles.' },
-            { number: '03', title: 'Production', description: 'Industrialisation de la solution, intégration aux systèmes existants, monitoring et alerting.' },
-            { number: '04', title: 'Optimisation', description: 'Fine-tuning continu, ajout de fonctionnalités et amélioration des performances basée sur les feedbacks.' },
-          ]}
+          processSteps={d.processSteps.map((s: { title: string; description: string }, idx: number) => ({
+            number: String(idx + 1).padStart(2, '0'),
+            title: s.title,
+            description: s.description,
+          }))}
+          technologiesTitle={dict.servicesDetail.technologiesTitle}
+          processTitle={dict.servicesDetail.processTitle}
         />
 
         <Box py={16} bg={colors.bg.body} textAlign="center">
@@ -54,7 +45,7 @@ export default function IAServicePage() {
             <HStack justify="center" spacing={4}>
               <Button
                 as={Link}
-                href="/contact"
+                href={localePath('/contact', locale)}
                 size="lg"
                 bgGradient={`linear(135deg, ${colors.services.ia}, ${colors.accent.cyan})`}
                 color="white"
@@ -64,7 +55,7 @@ export default function IAServicePage() {
                 _hover={{ opacity: 0.9, transform: 'translateY(-2px)' }}
                 rightIcon={<FiArrowRight />}
               >
-                Explorer les solutions IA
+                {d.cta}
               </Button>
             </HStack>
           </Container>

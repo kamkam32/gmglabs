@@ -4,10 +4,14 @@ import { Box, Heading, Text, VStack, HStack, Badge } from '@chakra-ui/react'
 import Link from 'next/link'
 import { colors } from '@/lib/colors'
 import type { BlogPost } from '@/lib/blog'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 export default function BlogCard({ post }: { post: BlogPost }) {
+  const { locale, dict } = useLocale()
+
   return (
-    <Link href={`/blog/${post.slug}`}>
+    <Link href={localePath(`/blog/${post.slug}`, locale)}>
       <Box
         bg={colors.bg.card}
         border="1px solid"
@@ -48,7 +52,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
               {post.category}
             </Badge>
             <Text fontSize="xs" color={colors.text.tertiary}>
-              {new Date(post.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+              {new Date(post.date).toLocaleDateString(locale === 'en' ? 'en-US' : 'fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
             </Text>
           </HStack>
           <Heading as="h3" fontSize="lg" fontWeight="700" color="white" noOfLines={2} lineHeight="1.4">

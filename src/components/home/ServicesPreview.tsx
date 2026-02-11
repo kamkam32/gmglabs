@@ -8,52 +8,37 @@ import { colors } from '@/lib/colors'
 import SectionHeading from '../shared/SectionHeading'
 import GlowCard from '../shared/GlowCard'
 import { useScrollAnimation, staggerContainer, fadeInUp } from '@/hooks/useScrollAnimation'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const MotionSimpleGrid = motion(SimpleGrid)
 const MotionBox = motion(Box)
 
-const services = [
-  {
-    icon: FiMonitor,
-    title: 'Développement Web',
-    description: 'Applications web performantes avec Next.js, React et des architectures modernes. SEO, rapidité et expérience utilisateur premium.',
-    color: colors.services.web,
-    href: '/services/web',
-  },
-  {
-    icon: FiSmartphone,
-    title: 'Applications Mobiles',
-    description: 'Apps iOS et Android natives et cross-platform avec React Native. Design soigné et performances optimales.',
-    color: colors.services.mobile,
-    href: '/services/mobile',
-  },
-  {
-    icon: FiCpu,
-    title: 'Intelligence Artificielle',
-    description: 'Chatbots, automatisation et solutions IA sur mesure. LLMs, RAG, computer vision et NLP pour transformer vos processus.',
-    color: colors.services.ia,
-    href: '/services/ia',
-  },
-  {
-    icon: FiActivity,
-    title: 'Performance IT',
-    description: 'Tests de charge, monitoring APM et audit de performance pour garantir la fiabilité de vos systèmes en production.',
-    color: colors.services.performance,
-    href: '/services/performance',
-  },
+const servicesMeta = [
+  { key: 'web' as const, icon: FiMonitor, color: colors.services.web, href: '/services/web' },
+  { key: 'mobile' as const, icon: FiSmartphone, color: colors.services.mobile, href: '/services/mobile' },
+  { key: 'ia' as const, icon: FiCpu, color: colors.services.ia, href: '/services/ia' },
+  { key: 'performance' as const, icon: FiActivity, color: colors.services.performance, href: '/services/performance' },
 ]
 
 export default function ServicesPreview() {
   const { ref, isInView } = useScrollAnimation()
+  const { locale, dict } = useLocale()
+
+  const services = servicesMeta.map((s) => ({
+    ...s,
+    title: dict.services[s.key].title,
+    description: dict.services[s.key].description,
+  }))
 
   return (
     <Box as="section" py={24} bg={colors.bg.section}>
       <Container maxW="1200px">
         <SectionHeading
-          label="Nos services"
-          title="Expertise technique, résultats concrets"
-          gradientWord="résultats concrets"
-          subtitle="Quatre piliers d'excellence pour couvrir tous vos besoins technologiques."
+          label={dict.services.label}
+          title={dict.services.title}
+          gradientWord={dict.services.gradientWord}
+          subtitle={dict.services.subtitle}
         />
 
         <MotionSimpleGrid
@@ -65,8 +50,8 @@ export default function ServicesPreview() {
           variants={staggerContainer}
         >
           {services.map((service) => (
-            <MotionBox key={service.title} variants={fadeInUp}>
-              <Link href={service.href}>
+            <MotionBox key={service.key} variants={fadeInUp}>
+              <Link href={localePath(service.href, locale)}>
                 <GlowCard glowColor={service.color} h="full" cursor="pointer" enableTilt>
                   <VStack align="flex-start" spacing={5}>
                     <Box
@@ -90,7 +75,7 @@ export default function ServicesPreview() {
                       color={service.color}
                       _hover={{ textDecoration: 'underline' }}
                     >
-                      En savoir plus →
+                      {dict.services.learnMore}
                     </Text>
                   </VStack>
                 </GlowCard>

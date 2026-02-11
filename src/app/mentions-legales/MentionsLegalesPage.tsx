@@ -4,8 +4,12 @@ import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { colors } from '@/lib/colors'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 export default function MentionsLegalesPage() {
+  const { locale, dict } = useLocale()
+
   return (
     <Box>
       <Navbar />
@@ -14,62 +18,54 @@ export default function MentionsLegalesPage() {
           <Container maxW="800px">
             <VStack spacing={10} align="flex-start">
               <Heading as="h1" fontSize={{ base: '2xl', md: '4xl' }} color="white" fontWeight="800">
-                Mentions légales
+                {dict.legal.title}
               </Heading>
 
               <VStack spacing={4} align="flex-start">
                 <Heading as="h2" fontSize="xl" color="white">
-                  Éditeur du site
+                  {dict.legal.editor}
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  Le site gmg-labs.com est édité par GMG Labs, société basée à Casablanca, Maroc.
+                  {dict.legal.editorText}
                 </Text>
-                <Text color={colors.text.secondary} lineHeight="1.8">
-                  Email : contact@ello.ma<br />
-                  Téléphone : +33 6 19 06 12 15<br />
-                  Adresse : Casablanca, Maroc
+                <Text color={colors.text.secondary} lineHeight="1.8" whiteSpace="pre-line">
+                  {dict.legal.editorContact}
                 </Text>
               </VStack>
 
               <VStack spacing={4} align="flex-start">
                 <Heading as="h2" fontSize="xl" color="white">
-                  Hébergement
+                  {dict.legal.hosting}
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.
+                  {dict.legal.hostingText}
                 </Text>
               </VStack>
 
               <VStack spacing={4} align="flex-start">
                 <Heading as="h2" fontSize="xl" color="white">
-                  Propriété intellectuelle
+                  {dict.legal.ip}
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  L&apos;ensemble du contenu de ce site (textes, images, logos, design) est la propriété exclusive de GMG Labs
-                  et est protégé par les lois relatives à la propriété intellectuelle. Toute reproduction, même partielle,
-                  est interdite sans autorisation préalable.
+                  {dict.legal.ipText}
                 </Text>
               </VStack>
 
               <VStack spacing={4} align="flex-start">
                 <Heading as="h2" fontSize="xl" color="white">
-                  Protection des données personnelles
+                  {dict.legal.data}
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  Les informations collectées via le formulaire de contact sont utilisées uniquement pour répondre
-                  à vos demandes. Elles ne sont ni vendues ni transmises à des tiers. Conformément à la loi 09-08
-                  relative à la protection des données à caractère personnel au Maroc, vous disposez d&apos;un droit
-                  d&apos;accès, de rectification et de suppression de vos données.
+                  {dict.legal.dataText}
                 </Text>
               </VStack>
 
               <VStack spacing={4} align="flex-start">
                 <Heading as="h2" fontSize="xl" color="white">
-                  Cookies
+                  {dict.legal.cookies}
                 </Heading>
                 <Text color={colors.text.secondary} lineHeight="1.8">
-                  Ce site utilise des cookies à des fins d&apos;analyse de trafic (Google Analytics). Vous pouvez
-                  désactiver les cookies dans les paramètres de votre navigateur.
+                  {dict.legal.cookiesText}
                 </Text>
               </VStack>
             </VStack>

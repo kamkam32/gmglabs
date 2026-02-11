@@ -7,46 +7,37 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ServiceDetailSection from '@/components/services/ServiceDetailSection'
 import { colors } from '@/lib/colors'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
+
+const icons = [FiSmartphone, FiDownloadCloud, FiSend, FiBell]
 
 export default function MobileServicePage() {
+  const { locale, dict } = useLocale()
+  const d = dict.servicesDetail.mobile
+
   return (
     <Box>
       <Navbar />
       <Box as="main" pt="73px">
         <ServiceDetailSection
           accentColor={colors.services.mobile}
-          heroTitle="Applications mobiles qui marquent"
-          heroGradientWord="marquent"
-          heroSubtitle="Des apps iOS et Android fluides, performantes et avec un design natif. Une seule codebase, deux plateformes."
-          features={[
-            {
-              icon: FiSmartphone,
-              title: 'Cross-platform avec React Native',
-              description: 'Une seule codebase pour iOS et Android. Réduction de 40% du temps de développement tout en conservant une expérience native sur chaque plateforme.',
-            },
-            {
-              icon: FiDownloadCloud,
-              title: 'Déploiement App Store & Play Store',
-              description: 'Nous gérons tout le processus de publication : builds, certificats, screenshots, fiches store et optimisation ASO.',
-            },
-            {
-              icon: FiSend,
-              title: 'Offline-first et temps réel',
-              description: 'Synchronisation hors-ligne, push notifications et mises à jour en temps réel pour une expérience sans interruption.',
-            },
-            {
-              icon: FiBell,
-              title: 'Push notifications intelligentes',
-              description: 'Notifications ciblées et segmentées pour engager vos utilisateurs au bon moment avec le bon message.',
-            },
-          ]}
+          heroTitle={d.heroTitle}
+          heroGradientWord={d.heroGradientWord}
+          heroSubtitle={d.heroSubtitle}
+          features={d.features.map((f: { title: string; description: string }, idx: number) => ({
+            icon: icons[idx],
+            title: f.title,
+            description: f.description,
+          }))}
           technologies={['React Native', 'Expo', 'TypeScript', 'Firebase', 'Supabase', 'Redux', 'React Navigation', 'FastAPI', 'App Store Connect', 'Google Play Console']}
-          processSteps={[
-            { number: '01', title: 'Prototype', description: 'Définition du MVP, wireframes et prototype Figma interactif pour valider l\'UX avant le développement.' },
-            { number: '02', title: 'Développement', description: 'Sprints de 2 semaines avec builds de test sur TestFlight et Play Store beta pour des retours continus.' },
-            { number: '03', title: 'Tests', description: 'Tests sur appareils réels, performance profiling, tests d\'accessibilité et correction des bugs.' },
-            { number: '04', title: 'Lancement', description: 'Publication sur les stores, monitoring Crashlytics, analytics et itérations post-lancement.' },
-          ]}
+          processSteps={d.processSteps.map((s: { title: string; description: string }, idx: number) => ({
+            number: String(idx + 1).padStart(2, '0'),
+            title: s.title,
+            description: s.description,
+          }))}
+          technologiesTitle={dict.servicesDetail.technologiesTitle}
+          processTitle={dict.servicesDetail.processTitle}
         />
 
         <Box py={16} bg={colors.bg.body} textAlign="center">
@@ -54,7 +45,7 @@ export default function MobileServicePage() {
             <HStack justify="center" spacing={4}>
               <Button
                 as={Link}
-                href="/contact"
+                href={localePath('/contact', locale)}
                 size="lg"
                 bgGradient={`linear(135deg, ${colors.services.mobile}, ${colors.accent.cyan})`}
                 color="white"
@@ -64,7 +55,7 @@ export default function MobileServicePage() {
                 _hover={{ opacity: 0.9, transform: 'translateY(-2px)' }}
                 rightIcon={<FiArrowRight />}
               >
-                Lancer une app mobile
+                {d.cta}
               </Button>
             </HStack>
           </Container>

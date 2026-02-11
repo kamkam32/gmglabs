@@ -12,7 +12,8 @@
       "WebFetch(domain:gmglabs-mqeknvnwh-ellos-projects-5e8d4ee2.vercel.app)",
       "Bash(ls:*)",
       "WebSearch",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(npm cache clean:*)"
     ]
   }
 }

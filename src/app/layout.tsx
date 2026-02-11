@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { headers } from 'next/headers'
 import { Providers } from './providers'
+import { getDictionary } from '@/i18n/getDictionary'
+import type { Locale } from '@/i18n/config'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -50,13 +53,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const headersList = await headers()
+  const locale = (headersList.get('x-locale') || 'fr') as Locale
+  const dict = await getDictionary(locale)
+
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" href="/favicon.png" />
@@ -78,7 +85,7 @@ export default function RootLayout({
             gtag('config', 'G-3PYLNRQZ2G');
           `}
         </Script>
-        <Providers>
+        <Providers locale={locale} dict={dict}>
           {children}
         </Providers>
       </body>

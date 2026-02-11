@@ -2,13 +2,8 @@
 
 import { HStack, Button } from '@chakra-ui/react'
 import { colors } from '@/lib/colors'
-
-const filters = [
-  { key: 'all', label: 'Tous' },
-  { key: 'web', label: 'Web', color: colors.services.web },
-  { key: 'mobile', label: 'Mobile', color: colors.services.mobile },
-  { key: 'ia', label: 'IA', color: colors.services.ia },
-]
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 interface ProjectFilterProps {
   active: string
@@ -16,6 +11,15 @@ interface ProjectFilterProps {
 }
 
 export default function ProjectFilter({ active, onFilter }: ProjectFilterProps) {
+  const { locale, dict } = useLocale()
+
+  const filters = [
+    { key: 'all', label: dict.portfolio.filterAll },
+    { key: 'web', label: dict.portfolio.filterWeb, color: colors.services.web },
+    { key: 'mobile', label: dict.portfolio.filterMobile, color: colors.services.mobile },
+    { key: 'ia', label: dict.portfolio.filterIA, color: colors.services.ia },
+  ]
+
   return (
     <HStack spacing={3} flexWrap="wrap" justify="center" mb={12}>
       {filters.map((f) => (

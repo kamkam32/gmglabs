@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { colors } from '@/lib/colors'
 import { useTiltEffect } from '@/hooks/useTiltEffect'
 import type { Project } from '@/lib/projects'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const categoryColors: Record<string, string> = {
   web: colors.services.web,
@@ -24,6 +26,7 @@ const categoryLabels: Record<string, string> = {
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const { locale, dict } = useLocale()
   const accent = categoryColors[project.category] || colors.accent.cyan
   const tiltRef = useTiltEffect<HTMLDivElement>({
     maxTilt: 8,
@@ -31,7 +34,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   })
 
   return (
-    <Link href={`/realisations/${project.slug}`}>
+    <Link href={localePath(`/realisations/${project.slug}`, locale)}>
       <Box
         ref={tiltRef}
         bg={colors.bg.card}
@@ -82,7 +85,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               fontSize="xs"
               fontWeight="700"
             >
-              Vedette
+              {dict.portfolio.featured}
             </Badge>
           )}
         </Box>

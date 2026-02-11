@@ -16,23 +16,29 @@ import { usePathname } from 'next/navigation'
 import { colors } from '@/lib/colors'
 import GradientText from '../shared/GradientText'
 import MobileMenu from './MobileMenu'
-
-const navLinks = [
-  { href: '/', label: 'Accueil' },
-  { href: '/services', label: 'Services' },
-  { href: '/realisations', label: 'Réalisations' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/tarifs', label: 'Tarifs' },
-  { href: '/a-propos', label: 'À propos' },
-]
+import LanguageSwitcher from './LanguageSwitcher'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 export default function Navbar() {
   const pathname = usePathname()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { locale, dict } = useLocale()
+
+  const navLinks = [
+    { href: '/', label: dict.nav.home },
+    { href: '/services', label: dict.nav.services },
+    { href: '/realisations', label: dict.nav.realisations },
+    { href: '/blog', label: dict.nav.blog },
+    { href: '/tarifs', label: dict.nav.pricing },
+    { href: '/a-propos', label: dict.nav.about },
+  ]
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/'
-    return pathname.startsWith(href)
+    // Strip /en prefix from pathname for comparison
+    const cleanPath = pathname.replace(/^\/en/, '') || '/'
+    if (href === '/') return cleanPath === '/'
+    return cleanPath.startsWith(href)
   }
 
   return (
@@ -51,8 +57,8 @@ export default function Navbar() {
         role="banner"
       >
         <Container maxW="1400px" py={4}>
-          <Flex as="nav" justify="space-between" align="center" aria-label="Navigation principale">
-            <Link href="/" aria-label="GMG Labs - Accueil">
+          <Flex as="nav" justify="space-between" align="center" aria-label={dict.nav.mainNavAriaLabel}>
+            <Link href={localePath('/', locale)} aria-label={dict.nav.homeAriaLabel}>
               <GradientText fontSize="xl" fontWeight="800">
                 GMG Labs
               </GradientText>
@@ -60,7 +66,7 @@ export default function Navbar() {
 
             <HStack spacing={8} display={{ base: 'none', lg: 'flex' }}>
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
+                <Link key={link.href} href={localePath(link.href, locale)}>
                   <Text
                     color={isActive(link.href) ? colors.accent.cyan : colors.text.secondary}
                     fontWeight={isActive(link.href) ? '600' : '500'}
@@ -88,9 +94,10 @@ export default function Navbar() {
             </HStack>
 
             <HStack spacing={3}>
+              <LanguageSwitcher />
               <Button
                 as={Link}
-                href="/contact"
+                href={localePath('/contact', locale)}
                 size="sm"
                 bg="transparent"
                 border="1px solid"
@@ -106,7 +113,7 @@ export default function Navbar() {
                 }}
                 display={{ base: 'none', md: 'flex' }}
               >
-                Contactez-nous
+                {dict.nav.contact}
               </Button>
               <IconButton
                 aria-label="Menu"

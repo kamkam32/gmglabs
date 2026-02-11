@@ -29,6 +29,8 @@ import {
   slideInLeft,
   slideInRight,
 } from '@/hooks/useScrollAnimation'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 const MotionBox = motion(Box)
 const MotionSimpleGrid = motion(SimpleGrid)
@@ -44,51 +46,23 @@ function MagneticButton({ children }: { children: React.ReactNode }) {
   )
 }
 
-const cofounders = [
-  {
-    name: 'Kamil Alami',
-    role: 'Co-fondateur – Product Builder',
-    description: 'Profil Product Builder avec +5 ans d\'expérience en conception de produits digitaux. De la stratégie produit au développement, en passant par le design UX et le go-to-market. Expertise en IA générative et méthodologies agiles.',
-    expertise: ['Product Strategy', 'UX/UI Design', 'Full-stack Dev', 'IA & RAG'],
-    formation: 'ESCP Europe / NEOMA Business School',
-  },
-  {
-    name: 'Oualid Tebib',
-    role: 'Co-fondateur – Performance IT & Stratégie Digitale',
-    description: 'Consultant en stratégie digitale et IT avec 8 ans d\'expérience dans l\'accompagnement de grands groupes (BNP, ENGIE, Saint-Gobain) dans leurs projets de transformation. Expert en performance applicative et architecture IT.',
-    expertise: ['Neoload', 'Dynatrace / AppDynamics', 'Tests de charge', 'Architecture IT'],
-    formation: 'Paris-Dauphine – Master MIAGE-IF',
-  },
-  {
-    name: 'Mehdi Essakalli',
-    role: 'Co-fondateur – Data & Stratégie',
-    description: 'Profil stratégie et data avec une expérience en R&D Big Data (MFG Labs) et en conseil en transformation digitale auprès de l\'État et de grands comptes du CAC 40. Expertise en blockchain, IA et automatisation.',
-    expertise: ['Data & Big Data', 'Blockchain', 'UX/UI Design', 'IA & Automatisation'],
-    formation: 'Sciences-Po Paris x LSE – Finance & Stratégie',
-  },
+const valueIcons = [FiTarget, FiHeart, FiZap, FiUsers]
+
+const expertiseArrays = [
+  ['Product Strategy', 'UX/UI Design', 'Full-stack Dev', 'IA & RAG'],
+  ['Neoload', 'Dynatrace / AppDynamics', 'Tests de charge', 'Architecture IT'],
+  ['Data & Big Data', 'Blockchain', 'UX/UI Design', 'IA & Automatisation'],
 ]
 
-const values = [
-  { icon: FiTarget, title: 'Excellence', description: 'Chaque ligne de code est écrite avec soin. Nous ne livrons que des produits dont nous sommes fiers.' },
-  { icon: FiHeart, title: 'Passion', description: 'Nous aimons ce que nous faisons. Cette passion se reflète dans la qualité de chaque projet.' },
-  { icon: FiZap, title: 'Innovation', description: 'Nous restons à la pointe de la technologie pour offrir les meilleures solutions à nos clients.' },
-  { icon: FiUsers, title: 'Partenariat', description: 'Nous ne sommes pas un prestataire, mais un partenaire. Votre succès est notre succès.' },
-]
-
-const stats = [
-  { target: 20, suffix: '+', label: "Ans d'expérience cumulée" },
-  { target: 3, suffix: '', label: 'Cofondateurs' },
-  { target: 15, suffix: '+', label: 'Projets livrés' },
-  { target: 4, suffix: '', label: "Pôles d'expertise" },
-]
-
-const timeline = [
-  { year: '2025', title: 'Création de GMG Labs', description: 'Fondation de l\'agence à Casablanca avec une vision claire : créer des produits digitaux de classe mondiale.' },
-  { year: '2025', title: 'Lancement d\'Ello', description: 'Développement et lancement de notre produit phare : Ello, la plateforme de réservation beauté #1 au Maroc.' },
-  { year: '2025', title: 'Messidor Patrimoine', description: 'Conception du dashboard financier pour Messidor Patrimoine : suivi OPCVM, OPCI et simulateur d\'investissement.' },
+const statsNumbers = [
+  { target: 20, suffix: '+' },
+  { target: 3, suffix: '' },
+  { target: 15, suffix: '+' },
+  { target: 4, suffix: '' },
 ]
 
 export default function AProposPage() {
+  const { locale, dict } = useLocale()
   const { ref: valRef, isInView: valInView } = useScrollAnimation()
   const { ref: teamRef, isInView: teamInView } = useScrollAnimation()
   const { ref: statsRef, isInView: statsInView } = useScrollAnimation()
@@ -110,6 +84,24 @@ export default function AProposPage() {
     offset: ['start 80%', 'end 60%'],
   })
   const lineScaleY = useTransform(timelineScroll, [0, 1], [0, 1])
+
+  // Build cofounders from dict + keep expertise arrays
+  const cofounders = dict.about.cofounders.map((c: { name: string; role: string; description: string; formation: string }, i: number) => ({
+    ...c,
+    expertise: expertiseArrays[i],
+  }))
+
+  // Build stats from dict + keep numeric values
+  const stats = statsNumbers.map((s, i) => ({
+    ...s,
+    label: dict.about.statsItems[i].label,
+  }))
+
+  // Build values from dict + keep icons
+  const values = dict.about.values.map((v: { title: string; description: string }, i: number) => ({
+    ...v,
+    icon: valueIcons[i],
+  }))
 
   return (
     <Box>
@@ -218,7 +210,7 @@ export default function AProposPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 >
-                  L&apos;équipe derrière <GradientText>GMG Labs</GradientText>
+                  {dict.about.heroTitle}<GradientText>{dict.about.heroTitleGradient}</GradientText>
                 </MotionHeading>
                 <MotionText
                   fontSize={{ base: 'md', md: 'lg' }}
@@ -229,8 +221,7 @@ export default function AProposPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.25 }}
                 >
-                  GMG Labs est une agence tech premium basée à Casablanca. Nous construisons des produits
-                  digitaux qui font la différence pour les entreprises marocaines et au-delà.
+                  {dict.about.heroSubtitle}
                 </MotionText>
                 <MotionBox
                   initial={{ opacity: 0, y: 20 }}
@@ -252,7 +243,7 @@ export default function AProposPage() {
                         transition="all 0.3s"
                         rightIcon={<FiExternalLink />}
                       >
-                        GMG Labs
+                        {dict.about.ctaGmgLabs}
                       </Button>
                     </MagneticButton>
                     <MagneticButton>
@@ -268,7 +259,7 @@ export default function AProposPage() {
                         _hover={{ bg: 'rgba(0, 212, 255, 0.1)', borderColor: colors.accent.cyan }}
                         rightIcon={<FiExternalLink />}
                       >
-                        Découvrir Ello
+                        {dict.about.ctaEllo}
                       </Button>
                     </MagneticButton>
                   </HStack>
@@ -282,9 +273,9 @@ export default function AProposPage() {
         <Box py={20} bg={colors.bg.section}>
           <Container maxW="800px">
             <SectionHeading
-              label="Notre histoire"
-              title="Comment tout a commencé"
-              gradientWord="commencé"
+              label={dict.about.storyLabel}
+              title={dict.about.storyTitle}
+              gradientWord={dict.about.storyGradientWord}
             />
             <VStack spacing={6} textAlign="center">
               <MotionText
@@ -295,9 +286,7 @@ export default function AProposPage() {
                 viewport={{ once: true, margin: '-80px' }}
                 variants={fadeInUp}
               >
-                GMG Labs est né d&apos;un constat simple : le Maroc regorge de talents tech, mais manque
-                d&apos;agences capables de délivrer des produits au niveau des standards internationaux.
-                Nous avons décidé de changer cela.
+                {dict.about.storyParagraphs[0]}
               </MotionText>
               <MotionText
                 color={colors.text.secondary}
@@ -307,9 +296,7 @@ export default function AProposPage() {
                 viewport={{ once: true, margin: '-80px' }}
                 variants={fadeInUp}
               >
-                Notre premier grand projet, Ello, est devenu la plateforme de réservation beauté de
-                référence au Maroc. Cette réussite nous a convaincu que nous pouvions reproduire
-                ce niveau d&apos;excellence pour d&apos;autres entreprises.
+                {dict.about.storyParagraphs[1]}
               </MotionText>
               <MotionText
                 color={colors.text.secondary}
@@ -319,11 +306,9 @@ export default function AProposPage() {
                 viewport={{ once: true, margin: '-80px' }}
                 variants={fadeInUp}
               >
-                Aujourd&apos;hui, nous accompagnons startups et grandes entreprises dans leur transformation
-                digitale avec quatre pôles d&apos;expertise : Web, Mobile, Intelligence Artificielle et Performance IT.
-                Retrouvez-nous sur{' '}
+                {dict.about.storyParagraphs[2]}{' '}
                 <Text as="a" href="https://gmg-labs.com/" target="_blank" color={colors.accent.cyan} fontWeight="600" _hover={{ textDecoration: 'underline' }}>
-                  gmg-labs.com
+                  {dict.about.storyLink}
                 </Text>.
               </MotionText>
             </VStack>
@@ -334,10 +319,10 @@ export default function AProposPage() {
         <Box py={20} bg={colors.bg.body}>
           <Container maxW="1100px">
             <SectionHeading
-              label="L'équipe"
-              title="Les cofondateurs"
-              gradientWord="cofondateurs"
-              subtitle="Trois profils complémentaires unissant stratégie, technologie et performance."
+              label={dict.about.teamLabel}
+              title={dict.about.teamTitle}
+              gradientWord={dict.about.teamGradientWord}
+              subtitle={dict.about.teamSubtitle}
             />
             <MotionSimpleGrid
               ref={teamRef}
@@ -347,7 +332,7 @@ export default function AProposPage() {
               animate={teamInView ? 'visible' : 'hidden'}
               variants={staggerContainer}
             >
-              {cofounders.map((person) => (
+              {cofounders.map((person: { name: string; role: string; description: string; formation: string; expertise: string[] }) => (
                 <MotionBox key={person.name} variants={fadeInUp}>
                   <GlowCard enableTilt glowColor={colors.accent.cyan} h="full" display="flex" flexDirection="column">
                     <VStack align="flex-start" spacing={4} flex={1}>
@@ -366,7 +351,7 @@ export default function AProposPage() {
                         {person.formation}
                       </Text>
                       <HStack spacing={2} flexWrap="wrap">
-                        {person.expertise.map((skill) => (
+                        {person.expertise.map((skill: string) => (
                           <Box
                             key={skill}
                             px={3}
@@ -394,9 +379,9 @@ export default function AProposPage() {
         <Box py={20} bg={colors.bg.section}>
           <Container maxW="1000px">
             <SectionHeading
-              label="En chiffres"
-              title="GMG Labs en quelques chiffres"
-              gradientWord="chiffres"
+              label={dict.about.statsLabel}
+              title={dict.about.statsTitle}
+              gradientWord={dict.about.statsGradientWord}
             />
             <MotionSimpleGrid
               ref={statsRef}
@@ -406,7 +391,7 @@ export default function AProposPage() {
               animate={statsInView ? 'visible' : 'hidden'}
               variants={staggerContainer}
             >
-              {stats.map((stat) => (
+              {stats.map((stat: { target: number; suffix: string; label: string }) => (
                 <MotionBox key={stat.label} variants={fadeInUp}>
                   <GlowCard
                     glowColor={colors.accent.violet}
@@ -437,9 +422,9 @@ export default function AProposPage() {
         <Box py={20} bg={colors.bg.body}>
           <Container maxW="1000px">
             <SectionHeading
-              label="Nos principes"
-              title="Nos valeurs fondatrices"
-              gradientWord="valeurs"
+              label={dict.about.valuesLabel}
+              title={dict.about.valuesTitle}
+              gradientWord={dict.about.valuesGradientWord}
             />
             <MotionSimpleGrid
               ref={valRef}
@@ -449,7 +434,7 @@ export default function AProposPage() {
               animate={valInView ? 'visible' : 'hidden'}
               variants={staggerContainer}
             >
-              {values.map((v) => (
+              {values.map((v: { title: string; description: string; icon: React.ElementType }) => (
                 <MotionBox key={v.title} variants={fadeInUp}>
                   <GlowCard glowColor={colors.accent.cyan}>
                     <HStack align="flex-start" spacing={5}>
@@ -481,9 +466,9 @@ export default function AProposPage() {
         <Box py={20} bg={colors.bg.section}>
           <Container maxW="700px">
             <SectionHeading
-              label="Notre parcours"
-              title="Les étapes clés"
-              gradientWord="étapes clés"
+              label={dict.about.timelineLabel}
+              title={dict.about.timelineTitle}
+              gradientWord={dict.about.timelineGradientWord}
             />
             <VStack ref={timelineRef} spacing={0} align="stretch" position="relative">
               {/* Animated line that draws on scroll */}
@@ -509,7 +494,7 @@ export default function AProposPage() {
                 bgGradient={colors.accent.gradient}
                 opacity={0.1}
               />
-              {timeline.map((item, idx) => (
+              {dict.about.timeline.map((item: { year: string; title: string; description: string }, idx: number) => (
                 <MotionBox
                   key={`${item.year}-${item.title}`}
                   initial="hidden"

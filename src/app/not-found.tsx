@@ -7,8 +7,12 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import GradientText from '@/components/shared/GradientText'
 import { colors } from '@/lib/colors'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 export default function NotFound() {
+  const { locale, dict } = useLocale()
+
   return (
     <Box>
       <Navbar />
@@ -44,14 +48,14 @@ export default function NotFound() {
                 404
               </Text>
               <Heading as="h1" fontSize={{ base: 'xl', md: '2xl' }} color="white">
-                Page introuvable
+                {dict.notFound.title}
               </Heading>
               <Text color={colors.text.secondary} lineHeight="1.7">
-                La page que vous cherchez n&apos;existe pas ou a été déplacée.
+                {dict.notFound.description}
               </Text>
               <Button
                 as={Link}
-                href="/"
+                href={localePath('/', locale)}
                 bgGradient={colors.accent.gradient}
                 color="white"
                 borderRadius="full"
@@ -60,7 +64,7 @@ export default function NotFound() {
                 _hover={{ opacity: 0.9 }}
                 leftIcon={<FiArrowLeft />}
               >
-                Retour à l&apos;accueil
+                {dict.notFound.backHome}
               </Button>
             </VStack>
           </Container>

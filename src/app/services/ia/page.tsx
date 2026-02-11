@@ -1,27 +1,37 @@
 import { Metadata } from 'next'
 import IAServicePage from './IAServicePage'
 import { generateServiceJsonLd } from '@/lib/seo'
+import { getLocaleDictionary } from '@/i18n/getLocaleFromHeaders'
 
-export const metadata: Metadata = {
-  title: 'Intelligence Artificielle - Chatbots, Automatisation & IA sur mesure',
-  description: 'Solutions d\'intelligence artificielle sur mesure : chatbots WhatsApp, RAG, automatisation de processus, computer vision et analyse de données au Maroc.',
-  keywords: 'intelligence artificielle maroc, chatbot whatsapp, rag llm, automatisation ia, openai, langchain, machine learning casablanca',
-  alternates: { canonical: 'https://www.gmg-labs.com/services/ia' },
-  openGraph: {
-    title: 'Intelligence Artificielle - GMG Labs',
-    description: 'Solutions IA sur mesure au Maroc : chatbots, automatisation et plus.',
-    url: 'https://www.gmg-labs.com/services/ia',
-    siteName: 'GMG Labs',
-    locale: 'fr_MA',
-    type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Intelligence Artificielle' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Intelligence Artificielle - GMG Labs',
-    description: 'Solutions IA sur mesure au Maroc : chatbots, automatisation et plus.',
-    images: ['/og-image.png'],
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const { locale, dict } = await getLocaleDictionary()
+  const m = dict.metadata.servicesIA
+  const baseUrl = 'https://www.gmg-labs.com'
+  const path = '/services/ia'
+
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: {
+      canonical: locale === 'fr' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
+      languages: { fr: `${baseUrl}${path}`, en: `${baseUrl}/en${path}` },
+    },
+    openGraph: {
+      title: m.ogTitle,
+      description: m.ogDescription,
+      url: locale === 'fr' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
+      siteName: 'GMG Labs',
+      locale: locale === 'fr' ? 'fr_MA' : 'en_US',
+      type: 'website',
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: m.ogTitle,
+      description: m.ogDescription,
+      images: ['/og-image.png'],
+    },
+  }
 }
 
 const jsonLd = {

@@ -14,35 +14,39 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import GradientText from '@/components/shared/GradientText'
 import { colors } from '@/lib/colors'
-
-const contactInfo = [
-  {
-    icon: FiMail,
-    label: 'Email',
-    value: 'contact@ello.ma',
-    href: 'mailto:contact@ello.ma',
-  },
-  {
-    icon: FiPhone,
-    label: 'Téléphone',
-    value: '+33 6 19 06 12 15',
-    href: 'tel:+33619061215',
-  },
-  {
-    icon: FaWhatsapp,
-    label: 'WhatsApp',
-    value: '+33 6 19 06 12 15',
-    href: 'https://wa.me/33619061215',
-  },
-  {
-    icon: FiMapPin,
-    label: 'Adresse',
-    value: 'Casablanca, Maroc',
-    href: undefined,
-  },
-]
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 export default function ContactPage() {
+  const { locale, dict } = useLocale()
+
+  const contactInfo = [
+    {
+      icon: FiMail,
+      label: dict.contact.emailLabel,
+      value: 'contact@ello.ma',
+      href: 'mailto:contact@ello.ma',
+    },
+    {
+      icon: FiPhone,
+      label: dict.contact.phoneLabel,
+      value: '+33 6 19 06 12 15',
+      href: 'tel:+33619061215',
+    },
+    {
+      icon: FaWhatsapp,
+      label: dict.contact.whatsappLabel,
+      value: '+33 6 19 06 12 15',
+      href: 'https://wa.me/33619061215',
+    },
+    {
+      icon: FiMapPin,
+      label: dict.contact.addressLabel,
+      value: dict.contact.addressValue,
+      href: undefined,
+    },
+  ]
+
   return (
     <Box>
       <Navbar />
@@ -68,10 +72,10 @@ export default function ContactPage() {
                 color="white"
                 lineHeight="1.2"
               >
-                Parlons de votre <GradientText>projet</GradientText>
+                {dict.contact.heroTitle}<GradientText>{dict.contact.heroTitleGradient}</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Premier appel de découverte gratuit et sans engagement. Contactez-nous directement.
+                {dict.contact.heroSubtitle}
               </Text>
             </VStack>
           </Container>
@@ -83,11 +87,10 @@ export default function ContactPage() {
             <VStack spacing={8} align="flex-start">
               <Box>
                 <Heading as="h2" fontSize="xl" color="white" mb={3}>
-                  Contactez-nous directement
+                  {dict.contact.directContact}
                 </Heading>
                 <Text color={colors.text.secondary} fontSize="sm" lineHeight="1.7">
-                  N&apos;hésitez pas à nous appeler, nous envoyer un email
-                  ou nous écrire sur WhatsApp. Nous répondons sous 24h.
+                  {dict.contact.directContactSubtitle}
                 </Text>
               </Box>
 

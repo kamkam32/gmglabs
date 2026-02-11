@@ -14,27 +14,35 @@ import { FaWhatsapp, FaLinkedin, FaInstagram } from 'react-icons/fa'
 import NextImage from 'next/image'
 import Link from 'next/link'
 import { colors } from '@/lib/colors'
-
-const footerLinks = {
-  services: [
-    { href: '/services/web', label: 'Développement Web' },
-    { href: '/services/mobile', label: 'Applications Mobiles' },
-    { href: '/services/ia', label: 'Intelligence Artificielle' },
-    { href: '/tarifs', label: 'Tarifs' },
-  ],
-  entreprise: [
-    { href: '/a-propos', label: 'À propos' },
-    { href: '/realisations', label: 'Réalisations' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
-    { href: 'https://gmg-labs.com/', label: 'GMG Labs', external: true },
-  ],
-  legal: [
-    { href: '/mentions-legales', label: 'Mentions légales' },
-  ],
-}
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 export default function Footer() {
+  const { locale, dict } = useLocale()
+
+  const footerLinks = {
+    services: [
+      { href: '/services/web', label: dict.footer.webDev },
+      { href: '/services/mobile', label: dict.footer.mobileApps },
+      { href: '/services/ia', label: dict.footer.ai },
+      { href: '/tarifs', label: dict.footer.pricing },
+    ],
+    entreprise: [
+      { href: '/a-propos', label: dict.footer.about },
+      { href: '/realisations', label: dict.footer.realisations },
+      { href: '/blog', label: dict.footer.blog },
+      { href: '/contact', label: dict.footer.contactLabel },
+      { href: 'https://gmg-labs.com/', label: dict.footer.gmgLabs, external: true },
+    ],
+    legal: [
+      { href: '/mentions-legales', label: dict.footer.legalTitle },
+    ],
+  }
+
+  const whatsappText = locale === 'fr'
+    ? 'Bonjour%2C%20je%20souhaite%20discuter%20d%27un%20projet'
+    : 'Hello%2C%20I%20would%20like%20to%20discuss%20a%20project'
+
   return (
     <Box as="footer" bg={colors.bg.card} borderTop="1px solid" borderColor={colors.border.subtle} role="contentinfo">
       <Container maxW="1400px" py={16}>
@@ -51,7 +59,7 @@ export default function Footer() {
               />
             </Box>
             <Text fontSize="sm" color={colors.text.tertiary} lineHeight="1.8">
-              Agence tech premium basée à Casablanca. Nous construisons des produits digitaux qui font la différence.
+              {dict.footer.description}
             </Text>
             <HStack spacing={3} pt={2}>
               <Box
@@ -96,10 +104,10 @@ export default function Footer() {
           {/* Services */}
           <VStack align="flex-start" spacing={4}>
             <Text fontWeight="600" color="white" fontSize="sm" textTransform="uppercase" letterSpacing="1px">
-              Services
+              {dict.footer.servicesTitle}
             </Text>
             {footerLinks.services.map((link) => (
-              <Link key={link.href} href={link.href}>
+              <Link key={link.href} href={localePath(link.href, locale)}>
                 <Text fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }} transition="color 0.2s">
                   {link.label}
                 </Text>
@@ -110,7 +118,7 @@ export default function Footer() {
           {/* Entreprise */}
           <VStack align="flex-start" spacing={4}>
             <Text fontWeight="600" color="white" fontSize="sm" textTransform="uppercase" letterSpacing="1px">
-              Entreprise
+              {dict.footer.companyTitle}
             </Text>
             {footerLinks.entreprise.map((link) =>
               'external' in link ? (
@@ -120,7 +128,7 @@ export default function Footer() {
                   </Text>
                 </Box>
               ) : (
-                <Link key={link.href} href={link.href}>
+                <Link key={link.href} href={localePath(link.href, locale)}>
                   <Text fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }} transition="color 0.2s">
                     {link.label}
                   </Text>
@@ -132,7 +140,7 @@ export default function Footer() {
           {/* Contact */}
           <VStack align="flex-start" spacing={4}>
             <Text fontWeight="600" color="white" fontSize="sm" textTransform="uppercase" letterSpacing="1px">
-              Contact
+              {dict.footer.contactLabel}
             </Text>
             <HStack spacing={3}>
               <FiMail size={16} color={colors.accent.cyan} />
@@ -151,7 +159,7 @@ export default function Footer() {
                 <FiMapPin size={16} color={colors.accent.cyan} />
               </Box>
               <Text fontSize="sm" color={colors.text.tertiary}>
-                Casablanca, Maroc
+                {dict.footer.address}
               </Text>
             </HStack>
           </VStack>
@@ -160,11 +168,11 @@ export default function Footer() {
         <Box borderTop="1px solid" borderColor={colors.border.subtle} mt={12} pt={8}>
           <Flex justify="space-between" align="center" flexWrap="wrap" gap={4}>
             <Text fontSize="sm" color={colors.text.tertiary}>
-              &copy; {new Date().getFullYear()} GMG Labs. Tous droits réservés.
+              &copy; {new Date().getFullYear()} {dict.footer.copyright}
             </Text>
             <HStack spacing={6}>
               {footerLinks.legal.map((link) => (
-                <Link key={link.href} href={link.href}>
+                <Link key={link.href} href={localePath(link.href, locale)}>
                   <Text fontSize="sm" color={colors.text.tertiary} _hover={{ color: colors.accent.cyan }}>
                     {link.label}
                   </Text>
@@ -178,7 +186,7 @@ export default function Footer() {
       {/* WhatsApp Floating Button */}
       <Box
         as="a"
-        href="https://wa.me/33619061215?text=Bonjour%2C%20je%20souhaite%20discuter%20d%27un%20projet"
+        href={`https://wa.me/33619061215?text=${whatsappText}`}
         target="_blank"
         rel="noopener noreferrer"
         position="fixed"
@@ -199,7 +207,7 @@ export default function Footer() {
           boxShadow: '0 6px 25px rgba(37, 211, 102, 0.5)',
         }}
         transition="all 0.3s ease"
-        aria-label="Nous contacter sur WhatsApp"
+        aria-label={dict.footer.whatsappAriaLabel}
       >
         <FaWhatsapp size={28} />
       </Box>

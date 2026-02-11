@@ -1,27 +1,37 @@
 import { Metadata } from 'next'
 import ServicesPage from './ServicesPage'
 import { generateServiceJsonLd } from '@/lib/seo'
+import { getLocaleDictionary } from '@/i18n/getLocaleFromHeaders'
 
-export const metadata: Metadata = {
-  title: 'Services - Développement Web, Mobile & IA',
-  description: 'Découvrez nos services : développement web avec Next.js, applications mobiles React Native et solutions d\'intelligence artificielle sur mesure.',
-  keywords: 'développement web maroc, application mobile casablanca, intelligence artificielle, next.js, react native, chatbot ia',
-  alternates: { canonical: 'https://www.gmg-labs.com/services' },
-  openGraph: {
-    title: 'Nos Services - GMG Labs',
-    description: 'Développement web, mobile et IA sur mesure au Maroc.',
-    url: 'https://www.gmg-labs.com/services',
-    siteName: 'GMG Labs',
-    locale: 'fr_MA',
-    type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs - Nos Services' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nos Services - GMG Labs',
-    description: 'Développement web, mobile et IA sur mesure au Maroc.',
-    images: ['/og-image.png'],
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const { locale, dict } = await getLocaleDictionary()
+  const m = dict.metadata.services
+  const baseUrl = 'https://www.gmg-labs.com'
+  const path = '/services'
+
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: {
+      canonical: locale === 'fr' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
+      languages: { fr: `${baseUrl}${path}`, en: `${baseUrl}/en${path}` },
+    },
+    openGraph: {
+      title: m.ogTitle,
+      description: m.ogDescription,
+      url: locale === 'fr' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
+      siteName: 'GMG Labs',
+      locale: locale === 'fr' ? 'fr_MA' : 'en_US',
+      type: 'website',
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'GMG Labs' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: m.ogTitle,
+      description: m.ogDescription,
+      images: ['/og-image.png'],
+    },
+  }
 }
 
 const jsonLd = {

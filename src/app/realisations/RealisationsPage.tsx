@@ -10,8 +10,11 @@ import GradientText from '@/components/shared/GradientText'
 import CTASection from '@/components/home/CTASection'
 import { colors } from '@/lib/colors'
 import { projects } from '@/lib/projects'
+import { useLocale } from '@/i18n/LocaleContext'
+import { localePath } from '@/i18n/config'
 
 export default function RealisationsPage() {
+  const { locale, dict } = useLocale()
   const [filter, setFilter] = useState('all')
 
   const filteredProjects = filter === 'all'
@@ -43,10 +46,10 @@ export default function RealisationsPage() {
                 color="white"
                 lineHeight="1.2"
               >
-                Nos <GradientText>réalisations</GradientText>
+                {dict.portfolio.heroTitle}<GradientText>{dict.portfolio.heroTitleGradient}</GradientText>
               </Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }} color={colors.text.secondary} lineHeight="1.8" maxW="600px">
-                Des projets concrets avec des résultats mesurables. Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs.
+                {dict.portfolio.heroSubtitle}
               </Text>
             </VStack>
           </Container>
