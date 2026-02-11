@@ -200,6 +200,12 @@
     "subtitle": "Discutons de votre vision. Premier appel de découverte gratuit et sans engagement.",
     "ctaPrimary": "Planifier un appel"
   },
+  "techStack": {
+    "label": "Technologies",
+    "title": "Les meilleurs outils, les meilleurs résultats",
+    "gradientWord": "meilleurs résultats",
+    "subtitle": "Nous utilisons les technologies les plus modernes pour garantir performance, scalabilité et maintenabilité."
+  },
   "about": {
     "heroTitle": "L'équipe derrière ",
     "heroTitleGradient": "GMG Labs",

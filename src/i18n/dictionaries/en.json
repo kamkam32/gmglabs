@@ -200,6 +200,12 @@
     "subtitle": "Let's discuss your vision. Free discovery call with no commitment.",
     "ctaPrimary": "Schedule a call"
   },
+  "techStack": {
+    "label": "Technologies",
+    "title": "The best tools, the best results",
+    "gradientWord": "best results",
+    "subtitle": "We use the most modern technologies to ensure performance, scalability and maintainability."
+  },
   "about": {
     "heroTitle": "The team behind ",
     "heroTitleGradient": "GMG Labs",

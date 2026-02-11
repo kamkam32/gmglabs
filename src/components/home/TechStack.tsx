@@ -19,6 +19,7 @@ import {
 import { colors } from '@/lib/colors'
 import SectionHeading from '../shared/SectionHeading'
 import { useScrollAnimation, staggerContainer, fadeInUp } from '@/hooks/useScrollAnimation'
+import { useLocale } from '@/i18n/LocaleContext'
 
 const MotionSimpleGrid = motion(SimpleGrid)
 const MotionBox = motion(Box)
@@ -40,15 +41,16 @@ const technologies = [
 
 export default function TechStack() {
   const { ref, isInView } = useScrollAnimation()
+  const { dict } = useLocale()
 
   return (
     <Box as="section" py={24} bg={colors.bg.body}>
       <Container maxW="1200px">
         <SectionHeading
-          label="Technologies"
-          title="Les meilleurs outils, les meilleurs resultats"
-          gradientWord="meilleurs resultats"
-          subtitle="Nous utilisons les technologies les plus modernes pour garantir performance, scalabilite et maintenabilite."
+          label={dict.techStack.label}
+          title={dict.techStack.title}
+          gradientWord={dict.techStack.gradientWord}
+          subtitle={dict.techStack.subtitle}
         />
 
         <MotionSimpleGrid
