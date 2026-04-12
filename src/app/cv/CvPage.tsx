@@ -24,6 +24,11 @@ const content = {
         company: 'Ello — Beauty & Wellness SaaS',
         location: 'Casablanca',
         period: 'Juil. 2025 - Present',
+        links: [
+          { label: 'Site web', url: 'https://www.ello.ma/' },
+          { label: 'iOS', url: 'https://www.bit.ly/ello-ios' },
+          { label: 'Android', url: 'https://www.bit.ly/ello-gplay' },
+        ],
         bullets: [
           'Lancement et scaling a 100+ salons onboarded et des milliers de rendez-vous traites au Maroc ; gestion complete du go-to-market B2B (pricing, activation, onboarding, churn).',
           'Cycle produit complet en solo : UX/UI, schema Supabase (80+ tables), app React Native, dashboard Next.js, API design — de zero a la production.',
@@ -112,6 +117,7 @@ const content = {
     ],
     languages: ['Francais (natif)', 'Anglais (courant)', 'Espagnol'],
     projects: [
+      { name: 'Ello', desc: 'Plateforme de reservation beaute & bien-etre — iOS, Android & Web', url: 'https://www.ello.ma/' },
       { name: 'Kasba.app', desc: 'SaaS de location courte duree & conciergerie', url: 'https://kasba.app' },
       { name: 'ChinAuto.ma', desc: 'Marketplace de voitures chinoises pour le Maroc — annonces, comparatifs, guides de marques sur 20+ marques', url: 'https://chinauto.ma' },
       { name: 'NAOMI Gestion', desc: 'Conciergerie de luxe au Maroc', url: 'https://naomigestion.com' },
@@ -134,6 +140,11 @@ const content = {
         company: 'Ello — Beauty & Wellness SaaS',
         location: 'Casablanca',
         period: 'Jul 2025 - Present',
+        links: [
+          { label: 'Website', url: 'https://www.ello.ma/' },
+          { label: 'iOS', url: 'https://www.bit.ly/ello-ios' },
+          { label: 'Android', url: 'https://www.bit.ly/ello-gplay' },
+        ],
         bullets: [
           'Launched and scaled to 100+ salons onboarded and thousands of appointments processed across Morocco; owned the full B2B go-to-market (pricing, activation, onboarding, churn).',
           'Owned the full product lifecycle solo: UX/UI, Supabase schema (80+ tables), React Native mobile app, Next.js dashboard, API design — from zero to production.',
@@ -222,6 +233,7 @@ const content = {
     ],
     languages: ['French (native)', 'English (fluent)', 'Spanish'],
     projects: [
+      { name: 'Ello', desc: 'Beauty & wellness booking platform — iOS, Android & Web', url: 'https://www.ello.ma/' },
       { name: 'Kasba.app', desc: 'Short-term rental & concierge SaaS', url: 'https://kasba.app' },
       { name: 'ChinAuto.ma', desc: 'Chinese car marketplace for Morocco — listings, comparisons, brand guides across 20+ brands', url: 'https://chinauto.ma' },
       { name: 'NAOMI Gestion', desc: 'Luxury concierge service in Morocco', url: 'https://naomigestion.com' },
@@ -306,6 +318,18 @@ export default function CvPage() {
                   </Box>
                   <Text color="gray.500" fontSize="xs" fontWeight="500" letterSpacing="0.05em">{job.period}</Text>
                 </Flex>
+                {'links' in job && (job as any).links && (
+                  <HStack spacing={3} mt={1.5}>
+                    {(job as any).links.map((l: { label: string; url: string }) => (
+                      <Link key={l.url} href={l.url} isExternal fontSize="xs" color="purple.400" _hover={{ color: 'purple.300' }}>
+                        <HStack spacing={1}>
+                          <Icon as={FiExternalLink} boxSize={3} />
+                          <Text>{l.label}</Text>
+                        </HStack>
+                      </Link>
+                    ))}
+                  </HStack>
+                )}
                 <VStack align="stretch" spacing={2} mt={3} pl={4} borderLeft="2px solid" borderColor="whiteAlpha.100">
                   {job.bullets.map((b, j) => (
                     <Text key={j} color="gray.400" fontSize="sm" lineHeight="1.7">
