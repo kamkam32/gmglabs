@@ -10,7 +10,6 @@ const MotionBox = motion(Box)
 
 const projectLogos: Record<string, string> = {
   'Ello': '/cv/ello-logo.png',
-  'NAOMI Gestion': '/cv/naomi-logo.png',
   'GMG Labs': '/cv/gmg-logo.png',
 }
 
@@ -116,7 +115,6 @@ const content = {
       { name: 'Ello', desc: 'Plateforme de reservation beaute & bien-etre — iOS, Android & Web', url: 'https://www.ello.ma/' },
       { name: 'Kasba.app', desc: 'SaaS de location courte duree & conciergerie', url: 'https://kasba.app' },
       { name: 'ChinAuto.ma', desc: 'Marketplace de voitures chinoises pour le Maroc — annonces, comparatifs, guides de marques sur 20+ marques', url: 'https://chinauto.ma' },
-      { name: 'NAOMI Gestion', desc: 'Conciergerie de luxe au Maroc', url: 'https://naomigestion.com' },
       { name: 'GMG Labs', desc: 'Agence de developpement Web, Mobile & IA', url: 'https://gmg-labs.com' },
     ],
   },
@@ -221,7 +219,6 @@ const content = {
       { name: 'Ello', desc: 'Beauty & wellness booking platform — iOS, Android & Web', url: 'https://www.ello.ma/' },
       { name: 'Kasba.app', desc: 'Short-term rental & concierge SaaS', url: 'https://kasba.app' },
       { name: 'ChinAuto.ma', desc: 'Chinese car marketplace for Morocco — listings, comparisons, brand guides across 20+ brands', url: 'https://chinauto.ma' },
-      { name: 'NAOMI Gestion', desc: 'Luxury concierge service in Morocco', url: 'https://naomigestion.com' },
       { name: 'GMG Labs', desc: 'Web, Mobile & AI development agency', url: 'https://gmg-labs.com' },
     ],
   },
