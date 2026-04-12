@@ -1,11 +1,18 @@
 'use client'
 
 import { Box, Container, Flex, Heading, Text, VStack, HStack, Tag, Icon, Link, SimpleGrid, Divider } from '@chakra-ui/react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FiMail, FiPhone, FiMapPin, FiExternalLink, FiGlobe } from 'react-icons/fi'
+import { FiMail, FiPhone, FiMapPin, FiExternalLink, FiGlobe, FiLinkedin, FiDownload } from 'react-icons/fi'
 import { useLocale } from '@/i18n/LocaleContext'
 
 const MotionBox = motion(Box)
+
+const projectLogos: Record<string, string> = {
+  'Ello': '/cv/ello-logo.png',
+  'NAOMI Gestion': '/cv/naomi-logo.png',
+  'GMG Labs': '/cv/gmg-logo.png',
+}
 
 const content = {
   fr: {
@@ -50,17 +57,6 @@ const content = {
           'Recherche marche et decouverte utilisateurs complete : persona mapping, priorisation des pain points et definition roadmap.',
           'Conception de flux d\'exploration de donnees intuitifs pour des donnees financieres proprietaires complexes.',
           'Integration des contraintes reglementaires (KYC, compliance) dans l\'architecture pour garantir une experience fluide et securisee.',
-        ],
-      },
-      {
-        title: 'Freelance Product Manager & Developpeur',
-        company: 'Infinit Patrimoine',
-        location: 'Paris',
-        period: 'Mars 2024 - Sept. 2024',
-        bullets: [
-          'Conception UX et developpement d\'un parcours de souscription digital intuitif pour un cabinet de gestion de patrimoine.',
-          'Creation d\'une plateforme de conseils en investissement enrichie par l\'IA generative avec recommandations personnalisees.',
-          'Implementation d\'un systeme d\'analyse comportementale pour l\'amelioration continue de l\'experience client.',
         ],
       },
       {
@@ -169,17 +165,6 @@ const content = {
         ],
       },
       {
-        title: 'Freelance Product Manager & Developer',
-        company: 'Infinit Patrimoine',
-        location: 'Paris',
-        period: 'Mar 2024 - Sep 2024',
-        bullets: [
-          'UX design and development of an intuitive digital subscription journey for a wealth management firm.',
-          'Built an AI-powered investment advisory platform generating personalized recommendations.',
-          'Implemented a behavioral analytics system for continuous improvement of the client experience.',
-        ],
-      },
-      {
         title: 'Head of Product',
         company: 'Fanprime',
         location: 'Paris',
@@ -266,41 +251,83 @@ export default function CvPage() {
   const t = content[locale]
 
   return (
-    <Box bg="#0A0A0F" minH="100vh" py={{ base: 8, md: 16 }} px={4}>
+    <Box bg="#0A0A0F" minH="100vh">
+      {/* Sticky top bar */}
+      <Box
+        position="sticky"
+        top={0}
+        zIndex={50}
+        bg="rgba(10,10,15,0.85)"
+        backdropFilter="blur(12px)"
+        borderBottom="1px solid"
+        borderColor="whiteAlpha.100"
+        py={3}
+        px={4}
+      >
+        <Container maxW="900px">
+          <Flex justify="space-between" align="center">
+            <HStack spacing={3}>
+              <Text color="white" fontWeight="600" fontSize="sm">Kamil Alami</Text>
+              <Text color="gray.500" fontSize="xs" display={{ base: 'none', md: 'block' }}>|</Text>
+              <Text color="purple.400" fontSize="xs" display={{ base: 'none', md: 'block' }}>{t.subtitle}</Text>
+            </HStack>
+            <HStack spacing={3}>
+              <Link href="https://www.linkedin.com/in/kamil-alami-4355b361/" isExternal>
+                <Icon as={FiLinkedin} color="gray.400" boxSize={4} _hover={{ color: 'purple.300' }} />
+              </Link>
+              <Link
+                href="/cv"
+                color={locale === 'fr' ? 'purple.400' : 'gray.500'}
+                fontSize="xs"
+                fontWeight={locale === 'fr' ? '600' : '400'}
+              >FR</Link>
+              <Link
+                href="/en/cv"
+                color={locale === 'en' ? 'purple.400' : 'gray.500'}
+                fontSize="xs"
+                fontWeight={locale === 'en' ? '600' : '400'}
+              >EN</Link>
+            </HStack>
+          </Flex>
+        </Container>
+      </Box>
+
+      <Box py={{ base: 8, md: 16 }} px={4}>
       <Container maxW="900px">
         {/* Header */}
         <MotionBox {...fade(0)} mb={10}>
+          <Text color="purple.400" fontSize="xs" textTransform="uppercase" letterSpacing="0.2em" mb={3}>
+            {t.subtitle}
+          </Text>
           <Heading
             as="h1"
-            fontSize={{ base: '2xl', md: '4xl' }}
+            fontSize={{ base: '3xl', md: '5xl' }}
             fontWeight="700"
             color="white"
-            letterSpacing="-0.02em"
+            letterSpacing="-0.03em"
+            lineHeight="1.1"
           >
             Kamil Alami
           </Heading>
-          <Text color="purple.400" fontSize={{ base: 'md', md: 'lg' }} fontWeight="500" mt={1}>
-            {t.subtitle}
-          </Text>
 
-          <HStack spacing={4} mt={4} flexWrap="wrap" color="gray.400" fontSize="sm">
-            <HStack spacing={1.5}>
-              <Icon as={FiMail} boxSize={3.5} />
-              <Link href="mailto:alamikamil@gmail.com" _hover={{ color: 'purple.300' }}>alamikamil@gmail.com</Link>
-            </HStack>
-            <HStack spacing={1.5}>
-              <Icon as={FiPhone} boxSize={3.5} />
-              <Link href="tel:+33619061215" _hover={{ color: 'purple.300' }}>+33 6 19 06 12 15</Link>
-            </HStack>
-            <HStack spacing={1.5}>
-              <Icon as={FiMapPin} boxSize={3.5} />
-              <Text>Paris, France</Text>
-            </HStack>
+          <HStack spacing={4} mt={5} flexWrap="wrap" color="gray.400" fontSize="sm">
+            <Link href="mailto:alamikamil@gmail.com" _hover={{ color: 'purple.300' }}>
+              <HStack spacing={1.5}><Icon as={FiMail} boxSize={3.5} /><Text>alamikamil@gmail.com</Text></HStack>
+            </Link>
+            <Link href="tel:+33619061215" _hover={{ color: 'purple.300' }}>
+              <HStack spacing={1.5}><Icon as={FiPhone} boxSize={3.5} /><Text>+33 6 19 06 12 15</Text></HStack>
+            </Link>
+            <HStack spacing={1.5}><Icon as={FiMapPin} boxSize={3.5} /><Text>Paris, France</Text></HStack>
+            <Link href="https://www.linkedin.com/in/kamil-alami-4355b361/" isExternal _hover={{ color: 'purple.300' }}>
+              <HStack spacing={1.5}><Icon as={FiLinkedin} boxSize={3.5} /><Text>LinkedIn</Text></HStack>
+            </Link>
           </HStack>
 
-          <Text color="gray.400" fontSize="sm" lineHeight="1.8" mt={6} maxW="800px">
-            {t.summary}
-          </Text>
+          <Box mt={6} p={5} bg="whiteAlpha.50" borderRadius="lg" borderLeft="3px solid" borderColor="purple.500">
+            <Text color="gray.300" fontSize="sm" lineHeight="1.8">
+              {t.summary}
+            </Text>
+          </Box>
         </MotionBox>
 
         <Divider borderColor="whiteAlpha.100" mb={10} />
@@ -409,34 +436,36 @@ export default function CvPage() {
                 _hover={{ textDecoration: 'none' }}
               >
                 <Box
-                  p={4}
+                  p={5}
                   borderRadius="lg"
                   border="1px solid"
                   borderColor="whiteAlpha.100"
-                  _hover={{ borderColor: 'purple.500', bg: 'whiteAlpha.50' }}
-                  transition="all 0.2s"
+                  _hover={{ borderColor: 'purple.500', bg: 'whiteAlpha.50', transform: 'translateY(-2px)' }}
+                  transition="all 0.25s"
+                  h="full"
                 >
-                  <HStack justify="space-between">
-                    <Text color="white" fontWeight="500" fontSize="sm">{p.name}</Text>
-                    <Icon as={FiExternalLink} color="gray.500" boxSize={3.5} />
+                  <HStack spacing={3} mb={2}>
+                    {projectLogos[p.name] && (
+                      <Box flexShrink={0} w="32px" h="32px" position="relative" borderRadius="md" overflow="hidden" bg="whiteAlpha.100">
+                        <Image src={projectLogos[p.name]} alt={p.name} fill style={{ objectFit: 'contain', padding: '4px' }} />
+                      </Box>
+                    )}
+                    <Box flex={1}>
+                      <HStack justify="space-between">
+                        <Text color="white" fontWeight="600" fontSize="sm">{p.name}</Text>
+                        <Icon as={FiExternalLink} color="gray.600" boxSize={3.5} />
+                      </HStack>
+                    </Box>
                   </HStack>
-                  <Text color="gray.500" fontSize="xs" mt={1}>{p.desc}</Text>
+                  <Text color="gray.500" fontSize="xs" lineHeight="1.6">{p.desc}</Text>
                 </Box>
               </Link>
             ))}
           </SimpleGrid>
         </MotionBox>
 
-        {/* Language switcher */}
-        <Flex justify="center" pb={8}>
-          <HStack spacing={3} color="gray.600" fontSize="xs">
-            <Icon as={FiGlobe} boxSize={3.5} />
-            <Link href="/cv" color={locale === 'fr' ? 'purple.400' : 'gray.500'} fontWeight={locale === 'fr' ? '600' : '400'}>FR</Link>
-            <Text>/</Text>
-            <Link href="/en/cv" color={locale === 'en' ? 'purple.400' : 'gray.500'} fontWeight={locale === 'en' ? '600' : '400'}>EN</Link>
-          </HStack>
-        </Flex>
       </Container>
+      </Box>
     </Box>
   )
 }
