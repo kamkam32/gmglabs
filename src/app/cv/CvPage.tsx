@@ -404,21 +404,46 @@ export default function CvPage() {
       <Container maxW="900px">
         {/* Header */}
         <MotionBox {...fade(0)} mb={10}>
-          <Text color="purple.400" fontSize="xs" textTransform="uppercase" letterSpacing="0.2em" mb={3}>
-            {t.subtitle}
-          </Text>
-          <Heading
-            as="h1"
-            fontSize={{ base: '3xl', md: '5xl' }}
-            fontWeight="700"
-            color="white"
-            letterSpacing="-0.03em"
-            lineHeight="1.1"
-          >
-            Kamil Alami
-          </Heading>
+          <Flex gap={{ base: 5, md: 8 }} align={{ base: 'center', md: 'start' }} direction={{ base: 'column', md: 'row' }}>
+            {/* Photo */}
+            <Box flexShrink={0}>
+              <Box
+                w={{ base: '100px', md: '120px' }}
+                h={{ base: '100px', md: '120px' }}
+                borderRadius="full"
+                overflow="hidden"
+                border="3px solid"
+                borderColor="purple.500"
+                position="relative"
+              >
+                <Image
+                  src="/cv/1706607757106.jpg"
+                  alt="Kamil Alami"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </Box>
+            </Box>
 
-          <HStack spacing={4} mt={5} flexWrap="wrap" color="gray.400" fontSize="sm">
+            {/* Info */}
+            <Box flex={1} textAlign={{ base: 'center', md: 'left' }}>
+              <Text color="purple.400" fontSize="xs" textTransform="uppercase" letterSpacing="0.2em" mb={2}>
+                {t.subtitle}
+              </Text>
+              <Heading
+                as="h1"
+                fontSize={{ base: '3xl', md: '5xl' }}
+                fontWeight="700"
+                color="white"
+                letterSpacing="-0.03em"
+                lineHeight="1.1"
+              >
+                Kamil Alami
+              </Heading>
+            </Box>
+          </Flex>
+
+          <HStack spacing={4} mt={5} flexWrap="wrap" color="gray.400" fontSize="sm" justify={{ base: 'center', md: 'start' }}>
             <Link href="mailto:alamikamil@gmail.com" _hover={{ color: 'purple.300' }}>
               <HStack spacing={1.5}><Icon as={FiMail} boxSize={3.5} /><Text>alamikamil@gmail.com</Text></HStack>
             </Link>
