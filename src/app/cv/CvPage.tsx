@@ -1,9 +1,10 @@
 'use client'
 
-import { Box, Container, Flex, Heading, Text, VStack, HStack, Tag, Icon, Link, SimpleGrid, Divider } from '@chakra-ui/react'
+import { useState } from 'react'
+import { Box, Container, Flex, Heading, Text, VStack, HStack, Tag, Icon, Link, SimpleGrid, Divider, Button } from '@chakra-ui/react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { FiMail, FiPhone, FiMapPin, FiExternalLink, FiGlobe, FiLinkedin, FiDownload } from 'react-icons/fi'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiMail, FiPhone, FiMapPin, FiExternalLink, FiGlobe, FiLinkedin, FiDownload, FiFileText, FiBookOpen } from 'react-icons/fi'
 import { useLocale } from '@/i18n/LocaleContext'
 
 const MotionBox = motion(Box)
@@ -237,6 +238,85 @@ const skills = [
   'Figma / Jira / ClickUp',
 ]
 
+const story = {
+  fr: {
+    headline: 'De la finance aux produits IA — l\'histoire d\'un AI Builder.',
+    chapters: [
+      {
+        era: '2015 — 2020',
+        title: 'La finance',
+        text: 'J\'ai commence ma carriere dans la finance a Londres, puis Paris. Produits structures, banque privee, clients institutionnels. J\'ai appris la rigueur, l\'exigence, la capacite a vulgariser des choses complexes. Mais au fond, je voulais construire, pas vendre.',
+        accent: 'ProFin Partners (Londres) → BNP Paribas → Zenith Capital',
+      },
+      {
+        era: '2020 — 2023',
+        title: 'La decouverte du produit',
+        text: 'Chez Fanprime, j\'ai decouvert le product management. Construire une roadmap, piloter des equipes, voir un produit prendre vie. Gamification, Web3, engagement — j\'ai touche a tout. Mais je dependais toujours des developpeurs pour concretiser mes idees.',
+        accent: 'Fanprime — SaaS de fidelisation pour le sport',
+      },
+      {
+        era: 'Fin 2022',
+        title: 'Le declic',
+        text: 'Quand ChatGPT est sorti, j\'ai tout de suite compris que ca allait tout changer. Pas seulement pour les utilisateurs — pour moi. J\'ai realise que l\'IA me donnait le pouvoir de construire moi-meme ce que j\'imaginais. Plus besoin d\'attendre une equipe dev. Avec la bonne vision produit, la bonne architecture en tete et l\'IA comme copilote, je pouvais passer de l\'idee au produit en production.',
+        accent: 'Le moment ou tout a bascule',
+        highlight: true,
+      },
+      {
+        era: '2024 — 2025',
+        title: 'L\'IA en production',
+        text: 'Chez Heavenize, j\'ai concu et livre un assistant IA pour des conseillers financiers — RAG, chatbots multi-agents, le tout dans un environnement reglemente. L\'IA n\'etait plus un side project, c\'etait mon metier.',
+        accent: 'Heavenize — IA pour la finance',
+      },
+      {
+        era: '2025 — Aujourd\'hui',
+        title: 'AI Builder',
+        text: 'J\'ai lance Ello. De l\'idee a la production, seul — en pilotant l\'IA pour construire : le backend, l\'app mobile, le dashboard, le moteur de reservation, le bot WhatsApp. 80+ tables Supabase, des milliers de rendez-vous traites. La preuve que le PM qui maitrise l\'IA peut shipper a la vitesse d\'une equipe entiere. Aujourd\'hui je ne m\'arrete plus — Kasba, ChinAuto, GMG Labs... chaque projet est une nouvelle occasion de construire.',
+        accent: 'Ello — 100+ salons, des milliers de RDV',
+        highlight: true,
+      },
+    ],
+    cta: 'Je ne suis pas un developpeur qui fait du produit. Je suis un Product Manager qui a compris comment utiliser l\'IA pour tout construire.',
+  },
+  en: {
+    headline: 'From finance to AI products — the story of an AI Builder.',
+    chapters: [
+      {
+        era: '2015 — 2020',
+        title: 'Finance',
+        text: 'I started my career in finance in London, then Paris. Structured products, private banking, institutional clients. I learned rigor, high standards, and the ability to simplify complex things. But deep down, I wanted to build, not sell.',
+        accent: 'ProFin Partners (London) → BNP Paribas → Zenith Capital',
+      },
+      {
+        era: '2020 — 2023',
+        title: 'Discovering product',
+        text: 'At Fanprime, I discovered product management. Building a roadmap, leading teams, watching a product come to life. Gamification, Web3, engagement — I touched everything. But I still depended on developers to bring my ideas to life.',
+        accent: 'Fanprime — Loyalty SaaS for sports',
+      },
+      {
+        era: 'Late 2022',
+        title: 'The turning point',
+        text: 'When ChatGPT launched, I immediately understood it would change everything. Not just for users — for me. I realized AI gave me the power to build what I imagined, myself. No more waiting for a dev team. With the right product vision, the right architecture in mind and AI as my copilot, I could go from idea to production.',
+        accent: 'The moment everything changed',
+        highlight: true,
+      },
+      {
+        era: '2024 — 2025',
+        title: 'AI in production',
+        text: 'At Heavenize, I designed and shipped an AI assistant for financial advisors — RAG, multi-agent chatbots, all within a regulated environment. AI was no longer a side project, it was my job.',
+        accent: 'Heavenize — AI for finance',
+      },
+      {
+        era: '2025 — Now',
+        title: 'AI Builder',
+        text: 'I launched Ello. From idea to production, solo — using AI to build everything: the backend, the mobile app, the dashboard, the booking engine, the WhatsApp bot. 80+ Supabase tables, thousands of appointments processed. Proof that a PM who masters AI can ship at the speed of an entire team. Today I don\'t stop — Kasba, ChinAuto, GMG Labs... every project is another chance to build.',
+        accent: 'Ello — 100+ salons, thousands of appointments',
+        highlight: true,
+      },
+    ],
+    cta: 'I\'m not a developer who does product. I\'m a Product Manager who figured out how to use AI to build everything.',
+  },
+}
+
 const fade = (delay: number) => ({
   initial: { opacity: 0, y: 16 },
   animate: { opacity: 1, y: 0 },
@@ -246,6 +326,8 @@ const fade = (delay: number) => ({
 export default function CvPage() {
   const { locale } = useLocale()
   const t = content[locale]
+  const s = story[locale]
+  const [mode, setMode] = useState<'cv' | 'story'>('cv')
 
   return (
     <Box bg="#0A0A0F" minH="100vh">
@@ -269,6 +351,35 @@ export default function CvPage() {
               <Text color="purple.400" fontSize="xs" display={{ base: 'none', md: 'block' }}>{t.subtitle}</Text>
             </HStack>
             <HStack spacing={3}>
+              {/* CV / Story toggle */}
+              <HStack spacing={0} bg="whiteAlpha.100" borderRadius="full" p="2px">
+                <Button
+                  size="xs"
+                  borderRadius="full"
+                  bg={mode === 'cv' ? 'purple.500' : 'transparent'}
+                  color={mode === 'cv' ? 'white' : 'gray.400'}
+                  _hover={{ color: 'white' }}
+                  onClick={() => setMode('cv')}
+                  leftIcon={<Icon as={FiFileText} boxSize={3} />}
+                  px={3}
+                  h="26px"
+                >
+                  CV
+                </Button>
+                <Button
+                  size="xs"
+                  borderRadius="full"
+                  bg={mode === 'story' ? 'purple.500' : 'transparent'}
+                  color={mode === 'story' ? 'white' : 'gray.400'}
+                  _hover={{ color: 'white' }}
+                  onClick={() => setMode('story')}
+                  leftIcon={<Icon as={FiBookOpen} boxSize={3} />}
+                  px={3}
+                  h="26px"
+                >
+                  Story
+                </Button>
+              </HStack>
               <Link href="https://www.linkedin.com/in/kamil-alami-4355b361/" isExternal>
                 <Icon as={FiLinkedin} color="gray.400" boxSize={4} _hover={{ color: 'purple.300' }} />
               </Link>
@@ -328,6 +439,129 @@ export default function CvPage() {
         </MotionBox>
 
         <Divider borderColor="whiteAlpha.100" mb={10} />
+
+        <AnimatePresence mode="wait">
+        {mode === 'story' ? (
+          <MotionBox
+            key="story"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            {/* Story headline */}
+            <Heading
+              as="h2"
+              fontSize={{ base: 'xl', md: '2xl' }}
+              color="white"
+              fontWeight="600"
+              lineHeight="1.4"
+              mb={12}
+              maxW="600px"
+            >
+              {s.headline}
+            </Heading>
+
+            {/* Timeline */}
+            <VStack spacing={0} align="stretch" position="relative">
+              {/* Vertical line */}
+              <Box
+                position="absolute"
+                left={{ base: '11px', md: '13px' }}
+                top="0"
+                bottom="0"
+                w="2px"
+                bg="whiteAlpha.100"
+              />
+
+              {s.chapters.map((ch, i) => (
+                <MotionBox
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  position="relative"
+                  pl={{ base: 10, md: 12 }}
+                  pb={i < s.chapters.length - 1 ? 12 : 0}
+                >
+                  {/* Dot */}
+                  <Box
+                    position="absolute"
+                    left={{ base: '4px', md: '6px' }}
+                    top="6px"
+                    w={ch.highlight ? '18px' : '14px'}
+                    h={ch.highlight ? '18px' : '14px'}
+                    borderRadius="full"
+                    bg={ch.highlight ? 'purple.500' : 'transparent'}
+                    border="2px solid"
+                    borderColor={ch.highlight ? 'purple.500' : 'whiteAlpha.300'}
+                    ml={ch.highlight ? '-2px' : '0'}
+                  />
+
+                  <Text color="purple.400" fontSize="xs" letterSpacing="0.15em" textTransform="uppercase" mb={1}>
+                    {ch.era}
+                  </Text>
+                  <Heading as="h3" fontSize={{ base: 'lg', md: 'xl' }} color="white" fontWeight="600" mb={3}>
+                    {ch.title}
+                  </Heading>
+                  <Text color="gray.400" fontSize="sm" lineHeight="1.9" mb={3}>
+                    {ch.text}
+                  </Text>
+                  <Text color="gray.600" fontSize="xs" fontStyle="italic">
+                    {ch.accent}
+                  </Text>
+                </MotionBox>
+              ))}
+            </VStack>
+
+            {/* CTA quote */}
+            <Box mt={16} p={6} bg="whiteAlpha.50" borderRadius="lg" borderLeft="3px solid" borderColor="purple.500">
+              <Text color="white" fontSize={{ base: 'sm', md: 'md' }} fontWeight="500" lineHeight="1.8" fontStyle="italic">
+                &laquo; {s.cta} &raquo;
+              </Text>
+            </Box>
+
+            {/* Projects after story */}
+            <Box mt={16}>
+              <SectionTitle>{t.sections.projects}</SectionTitle>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+                {t.projects.map((p) => (
+                  <Link key={p.name} href={p.url} isExternal _hover={{ textDecoration: 'none' }}>
+                    <Box
+                      p={5}
+                      borderRadius="lg"
+                      border="1px solid"
+                      borderColor="whiteAlpha.100"
+                      _hover={{ borderColor: 'purple.500', bg: 'whiteAlpha.50', transform: 'translateY(-2px)' }}
+                      transition="all 0.25s"
+                      h="full"
+                    >
+                      <HStack spacing={3} mb={2}>
+                        {projectLogos[p.name] && (
+                          <Box flexShrink={0} w="32px" h="32px" position="relative" borderRadius="md" overflow="hidden" bg="whiteAlpha.100">
+                            <Image src={projectLogos[p.name]} alt={p.name} fill style={{ objectFit: 'contain', padding: '4px' }} />
+                          </Box>
+                        )}
+                        <HStack flex={1} justify="space-between">
+                          <Text color="white" fontWeight="600" fontSize="sm">{p.name}</Text>
+                          <Icon as={FiExternalLink} color="gray.600" boxSize={3.5} />
+                        </HStack>
+                      </HStack>
+                      <Text color="gray.500" fontSize="xs" lineHeight="1.6">{p.desc}</Text>
+                    </Box>
+                  </Link>
+                ))}
+              </SimpleGrid>
+            </Box>
+          </MotionBox>
+        ) : (
+          <MotionBox
+            key="cv"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
 
         {/* Experience */}
         <MotionBox {...fade(0.1)} mb={12}>
@@ -460,6 +694,10 @@ export default function CvPage() {
             ))}
           </SimpleGrid>
         </MotionBox>
+
+          </MotionBox>
+        )}
+        </AnimatePresence>
 
       </Container>
       </Box>
